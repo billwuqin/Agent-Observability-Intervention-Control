@@ -1,8 +1,8 @@
 # Observability, Intervention and Control of Network Management Agent (ICON)
 
-This document provides a short description of a proposed IETF work.
-The intention of this document is to capture the scope of a piece of work that the proponents believes is in IETF scope and needs urgent attention.
-Our hope is that Area Directors will help us dispatch this to a place to do the work:
+This page provides a short description of a proposed IETF work.
+The intention of this page is to capture the scope of the ICON work that the proponents believes is in IETF scope and needs special attention.
+Our expection is that Area Directors will help us dispatch this to a place to do the work:
 - an existing working group
 - a new working group
 
@@ -18,23 +18,27 @@ Agents are expected to do, AI Guardrails such as input guardrail, output guardra
 AI agents within operational and ethical boundaries, prevent AI from producing harmful results, e.g.,escalate a decision to a
 human for high-risk network operation,in the meanwhile protect against malicious attacks,e.g., prompt injection.
 
-However the pace of AI Agent technology adoption is exceeding network operators' abilities to assure and control them. Network
-operators usually lack equivalent infrastructure for human oversight that match the speed and scale of the network management
+However the pace of AI Agent technology adoption is exceeding network operators' capacities to assure and control them. Network
+operators usually lack an equivalent infrastructure for human oversight that match the speed and scale of the network management
 Agent applications,e.g.,network failure or security risk is hard to detect and control, occurring at machine speed.
 
-The goal of this work is to explore use cases, derive requirements, and provide solutions for continuous monitoring and evaluation,
+The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for continuous monitoring and evaluation,
 identifying and characterizing trajectory records related to agent behavior or workflow operation, enable human oversight, provide
 human and agent interaction for agent intervention and control at the service level and network level.
 
 Where possible, any solutions work will be built in a modular way using existing IETF protocols. However, no protocol solution
-choices will be made until the requirements (functional and behavioral) have been agreed, and then this will require an analysis
-of the capabilities of existing protocols and what gaps need to be filled.
+choices will be made until the functional requirements have been agreed, and then this will require an analysis
+of the capabilities of existing protocols and identify gaps that need to be filled.
 
 ## Terminology
 
 - Human to Agent Interface:
-- Observability:
-- Invention and Control:
+- Observability: enabling network behavioral assessment through analysis of observed operational network data (logs, metrics, traces, etc.)
+                with the aim of detecting symptoms of network behavior, and to identify anomalies and their causes.
+- Invention: Operates when something has gone wrong, is going wrong, or is about to go wrong that provides humans with the
+             ability to detect, interrupt, correct, and recover from agent behavior that is not anticipated by control mechanism.
+- Control: Operates before and during agent action execution defining what an agent is permitted to do, enforcing boundaries,
+           and structuring the environment so that harmful or unauthorized actions are difficult or impossible to execute.
 - Evaluation:
 - Human Oversight:
 - Behavior:
@@ -45,7 +49,7 @@ of the capabilities of existing protocols and what gaps need to be filled.
 ## Out Of Scope
 
 - Agent Discovery
-- Trust, authentication, and authorisation of the entities
+- Trust, Authentication, and Authorisation of the Agent
 - Agent-to-Agent communication
 
 ## Implementations and Interoperability
