@@ -1,0 +1,94 @@
+# Intervention and Control of Network Management Agent (ICON)
+
+This document provides a short description of a proposed IETF work.
+The intention of this document is to capture the scope of a piece of work that the proponents believes is in IETF scope and needs urgent attention.
+Our hope is that Area Directors will help us dispatch this to a place to do the work:
+- an existing working group
+- a new working group
+
+The proponents fully intend to continue refining existing Internet-Drafts concurrent with any work-dispatch process.
+
+Some explanation of terminology is provided after the problem statement that uses some of the terms.
+
+## Problem Statement and Work Scope
+
+Network operations are increasingly autonomous with the growth of network management Agent applications at the network level and
+service level. Since AI native operations are non-deterministic, when network management agents misbehave or deviate from what
+Agents are expected to do, AI Guardrails such as input guardrail, output guardrail are introduced to constrain the behavior of
+AI agents within operational and ethical boundaries, prevent AI from producing harmful results, e.g.,escalate a decision to a
+human for high-risk network operation,in the meanwhile protect against malicious attacks,e.g., prompt injection.
+
+However the pace of AI Agent technology adoption is exceeding network operators' abilities to assure and control them. Network
+operators usually lack equivalent infrastructure for human oversight that match the speed and scale of the network management
+Agent applications,e.g.,network failure or security risk is hard to detect and control, occurring at machine speed.
+
+The goal of this work is to explore use cases, derive requirements, and provide solutions for continuous monitoring and evaluation,
+identifying and characterizing trajectory records related to agent behavior or workflow operation, enable human oversight, provide
+human and agent interaction for agent intervention and control at the service level and network level.
+
+Where possible, any solutions work will be built in a modular way using existing IETF protocols. However, no protocol solution
+choices will be made until the requirements (functional and behavioral) have been agreed, and then this will require an analysis
+of the capabilities of existing protocols and what gaps need to be filled.
+
+## Terminology
+
+
+## Functional Requirements
+
+## Out Of Scope
+
+- Agent Discovery
+- Trust, authentication, and authorisation of the entities
+- Agent-to-Agent communication
+
+## Implementations and Interoperability
+
+Implementation and interoperability are essential cornerstones of IETF work. It is important to understand which elements need to be built to interoperate.
+
+### What are implementable components?
+
+
+### What needs to be standardised?
+
+**Protocols**
+
+
+**Entity Properties**
+
+### What are the interoperability interfaces?
+
+>> TBD
+
+## Coordination with other organisations
+
+This work is closely related to work done in other organisations and bodies. This work effort will seek to take input from other experts while attempting to bring them together to coordinate on this issue.
+
+Outreach should take place to at least:
+- TMF ANP
+- OpenGuardrails
+- OpenTelemetry
+- Harness Engineering
+
+
+## Proponents
+
+This is a list of people who contributed to the discussions that led to this work description. Draw no conclusions from the ordering of people in this list.
+- Qin Wu <billwu@huawei.com>
+- Qiufang Ma <maqiufang1@huawei.com>
+
+## Deliverables
+
+**A list of deliverables will be added here**
+
+## Relevant ICON Internet-Drafts
+
+**specific drafts will be listed here**
+
+## Related Internet-Drafts or Documents
+
+This section lists related internet draft or any work that people are thinking are relevant in the scope
+- "Network Digital Twin and Agentic AI based Architecture for AI driven Network Operations" <https://datatracker.ietf.org/doc/draft-wmz-nmrg-agent-ndt-arch/>
+- "Agentic AI Architectural Principles for Autonomous Computer Networks" <https://datatracker.ietf.org/doc/draft-jadoon-nmrg-agentic-ai-autonomous-networks/>
+- "IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT" <https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744>
+- "Problem Space Analysis of AI Agent Protocols in IETF" <https://datatracker.ietf.org/doc/draft-yao-catalist-problem-space-analysis/>
+- "Why Naming Matters: Identifier Design for Decentralized Digital Infrastructure in the Age of AGI"<https://datatracker.ietf.org/meeting/125/materials/slides-125-dinrg-why-naming-matters-identifier-design-for-decentralized-digital-infrastructure-in-the-age-of-agi-01>
