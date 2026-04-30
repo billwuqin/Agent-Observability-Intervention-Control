@@ -35,7 +35,7 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 - Human to Agent Interface:
 - Observability: enabling network behavioral assessment through analysis of observed operational network data (logs, metrics, traces, etc.)
                 with the aim of detecting symptoms of network behavior, and to identify anomalies and their causes.
-- Invention: Operates when something has gone wrong, is going wrong, or is about to go wrong that provides humans with the
+- Intervention: Operates when something has gone wrong, is going wrong, or is about to go wrong that provides humans with the
              ability to detect, interrupt, correct, and recover from agent behavior that is not anticipated by control mechanism.
 - Control: Operates before and during agent action execution defining what an agent is permitted to do, enforcing boundaries,
            and structuring the environment so that harmful or unauthorized actions are difficult or impossible to execute.
