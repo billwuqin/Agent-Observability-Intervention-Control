@@ -48,8 +48,10 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 - Human Oversight: The practice of keeping humans actively involved in continuously monitoring of AI agents.In agent trajectory management,
                    it ensures that network management agents do not go off the rails, violate safety protocols, or waste resources. It transforms
                    a fully autonomous "black box" into a controllable and collaborative system.
-- Behavior:
-- Trajectory record:
+- Behavior: pattern of reasoning, decisions, and actions an AI agent takes to achieve a specific goal such as reasoning sequence, the sequence
+            and logic of execution paths.
+- Trajectory record: Keep track of Agent behaviour and produce audit log or trace information to Capture the entire "flight path" or reasoning
+                     sequence the agent followed to reach its conclusion using using a structured Thought,Action,Observation loop.
 
 ## Functional Requirements
 
