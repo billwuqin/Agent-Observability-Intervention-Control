@@ -54,6 +54,19 @@ of the capabilities of existing protocols and identify gaps that need to be fill
                      sequence the agent followed to reach its conclusion using using a structured Thought,Action,Observation loop.
 
 ## Functional Requirements
+- What are typical scenarios for Agent Behaviour Observability, Intervention and Control?
+- Which is specific for Agent Behaviour Observability?
+- Which is specific for Agent Intervention and Control?
+- Who Observe?
+- Who is Observed and Evaluated?
+- What information needs to be observed and Evaluated?
+ - Which performance metrics are used to charaterize the operational state of the Network Management Agent;
+ - Which Log information are collected;
+ - Which trace information is used to charaterize the trajectory record of the Network Management Agent;
+- Who Intervenes and Controls?
+- What information are used for Intervention and Control?
+- How is Observability,Intervention and Control realized?
+- Where does Observability,Intervention and Control fit in the overal workflow?
 
 ## Out Of Scope
 
@@ -67,17 +80,26 @@ Implementation and interoperability are essential cornerstones of IETF work. It 
 
 ### What are implementable components?
 
+- Observability Component
+- Evaluation Component
+- Intervention Component
+- Control Component
 
 ### What needs to be standardised?
 
 **Protocols**
+- Human and Agent Interaction interface for Intervention and Control;
+- Telemetry Protocol Extension for Agent Behavior Observability;
 
-
-**Entity Properties**
+**Protocol Properties**
+- Trace, Log and Metric for Agent Observability
+- Policy Element for Intervention 
+- Policy Element for Control
 
 ### What are the interoperability interfaces?
 
->> TBD
+Telemetry Interface
+Human and Agent Interaction Interface
 
 ## Coordination with other organisations
 
