@@ -54,6 +54,7 @@ of the capabilities of existing protocols and identify gaps that need to be fill
                      sequence the agent followed to reach its conclusion using using a structured Thought,Action,Observation loop.
 
 ## Functional Requirements
+
 - What are typical scenarios for Agent Behaviour Observability, Intervention and Control?
 - Which is specific for Agent Behaviour Observability?
 - Which is specific for Agent Intervention and Control?
@@ -77,6 +78,9 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 ## Implementations and Interoperability
 
 Implementation and interoperability are essential cornerstones of IETF work. It is important to understand which elements need to be built to interoperate.
+- Input Guardrails
+- Output Guardrails
+- Interaction-Level Guardrails
 
 ### What are implementable components?
 
