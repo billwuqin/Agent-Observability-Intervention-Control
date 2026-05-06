@@ -13,7 +13,7 @@ Some explanation of terminology is provided after the problem statement that use
 ## Problem Statement and Work Scope
 
 Network operations are increasingly autonomous with the growth of network management Agent applications at the network level and
-service level. Since AI native operations suffer from hallucination and unreliable decision-making, when network management agents misbehave or deviate from what
+service level. Since AI native operations may be non-deterministic, when network management agents misbehave or deviate from what
 Agents are expected to do, Current AI safety technologies, often referred to as "AI guardrails" are introduced to constrain the behavior of
 AI agents within operational and compliance boundaries, prevent AI from producing harmful results or taking wrong actions, e.g.,escalate a decision to a
 human for a high-risk network operation, defend against malicious attacks,e.g., prompt injection. These guardrails typically
@@ -27,7 +27,7 @@ When a violation is suspected, there are currently no standardized protocols for
 series of autonomous actions that introduce substantial operational risk) mechanisms.
 In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange hinder timely risk mitigation and state recovery during boundary violations by agents.
 
-The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for continuous detection/monitoring, intervention, and recovery,
+The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for continuous monitoring, intervention, and recovery,
 identifying and characterizing trajectory records related to agent behavior or workflow operation, enable human oversight, provide
 human and agent interaction for agent intervention and control at the service level and network level.
 
