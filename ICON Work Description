@@ -27,8 +27,13 @@ When a violation is suspected, there are currently no standardized protocols for
 series of autonomous actions that introduce substantial operational risk) mechanisms.
 In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange hinder timely risk mitigation and state recovery during boundary violations by agents.
 
+<<<<<<< main
 The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for continuous monitoring, intervention, and recovery,
 identifying and characterizing trajectory records related to agent behavior or workflow operation, enable human oversight, provide
+=======
+The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for identifying and characterizing trajectory records related
+to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
+>>>>>>> main
 human and agent interaction for agent intervention and control at the service level and network level.
 
 Where possible, any solutions work will be built in a modular way using existing IETF protocols. However, no protocol solution
