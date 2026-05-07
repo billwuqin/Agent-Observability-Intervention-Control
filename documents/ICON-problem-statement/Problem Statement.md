@@ -71,6 +71,11 @@ TODO Introduction
 
 {::boilerplate bcp14-tagged}
 
+# Problem Space
+
+
+# Solution Space for Network Management Agent Observability, Intervention and Control
+
 
 # Security Considerations
 
