@@ -1,6 +1,7 @@
 # Observability, Intervention and Control of Network Management Agent (ICON)
 
-This page provides a short description of a proposed IETF work.
+This page provides a short description of a proposed IETF work, ICON work. ICON work aims at exploring how network management Agent can be
+continuously monitored, intervened, Controlled when the network management Agent goes wrong.
 The intention of this page is to capture the scope of the ICON work that the proponents believes is in IETF scope and needs special attention.
 Our expection is that Area Directors will help us dispatch this to a place to do the work:
 - an existing working group
