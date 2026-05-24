@@ -33,7 +33,6 @@ normative:
 
 informative:
 
-...
 
 --- abstract
 
