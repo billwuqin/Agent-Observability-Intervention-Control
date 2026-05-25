@@ -84,17 +84,43 @@ real-time execution interventions.
  BCP 14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all
  capitals, as shown here.
 
- o  Autonomous Agent: An AI-driven software entity capable of accepting
+-  Autonomous Agent: An AI-driven software entity capable of accepting
     a declarative goal and executing non-deterministic tasks.
- o  Control: A preventive governance mechanism operating before and
-    during agent action to enforce environmental boundaries.
- o  Intervention: A responsive mechanism activated when controls are
-    bypassed, allowing an external authority to interrupt, roll back, or
-    correct an agent's state.
- o  Agent Drift: Gradual performance degradation or misalignment of
+
+-  Agent Drift: Gradual performance degradation or misalignment of
     reasoning patterns over time in a production environment.
- o  Cascading Failure: A scenario where a failure in one downstream
+
+-  Cascading Failure: A scenario where a failure in one downstream
     sub-agent propagates across multi-agent boundaries.
+
+- Human to Agent Communication: The interaction between human users and network management Agent designed to perform tasks, solve problems,
+                                 or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
+                                 task, human-agent communication involves delegation, where the human provides a goal and the agent
+                                 autonomously figures out how to achieve it.
+
+- Observability: Enabling network behavioral assessment through analysis of observed operational network data (logs, metrics, traces, etc.)
+                with the aim of detecting symptoms of network behavior, and to identify anomalies and their causes.
+
+- Intervention: Operates when something has gone wrong, is going wrong, or is about to go wrong that provides humans with the
+                ability to detect, interrupt, correct, and recover from agent behavior that is not anticipated by control mechanism.
+
+- Control: Operates before and during agent action execution defining what an agent is permitted to do, enforcing boundaries,
+           and structuring the environment so that harmful or unauthorized actions are difficult or impossible to execute.
+
+- Evaluation:Using Trajectory record to assess the performance and understand how an gent solves problem,e.g.,Checking if the agent took
+             the shortest sequence of actions or wasted resources on redundant tool or Analyzing specific segments of the trajectory to
+             see if the agent excels at information retrieval but struggles with mathematical synthesis.
+
+- Human Oversight: The practice of keeping humans actively involved in continuously monitoring of AI agents.In agent trajectory management,
+                   it ensures that network management agents do not go off the rails, violate safety protocols, or waste resources. It transforms
+                   a fully autonomous "black box" into a controllable and collaborative system.
+
+- Behavior: pattern of reasoning, decisions, and actions an AI agent takes to achieve a specific goal such as reasoning sequence, the sequence
+            and logic of execution paths.
+
+- Trajectory record: Keep track of Agent behaviour and produce audit log or trace information to Capture the entire "flight path" or reasoning
+                     sequence the agent followed to reach its conclusion using using a structured Thought,Action,Observation loop.
+
 
 # Problem Space
 
