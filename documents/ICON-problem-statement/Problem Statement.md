@@ -54,25 +54,41 @@ interfaces, runtime contracts, and human-agent signalling protocols.
 
 # Introduction
 
-Modern network management architecture is moving beyond static,
-deterministic, rule-based automation workflows. The integration
-of Large Language Models (LLMs) and agentic AI frameworks enables
-autonomous AI agents to accept broad declarative intents, decompose
-them into sub-tasks, dynamically plan execution paths, and manipulate
-network infrastructure via APIs and tools.
+Network operations are increasingly autonomous with the growth of network
+management Agent applications at the network level and service level. Since
+AI native operations may be non-deterministic, when network management agents
+misbehave or deviate from what Agents are expected to do, Current AI safety
+technologies, often referred to as "AI guardrails" are introduced to constrain
+the behavior of AI agents within operational and compliance boundaries, prevent
+AI from producing harmful results or taking wrong actions, e.g.,escalate a decision
+to a human for a high-risk network operation, defend against malicious attacks,
+e.g., prompt injection. These guardrails typically operate at the input/output/pre-action
+filter level or through static boundary alignment.
 
-While this shift increases operational velocity, it creates an
-unacceptable risk landscape for critical infrastructure.
-Existing safety implementations rely heavily on static design-time
-guardrails or localized prompt/response filters. These
-paradigms fail to capture cumulative, multi-step execution risks,
-indirect instruction injection via RAG, or cascading failures across distributed
-multi-agent pipelines.
+However as AI systems are increasingly integrated into autonomous workflows and
+critical infrastructure, these static measures are proving insufficient for the
+full operational lifecycle, they often cannot detect, interrupt, and rollover from
+unanticipated behaviors. Network operators usually lack an equivalent infrastructure
+for human oversight or to provide continuous, monitoring of an AI system’s internal
+logic or its long-running execution paths that match the speed and scale of the network
+management Agent applications, e.g., network failure or security risk is hard to detect
+and control, occurring at machine speed. When a violation is suspected, there are currently
+no standardized protocols for intervention (e.g., immediate task suspension) and recovery
+(e.g., reverting to a last known safe state or undoing a series of autonomous actions that
+introduce substantial operational risk) mechanisms. In non-deterministic environments, the
+lack of human oversight and human-AI semantic intent exchange hinder timely risk mitigation
+and state recovery during boundary violations by agents.
 
-This document applies the architectural principles of automated network
-supervision to the problem of AI agent coordination. It establishes the
-need for a standardized protocol layer capable of imposing runtime controls and
-real-time execution interventions.
+This document provides a problem statement for protocol on agent observability, intervation and control.
+We list the properties the protocol should have, then explain why those properties are necessary.  We describe why a
+new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
+related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
+human and agent interaction for agent intervention and control at the service level and network level.
+
+Where possible, any solutions work will be built in a modular way using existing IETF protocols.
+However, no protocol solution choices will be made until the functional requirements have been
+agreed, and then this will require an analysis of the capabilities of existing protocols and
+identify gaps that need to be filled.
 
 # Conventions and Definitions
 
