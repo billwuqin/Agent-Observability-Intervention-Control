@@ -7,6 +7,7 @@
 
 Moderators
 * [bill.wu@huawei.com] Qin Wu
+* Daniel King Lancast University
 
 
 ## Agenda
@@ -16,7 +17,7 @@ Moderators
    - Reference: https://datatracker.ietf.org/doc/draft-wnd-opsawg-icon-ps/
 3. Network Management Agent Observability, Intervention and Control (ICON) Architecture and Requirements 10 min +5 min Qiufang Ma
    - Reference: https://datatracker.ietf.org/doc/draft-mcw-opsawg-icon-requirements/
-4. Benchmarking Methodology for AI Agents in Network Operations 5 min + 5 min  Luis Contreras
+4. Recent work on Observability and Traceability in AAIF  10 min + 5 min Daniel King
    - Reference: https://datatracker.ietf.org/doc/draft-contreras-bmwg-ai-agent-benchmarking/
 5. Open Discussion on this new proposed Initiative    35 min All
 6. Wrap-up / Next steps                               5  min Moderators
