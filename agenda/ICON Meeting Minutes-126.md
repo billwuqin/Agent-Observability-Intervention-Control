@@ -8,19 +8,27 @@ On Wednesday Morning, Network Management Agent Observability, Intervention and C
 # The problem statement, requirements and AAIF traceability related work has been investigated.
 The key challenges or problem can be articulated as follows which include:
 a. Limited Transparency in Planning and Decision-Making
+
 b. Hard to attribute accountability to a specific agent entity or human
+
 c. Lack standardized way to benchmark Network Management Agent
+
 d. Lack Human oversight
+
 e. Lack roll back, termination command, lack bidirectional interaction channel between human and Network Management Agent.
 
 # There is a general agreement on the problem space, and lots of discussions are around what is missing in Agent observability, intervention, control requirements which include:
 a. Observability should extend to agent-tool interactions
+
 b. Agent intervention and Control are intent face related, needs to break down into several category capabilities, such readonly, writeaccess, beyond control or start from function integrity and then function quality
-c. Observability should extend to agent-tool interactions
-d. Observability must track agent actions, reasoning, performance metrics, and enable audit-ability and accountability.
-e. reuse existing terminologies to avoid ambiguity
-f. Human operators retain authority for monitoring, policy injection, emergency interruption, and corrective actions.
-g. collaborate with related open souce community
+
+c. Observability must track agent actions, reasoning, performance metrics, and enable audit-ability and accountability.
+
+d. reuse existing terminologies to avoid ambiguity
+
+e. Human operators retain authority for monitoring, policy injection, emergency interruption, and corrective actions.
+
+f. collaborate with related open souce community
 
 # in this side meeting, where to standardize this work has also been discussed, some proponents suggest to create dedicate WG to develop standards,
 ANIMA, NMOP can also be the options. There are agreement to narrow down scope, focus on network operation scenario, look for standardization from
