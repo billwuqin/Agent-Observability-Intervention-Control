@@ -137,13 +137,18 @@ This is a list of people who contributed to the discussions that led to this wor
 
 ## Relevant ICON Internet-Drafts
 
-**specific drafts will be listed here**
+Several Internet-Drafts are directly related to the ICON work:
+
+- "Problem Statement for Observability, Intervention and Control (I&C) in Multi-Agent Autonomous Networks" <https://datatracker.ietf.org/doc/draft-wnd-opsawg-icon-ps/>
+- "Architecture and Requirements for Observability, Control and Intervention of Network Management Agents" <https://datatracker.ietf.org/doc/draft-mcw-opsawg-icon-requirements/>
 
 ## Related Internet-Drafts or Documents
 
-This section lists related internet draft or any work that people are thinking are relevant in the scope
+This section lists related Internet-Drafts, and work that is relevant to the ICON scope:
+
 - "Network Digital Twin and Agentic AI based Architecture for AI driven Network Operations" <https://datatracker.ietf.org/doc/draft-wmz-nmrg-agent-ndt-arch/>
 - "Use of Natural Language for Agent Communication" <https://datatracker.ietf.org/doc/draft-verma-dmsc-nlip-notes/>
 - "Agentic AI Architectural Principles for Autonomous Computer Networks" <https://datatracker.ietf.org/doc/draft-jadoon-nmrg-agentic-ai-autonomous-networks/>
 - "IG1548 Intervention and Control for Agentic Operation V1.0.0 DRAFT" <https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744>
 - "IG1251G IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy" <https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956>
+- ITU-T Focus Group on Artificial Intelligence Native for Telecommunication Networks (FG-AINN) working documents as liaised to the IETF at <https://datatracker.ietf.org/liaison/2277/>
