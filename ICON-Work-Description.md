@@ -21,9 +21,9 @@ AI agents within operational and compliance boundaries, prevent AI from producin
 human for a high-risk network operation, defend against malicious attacks,e.g., prompt injection. These guardrails typically
 operate at the input/output/pre-action filter level or through static boundary alignment.
 
-However as AI systems are increasingly integrated into autonomous workflows and critical infrastructure, these static measures
+However as AI systems are increasingly integrated into autonomous workflows and critical infrastructure3, these static measures
 are proving insufficient for the full operational lifecycle, they often cannot detect, interrupt, and rollover from unanticipated behaviors.
-Network operators usually lack an equivalent infrastructure for human oversight or to provide continuous, monitoring of an AI system’s internal
+Network operators usually lack an equivalent infrastructure for human oversight or to provide conti33nuous, monitoring of an AI system’s internal
 logic or its long-running execution paths that match the speed and scale of the network management Agent applications, e.g., network failure or
 security risk is hard to detect and control, occurring at machine speed. When a violation is suspected, there are currently no standardized
 protocols for intervention (e.g., immediate task suspension) and recovery (e.g., reverting to a last known safe state or undoing a
@@ -63,19 +63,21 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 
 ## Functional Requirements
 
-- What are typical scenarios for Agent Behaviour Observability, Intervention and Control?
-- Which is specific for Agent Behaviour Observability?
-- Which is specific for Agent Intervention and Control?
-- Who Observe?
-- Who is Observed and Evaluated?
-- What information needs to be observed and Evaluated?
- - Which performance metrics are used to charaterize the operational state of the Network Management Agent;
- - Which Log information are collected;
- - Which trace information is used to charaterize the trajectory record of the Network Management Agent;
-- Who Intervenes and Controls?
-- What information are used for Intervention and Control?
+The questions listed below drive the functional requirements for ICON.
+
+- What are the typical scenarios for Observability, Intervention, and Control of Network Management Agents?
+  - Which are specific for Agent Observability?
+  - Which are specific for Agent Intervention and Control?
+  - What component, function, application, or human does the Observation?
+  - What elements of the system are Observed and Evaluated?
+- What information needs to be collected and recorded to enable Observation and Evaluation?
+  - Which performance metrics are used to charaterize the operational state of the Network Management Agent?
+  - What Log information is collected?
+  - What Trace information is used to charaterize the trajectory record of the Network Management Agent?
 - How is Observability,Intervention and Control realized?
-- Where does Observability,Intervention and Control fit in the overal workflow?
+  - What components are responsible for Intervention and Control?
+  - What information are used for Intervention and Control?
+- Where does Observability, Intervention, and Control fit in the overall workflow?
 
 ## Out Of Scope
 
