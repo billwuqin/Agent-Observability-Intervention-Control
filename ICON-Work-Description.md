@@ -1,18 +1,26 @@
-# Observability, Intervention and Control of Network Management Agent (ICON)
+# Observability, Intervention, and Control of Network Management Agents (ICON)
 
-This page provides a short description of a proposed IETF work, ICON work. ICON work aims at exploring how network management Agent can be
-continuously monitored, intervened, Controlled when the network management Agent goes wrong.
-The intention of this page is to capture the scope of the ICON work that the proponents believes is in IETF scope and needs special attention.
-Our expection is that Area Directors will help us dispatch this to a place to do the work:
+This page provides a short description of a proposed IETF work-item to address Observability, 
+Intervention, and Control of Network Management Agents (ICON). The ICON work explores how an
+automated Network Management Agent (such as one that is utilising AI function) can be 
+continuously monitored, and how operators can intervene to control a Network Management Agent
+that has gone wrong or is performing actions that are not what the operator wants. 
 
-- an existing working group
+The intention of this page is to capture the scope of the ICON work, identify which parts are 
+in scope for the IETF, and to serve as a focal point for collating all related work. As
+discussions progress, this page will be updated to record new Internet-Drafts, and it is
+anticipated that existing Internet-Drafts will continue to be refined.
+
+One further purpose of this page is to aid the Area Directors (specifically the OPS ADs) in
+dispatching this work to:
+
+- a simple work item in an existing working group
+- a specially commissioned design team within or across existing working groups
 - a new working group
 
-The proponents fully intend to continue refining existing Internet-Drafts concurrent with any work-dispatch process.
-
-Some explanation of terminology is provided after the problem statement that uses some of the terms.
-
 ## Problem Statement and Work Scope
+
+Some explanation of terminology is provided after this problem statement which uses the terms.
 
 Network operations are increasingly autonomous with the growth of network management Agent applications at the network level and
 service level. Since AI native operations may be non-deterministic, when network management agents misbehave or deviate from what
