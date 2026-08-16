@@ -74,19 +74,21 @@ The terms defined here are specifically within the ICON context. Thus, for examp
 
 ## Functional Requirements
 
-- What are typical scenarios for Agent Behaviour Observability, Intervention and Control?
-- Which is specific for Agent Behaviour Observability?
-- Which is specific for Agent Intervention and Control?
-- Who Observe?
-- Who is Observed and Evaluated?
-- What information needs to be observed and Evaluated?
- - Which performance metrics are used to charaterize the operational state of the Network Management Agent;
- - Which Log information are collected;
- - Which trace information is used to charaterize the trajectory record of the Network Management Agent;
-- Who Intervenes and Controls?
-- What information are used for Intervention and Control?
+The questions listed below drive the functional requirements for ICON.
+
+- What are the typical scenarios for Observability, Intervention, and Control of Network Management Agents?
+  - Which are specific for Agent Observability?
+  - Which are specific for Agent Intervention and Control?
+  - What component, function, application, or human does the Observation?
+  - What elements of the system are Observed and Evaluated?
+- What information needs to be collected and recorded to enable Observation and Evaluation?
+  - Which performance metrics are used to charaterize the operational state of the Network Management Agent?
+  - What Log information is collected?
+  - What Trace information is used to charaterize the trajectory record of the Network Management Agent?
 - How is Observability,Intervention and Control realized?
-- Where does Observability,Intervention and Control fit in the overal workflow?
+  - What components are responsible for Intervention and Control?
+  - What information are used for Intervention and Control?
+- Where does Observability, Intervention, and Control fit in the overall workflow?
 
 ## Out Of Scope
 
