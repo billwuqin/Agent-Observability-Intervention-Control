@@ -92,10 +92,12 @@ The questions listed below drive the functional requirements for ICON.
 
 ## Out Of Scope
 
-- Agent Discovery
-- Trust, Authentication, and Authorisation of the Agent
-- Agent-to-Agent communication
+While the following topics are very important to the construction of an autonomous network management that uses Network Management Agents that comprise AI-based components, they are out of scope of the ICON work. It is hoped that other IETF work efforts will capture these topics for the general application of AI agents and the resulting output will be available to implementers and operators building AI-enabled network management systems.
 
+- Agent Discovery. How individual Ai agents (or instances of AI agents) are discovered so that they can be used by the network management system is out of scope, but may be captured by the DAWN work effort.
+- Agent-to-Agent Communication. How applications or AI agents communicate with other AI agents to exchange and negotiate capabilities and to perform tasks is not in scope, but may be captured by the AgentProto work effort.
+- Trust, Authentication, and Authorisation of Agents is critically important to ensure that only legitimate AI agents are allowed to process the network data and to issue commands to control the network. This is out of scope for ICON, but may form part of the AgentProto effort or may be a separate IETF topic.
+  
 ## Implementations and Interoperability
 
 Implementation and interoperability are essential cornerstones of IETF work. It is important to understand which elements need to be built to interoperate.
