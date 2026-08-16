@@ -20,27 +20,32 @@ dispatching this work to:
 
 ## Problem Statement and Work Scope
 
-Some explanation of terminology is provided after this problem statement which uses the terms.
+There has been a steady growth in the use of Network Management Agent applications used both at the network level and at the service level. This
+has allowed network operations to become increasingly autonomous, but the use of AI-based agents in network management means that the behavior of
+network management applications may be non-deterministic.
 
-Network operations are increasingly autonomous with the growth of network management Agent applications at the network level and
-service level. Since AI native operations may be non-deterministic, when network management agents misbehave or deviate from what
-Agents are expected to do, Current AI safety technologies, often referred to as "AI guardrails" are introduced to constrain the behavior of
-AI agents within operational and compliance boundaries, prevent AI from producing harmful results or taking wrong actions, e.g.,escalate a decision to a
-human for a high-risk network operation, defend against malicious attacks,e.g., prompt injection. These guardrails typically
-operate at the input/output/pre-action filter level or through static boundary alignment.
+To help protect against AI-based Network Management Agents misbehaving or deviating from what from the operator expected them to do, AI safety
+technologies, often referred to as "AI guardrails", can be to constrain the behavior of the AI agents to within operational and compliance
+boundaries, to prevent the AI-based agents from producing harmful results or taking wrong actions, or to defend against malicious attacks. For
+example, a decision for a high-risk network operation may be escalated to a human, defend against malicious attacks. These guardrails typically
+operate at the input/output/pre-action filter level, or through static boundary alignment.
 
-However as AI systems are increasingly integrated into autonomous workflows and critical infrastructure, these static measures
-are proving insufficient for the full operational lifecycle, they often cannot detect, interrupt, and rollover from unanticipated behaviors.
-Network operators usually lack an equivalent infrastructure for human oversight or to provide continuous, monitoring of an AI system’s internal
-logic or its long-running execution paths that match the speed and scale of the network management Agent applications, e.g., network failure or
-security risk is hard to detect and control, occurring at machine speed. When a violation is suspected, there are currently no standardized
-protocols for intervention (e.g., immediate task suspension) and recovery (e.g., reverting to a last known safe state or undoing a
-series of autonomous actions that introduce substantial operational risk) mechanisms. In non-deterministic environments, the lack of human
-oversight and human-AI semantic intent exchange hinder timely risk mitigation and state recovery during boundary violations by agents.
+As Network Management AI systems are integrated into autonomous workflows and critical infrastructure, these static guardrail measures are proving
+insufficient for the full operational lifecycle: they often cannot detect, interrupt, and rollback from unanticipated behaviors. Network operators
+usually lack an equivalent automated infrastructure for human oversight or to provide continuous monitoring of an AI-based Network Managementt Agent’s 
+internal logic or its long-running execution paths that match the speed and scale of the Network Management Agent applications. For example, it can 
+be hard to detect and control network failures or security risks that are happening at machine speed.
 
-The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for identifying and characterizing trajectory
-records related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide human and agent
-interaction for agent intervention and control at the service level and network level.
+When a violation of the guardrails is suspected, there are currently no standardized protocols for intervention (e.g., immediate task suspension) or
+recovery (e.g., reverting to a last known safe state or undoing a series of autonomous actions that introduce substantial operational risk). In 
+non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange hinder timely risk mitigation and state recovery during
+boundary violations by agents, yet the use of human oversight can introduce delays which may be relatively large compared to the speed of operation of the automated tools.
+
+The goal of this ICON work is to explore use cases, derive requirements, and provide solutions for:
+- identifying and characterizing trajectory records related to agent behavior or workflow operation
+- facilitating continuous monitoring and evaluation
+- enabling human oversight
+- providing human and agent interaction for agent intervention and control at the service level and network level.
 
 Where possible, any solutions work will be built in a modular way using existing IETF protocols. However, no protocol solution
 choices will be made until the functional requirements have been agreed, and then this will require an analysis
