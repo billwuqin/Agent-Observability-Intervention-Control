@@ -21,7 +21,7 @@ AI agents within operational and compliance boundaries, prevent AI from producin
 human for a high-risk network operation, defend against malicious attacks,e.g., prompt injection. These guardrails typically
 operate at the input/output/pre-action filter level or through static boundary alignment.
 
-However as AI systems are increasingly integrated into autonomous workflows and critical infrastructure3, these static measures
+However as AI systems are increasingly integrated into autonomous workflows and critical infrastructure, these static measures
 are proving insufficient for the full operational lifecycle, they often cannot detect, interrupt, and rollover from unanticipated behaviors.
 Network operators usually lack an equivalent infrastructure for human oversight or to provide conti33nuous, monitoring of an AI system’s internal
 logic or its long-running execution paths that match the speed and scale of the network management Agent applications, e.g., network failure or
