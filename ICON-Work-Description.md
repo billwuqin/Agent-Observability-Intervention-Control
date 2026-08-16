@@ -40,26 +40,29 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 
 ## Terminology
 
-- Human to Agent Communication: The interaction between human users and network management Agent designed to perform tasks, solve problems,
-                                 or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
-                                 task, human-agent communication involves delegation, where the human provides a goal and the agent
-                                 autonomously figures out how to achieve it.
+The terms defined here are specifically within the ICON context. Thus, for example, any mention of an "AI agent" is in the context of that agent being used as part of a Network Management Agent or in support of its functionality.
+
+- Human to Agent Communication: The interaction between human users and Network Management Agents designed to perform tasks, solve problems,
+                                 or provide information. Unlike standard human-to-machine interactions where a human drives every step of a
+                                 task, human to agent communication involves delegation, where the human provides a goal and the agent
+                                 autonomously figures out how to achieve it and then acts to achieve it.
 - Observability: Enabling network behavioral assessment through analysis of observed operational network data (logs, metrics, traces, etc.)
                 with the aim of detecting symptoms of network behavior, and to identify anomalies and their causes.
-- Intervention: Operates when something has gone wrong, is going wrong, or is about to go wrong that provides humans with the
-                ability to detect, interrupt, correct, and recover from agent behavior that is not anticipated by control mechanism.
-- Control: Operates before and during agent action execution defining what an agent is permitted to do, enforcing boundaries,
+- Intervention: Operates when something has gone wrong, is going wrong, or is about to go wrong to provide humans with the
+                ability to detect, interrupt, correct, and recover from Network Management Agent behavior that is not anticipated by control mechanism.
+- Control: Operates before and during actions executed by Network Management Agents. Defines what an agent is permitted to do, enforcing boundaries,
            and structuring the environment so that harmful or unauthorized actions are difficult or impossible to execute.
-- Evaluation:Using Trajectory record to assess the performance and understand how an gent solves problem,e.g.,Checking if the agent took
-             the shortest sequence of actions or wasted resources on redundant tool or Analyzing specific segments of the trajectory to
-             see if the agent excels at information retrieval but struggles with mathematical synthesis.
-- Human Oversight: The practice of keeping humans actively involved in continuously monitoring of AI agents.In agent trajectory management,
-                   it ensures that network management agents do not go off the rails, violate safety protocols, or waste resources. It transforms
+- Evaluation: Using Trajectory Records to assess the performance of agents and to understand how an agent solves a problem. For example, checking if
+              the agent took the shortest sequence of actions or wasted resources on redundant tools, or analyzing specific segments of the trajectory to
+              see if the agent excels at information retrieval, but struggles with mathematical synthesis.
+- Human Oversight: The practice of keeping humans actively involved in continuous monitoring of AI agents. In agent trajectory management,
+                   it ensures that Network Management Agents do not go wrong, violate safety protocols, or waste resources. It transforms
                    a fully autonomous "black box" into a controllable and collaborative system.
-- Behavior: pattern of reasoning, decisions, and actions an AI agent takes to achieve a specific goal such as reasoning sequence, the sequence
+- Behavior: A Pattern of reasoning, decisions, and actions that an AI agent takes to achieve a specific goal such as a reasoning sequence, the sequence
             and logic of execution paths.
-- Trajectory record: Keep track of Agent behaviour and produce audit log or trace information to Capture the entire "flight path" or reasoning
-                     sequence the agent followed to reach its conclusion using using a structured Thought,Action,Observation loop.
+- Trajectory Record: A log or other data storage record that captures the data from Trajectory Recording.
+- Trajectory Recording: Keeping track of agent behaviour to produce audit logs or trace information to capture the entire "flight path" or reasoning
+                        sequence that an agent followed in reaching its conclusions using using a structured Thought / Action / Observation loop.
 
 ## Functional Requirements
 
