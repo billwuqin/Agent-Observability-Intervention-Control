@@ -1,16 +1,22 @@
-# Observability, Intervention and Control of Network Management Agent (ICON)
+# Observability, Intervention, and Control of Network Management Agents (ICON)
 
-This page provides a short description of a proposed IETF work, ICON work. ICON work aims at exploring how network management Agent can be
-continuously monitored, intervened, Controlled when the network management Agent goes wrong.
-The intention of this page is to capture the scope of the ICON work that the proponents believes is in IETF scope and needs special attention.
-Our expection is that Area Directors will help us dispatch this to a place to do the work:
+This page provides a short description of a proposed IETF work-item to address Observability, 
+Intervention, and Control of Network Management Agents (ICON). The ICON work explores how an
+automated Network Management Agent (such as one that is utilising AI function) can be 
+continuously monitored, and how operators can intervene to control a Network Management Agent
+that has gone wrong or is performing actions that are not what the operator wants. 
 
-- an existing working group
+The intention of this page is to capture the scope of the ICON work, identify which parts are 
+in scope for the IETF, and to serve as a focal point for collating all related work. As
+discussions progress, this page will be updated to record new Internet-Drafts, and it is
+anticipated that existing Internet-Drafts will continue to be refined.
+
+One further purpose of this page is to aid the Area Directors (specifically the OPS ADs) in
+dispatching this work to:
+
+- a simple work item in an existing working group
+- a specially commissioned design team within or across existing working groups
 - a new working group
-
-The proponents fully intend to continue refining existing Internet-Drafts concurrent with any work-dispatch process.
-
-Some explanation of terminology is provided after the problem statement that uses some of the terms.
 
 ## Problem Statement and Work Scope
 
@@ -144,13 +150,18 @@ This is a list of people who contributed to the discussions that led to this wor
 
 ## Relevant ICON Internet-Drafts
 
-**specific drafts will be listed here**
+Several Internet-Drafts are directly related to the ICON work:
+
+- "Problem Statement for Observability, Intervention and Control (I&C) in Multi-Agent Autonomous Networks" <https://datatracker.ietf.org/doc/draft-wnd-opsawg-icon-ps/>
+- "Architecture and Requirements for Observability, Control and Intervention of Network Management Agents" <https://datatracker.ietf.org/doc/draft-mcw-opsawg-icon-requirements/>
 
 ## Related Internet-Drafts or Documents
 
-This section lists related internet draft or any work that people are thinking are relevant in the scope
+This section lists related Internet-Drafts, and work that is relevant to the ICON scope:
+
 - "Network Digital Twin and Agentic AI based Architecture for AI driven Network Operations" <https://datatracker.ietf.org/doc/draft-wmz-nmrg-agent-ndt-arch/>
 - "Use of Natural Language for Agent Communication" <https://datatracker.ietf.org/doc/draft-verma-dmsc-nlip-notes/>
 - "Agentic AI Architectural Principles for Autonomous Computer Networks" <https://datatracker.ietf.org/doc/draft-jadoon-nmrg-agentic-ai-autonomous-networks/>
 - "IG1548 Intervention and Control for Agentic Operation V1.0.0 DRAFT" <https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744>
 - "IG1251G IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy" <https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956>
+- ITU-T Focus Group on Artificial Intelligence Native for Telecommunication Networks (FG-AINN) working documents as liaised to the IETF at <https://datatracker.ietf.org/liaison/2277/>
