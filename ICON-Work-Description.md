@@ -151,11 +151,8 @@ This is a list of people who contributed to the discussions that led to this wor
 - Qiufang Ma <maqiufang1@huawei.com>
 - Daniele Ceccarelli <dceccare@cisco.com>
 - Daniel King <d.king@lancaster.ac.uk>
-- Adrian Farrel <adrian@olddog.co.uk>
+- Zhenqiang Li <lizhenqiang@chinamobile.com>
 - Luis M. Contreras <luismiguel.contrerasmurillo@telefonica.com>
-- Laurent Ciavaglia <Laurent.Ciavaglia@nokia.com>
-- Reza Rokui <rrokui@ciena.com>
-- Benoit Claise <Benoit@everything-ops.net>
 
 ## Deliverables
 
