@@ -169,6 +169,7 @@ Several Internet-Drafts are directly related to the ICON work:
 
 This section lists related Internet-Drafts, and work that is relevant to the ICON scope:
 
+- "Artificial Intelligence (AI) for Network Operations Use Cases" <https://datatracker.ietf.org/doc/draft-king-rokui-ainetops-usecases/>
 - "Network Digital Twin and Agentic AI based Architecture for AI driven Network Operations" <https://datatracker.ietf.org/doc/draft-wmz-nmrg-agent-ndt-arch/>
 - "Use of Natural Language for Agent Communication" <https://datatracker.ietf.org/doc/draft-verma-dmsc-nlip-notes/>
 - "Agentic AI Architectural Principles for Autonomous Computer Networks" <https://datatracker.ietf.org/doc/draft-jadoon-nmrg-agentic-ai-autonomous-networks/>
