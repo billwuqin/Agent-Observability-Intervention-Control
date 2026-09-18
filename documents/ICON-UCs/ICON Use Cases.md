@@ -119,39 +119,38 @@
    traditional, static threshold-based detection.
 
 
-
- +----------------------------+
- |     Agent Observability    |(D)Optimization
- |+----------+   +----------+ |
- ||  Network |   | Network  | |       +------------+
- ||  Anomaly +---> Anomaly  |<+------->AI Guardrail|
- ||Validation|   |Refinement| |       | Assistant  |
- |+-----^----+   +----------+ |       +----^-------+
- +------+---------------------+            |
-        |                                (E)Invention&
-        |(C)Evaluation                     |  Control
-        |  &Refinement    +----------------V--+
-        +-----------------+                   |
-                          |  Network Anomaly (B)Network Policy
-             |----------->|  Detection Agent  |------------|
-             | A)Network  |                   |            |
-             | Telemetry  +-------------------+            |
-             |                                             |
-  +----------+---------------------------------------------+--------+
-  | +--------|----------+       MCP Server      +----------|------+ |
-  | |                   |                       |                 | |
-  | |  Data Collection  |                       |    Response     | |
-  | |      Layer        |<------|       |-------|      Layer      | |
-  | |                   |       |       |       |                 | |
-  | +-------------------+       |       |       +-----------------+ |
-  +-----------------------------+-------+---------------------------+
-              Southbound API    |       | Southbound API
-   (NETCONF, IPFIX,BGP-LS, etc) |       v (NETCONF, PCEP, BGP, etc)
-                         +-------------------+
-                         |  Network Devices  |
-                         | (Routers, Switches|
-                         | Endpoints, etc.)  |
-                         +-------------------+
++----------------------------+
+|     Agent Observability    |(D)Optimization
+|+----------+   +----------+ |
+||  Network |   | Network  | |       +------------+
+||  Anomaly +---> Anomaly  |<+------->AI Guardrail|
+||Validation|   |Refinement| |       | Assistant  |
+|+-----^----+   +----------+ |       +----^-------+
++------+---------------------+            |
+       |                                (E)Invention&
+       |(C)Evaluation                     |  Control
+       |  &Refinement    +----------------V--+
+       +-----------------+                   |
+                         |  Network Anomaly (B)Network Policy
+           |----------->|  Detection Agent  |------------|
+           | A)Network  |                   |            |
+           | Telemetry  +-------------------+            |
+           |                                             |
++----------+---------------------------------------------+--------+
+| +--------|----------+       MCP Server      +----------|------+ |
+| |                   |                       |                 | |
+| |  Data Collection  |                       |    Response     | |
+| |      Layer        |<------|       |-------|      Layer      | |
+| |                   |       |       |       |                 | |
+| +-------------------+       |       |       +-----------------+ |
++-----------------------------+-------+---------------------------+
+            Southbound API    |       | Southbound API
+ (NETCONF, IPFIX,BGP-LS, etc) |       v (NETCONF, PCEP, BGP, etc)
+                      +-------------------+
+                      |  Network Devices  |
+                      | (Routers, Switches|
+                      | Endpoints, etc.)  |
+                      +-------------------+
 
 
 
