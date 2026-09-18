@@ -229,3 +229,66 @@
    (C) Compliance reports and alerts
    
    Figure 5: AI-Driven Policy Enforcement and Compliance Auditing using AI Guardrail
+
+6.4. Agentic AI-Driven Resilience Testing using AI Guardrail
+
+   This use case leverages AI to design and execute fault injection
+   scenarios that test the resilience of IP/optical networks under
+   simulated failure conditions.  By proactively introducing controlled
+   disruptions-such as packet drops, latency spikes, or optical signal
+   degradation- AI Guardrail system assesses the network Agent 's ability to detect, respond to,
+   and recover from faults.  This approach enhances network robustness
+   by identifying weaknesses and validating automated recovery
+   mechanisms before real failures occur, addressing both single-layer
+   (IP or optical) and multi-layer (IP over optical) scenarios.
+
+   The Fault management AI Agent analyzes historical failure data (e.g., fiber cuts,
+   equipment outages), real-time telemetry (e.g., latency, BER), and
+   external factors (e.g., weather events, traffic surges) to model
+   probable failure points.  It then trigger AI Fault Inject Engine to
+   inject faults, monitors the network's response, and refines recovery
+   strategies, potentially in a closed-loop manner.  For example, an Fault management AI Agent
+   might predict a high-risk optical link based on trending attenuation, simulate a fiber
+   cut, and evaluate whether IP-layer rerouting maintains SLAs.  If
+   recovery is suboptimal, it suggests adjustments (e.g., updating TE
+   policies) and retests. And then Network Agent Behavior related to Tools Excution, Reason
+   can be collected and report to the AI Guardrail. The AI Guardrail can use Evaluate process
+   to Evaluate how well the Fault management Network Agent are run to support Network resilience test.
+   
+            +--------------------------------------+
+            |Network Management AI Guardrail       |
+            |    +--------------+    +-----------+ |
+            |    | Observability|(E) | Evaluation| |
+            |    |    Process   +---->  Process  | |
+            |    +---^----------+    +-----------+ |
+            +--------|-----------------------------+
+                 (D) |
+               |----------------------------|
+ +---------+   |      Fault Management      |
+ |AI Fault |   |      Network Agent         |
+ |Injection|   |----------------------------|
+ | Engine  |         ^                |
+ +----+----+     (B) |                | (C)
+      |              |                v
+      |  |-----------------------------------------|
+      |  |  packet controller (P-PNC),             |
+      |  |  optical controller (O-PNC),            |
+      |  |  and/or higher layer controllers (MDSC) |
+  (A) |  |-----------------------------------------|
+      |                      ^
+      |                  (B) |
+      |                      |
+  +---V---------------------------------------------------+
+  |                                                       |
+  |                    IP/Optical Network                 |
+  |                                                       |
+  +-------------------------------------------------------+
+
+  Legend
+  (A) Fault injection commands (e.g., disable link, drop packets, degrade signal)
+  (B) Telemetry feedback (e.g., latency, packet loss, BER)
+  (C  Recovery actions (e.g., reroute traffic, adjust optical parameters)
+  (D) Agent Telemetry Collection (e.g., tool invoking success rate, Task Success rate)
+  (E) Agent Resilience Test Performance Evaluation
+  
+  Figure 6: Agentic AI-Driven Resilience Testing using AI Guardrail
