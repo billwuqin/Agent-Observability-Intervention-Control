@@ -117,7 +117,8 @@
    If consecutive-point monitoring in the Agent Observability Module flags that the AI baseline
    has drifted or been poisoned by bad telemetry, the AI guardrail can switch the network back to
    traditional, static threshold-based detection.
-  
+
+
  +----------------------------+
  |     Agent Observability    |(D)Optimization
  |+----------+   +----------+ |
@@ -150,6 +151,8 @@
                          | (Routers, Switches|
                          | Endpoints, etc.)  |
                          +-------------------+
+
+
      Legend:
      (A) Network Telemetry Information Collection
 	 (B) Resolve the problem with the Network Policy
