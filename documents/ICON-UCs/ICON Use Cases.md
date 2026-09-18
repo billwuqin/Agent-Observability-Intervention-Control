@@ -119,11 +119,12 @@
    traditional, static threshold-based detection.
 
 
+
  +----------------------------+
  |     Agent Observability    |(D)Optimization
  |+----------+   +----------+ |
  ||  Network |   | Network  | |       +------------+
- ||  Anomaly +---> Anomaly  |<+------->AI Guardrail|<->Human Expert
+ ||  Anomaly +---> Anomaly  |<+------->AI Guardrail|
  ||Validation|   |Refinement| |       | Assistant  |
  |+-----^----+   +----------+ |       +----^-------+
  +------+---------------------+            |
@@ -131,7 +132,7 @@
         |(C)Evaluation                     |  Control
         |  &Refinement    +----------------V--+
         +-----------------+                   |
-                          |  Network Anomaly (B)Remediation Action
+                          |  Network Anomaly (B)Network Policy
              |----------->|  Detection Agent  |------------|
              | A)Network  |                   |            |
              | Telemetry  +-------------------+            |
@@ -151,6 +152,7 @@
                          | (Routers, Switches|
                          | Endpoints, etc.)  |
                          +-------------------+
+
 
 
      Legend:
