@@ -84,4 +84,80 @@
   
 6.2.   Network Anomaly Detection with AI Guardrail Support
 
+   Network anomaly detection is a critical component of modern network
+   security and management, aimed at identifying deviations from normal
+   network behavior that may indicate potential threats or operational
+   issues.  With the increasing complexity of networks and the growing
+   sophistication of cyber threats, traditional rule-based detection
+   methods are often insufficient.  The integration of machine learning techniques
+   into network anomaly detection system offers a more
+   dynamic and adaptive approach to detecting anomalies in real-time.
+   
+   The lifecycle of a network anomaly can be articulated in three
+   stages, structured as a loop: Detection, Validation, Refinement.
+   The Network Anomaly Detection stage is performed by the Agent while
+   Network Anomaly Validation and refinement is performed by Agent
+   Observability module and AI Guardrail Assistant. The Network Anomaly
+   Detection stage is about the continuous monitoring of the network
+   through Network Telemetry {{?RFC9232}} and the identification of Symptoms.
+   The key objective for the validation and refinement stage is clearly to decide if
+   the detected Symptoms are signaling a real problem (a.k.a. requires
+   action) or if they are to be treated as false positives (a.k.a.
+   suppressing the alarm),perform detailed postmortem analysis of Problems
+   with the objective to identify useful adjustments to the prevention and detection
+   mechanisms.
+   
+   After the adjustments are generated, it will be sent to AI Guardrail  Assistant and
+   the AI Guardrail  Assistant apply adjustments to the Network Anomaly Detection Agent,
+   the cycle starts again. Alternatively,  Any remediation action flagged as "high-impact"
+   by the Network Anomaly Detection Agent is put into a correction queue and escalated to
+   AI Guardrail Assistant, requiring manual administrative approval via an external management
+   console before execution.
+   
+   If consecutive-point monitoring in the Agent Observability Module flags that the AI baseline
+   has drifted or been poisoned by bad telemetry, the AI guardrail can switch the network back to
+   traditional, static threshold-based detection.
   
+ +----------------------------+
+ |     Agent Observability    |(D)Optimization
+ |+----------+   +----------+ |
+ ||  Network |   | Network  | |       +------------+
+ ||  Anomaly +---> Anomaly  |<+------->AI Guardrail|<->Human Expert
+ ||Validation|   |Refinement| |       | Assistant  |
+ |+-----^----+   +----------+ |       +----^-------+
+ +------+---------------------+            |
+        |                                (E)Invention&
+        |(C)Evaluation                     |  Control
+        |  &Refinement    +----------------V--+
+        +-----------------+                   |
+                          |  Network Anomaly (B)Remediation Action
+             |----------->|  Detection Agent  |------------|
+             | A)Network  |                   |            |
+             | Telemetry  +-------------------+            |
+             |                                             |
+  +----------+---------------------------------------------+--------+
+  | +--------|----------+       MCP Server      +----------|------+ |
+  | |                   |                       |                 | |
+  | |  Data Collection  |                       |    Response     | |
+  | |      Layer        |<------|       |-------|      Layer      | |
+  | |                   |       |       |       |                 | |
+  | +-------------------+       |       |       +-----------------+ |
+  +-----------------------------+-------+---------------------------+
+              Southbound API    |       | Southbound API
+   (NETCONF, IPFIX,BGP-LS, etc) |       v (NETCONF, PCEP, BGP, etc)
+                         +-------------------+
+                         |  Network Devices  |
+                         | (Routers, Switches|
+                         | Endpoints, etc.)  |
+                         +-------------------+
+     Legend:
+     (A) Network Telemetry Information Collection
+	 (B) Resolve the problem with the Network Policy
+	 (C) Evaluate the network anomalies and identify useful adjustments
+	 (D) Generate adjustments to the Network Anomaly Detection Agent
+	 (E) AI Guardrail Assistant optimizes the Detection Agent based on Adjustment policy
+	     or Detection Agent requests Human-in-the-Loop Escalation from AI Guardrail Assistant
+		
+    Figure 4: network anomaly detection optimization using AI Guardrail
+
+6.3. 
