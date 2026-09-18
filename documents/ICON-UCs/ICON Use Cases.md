@@ -82,5 +82,6 @@
 
   Figure 4: Multi-layer Active Assurance Using Network Agent and AI Guardrail
   
-6.2   
+6.2.   Network Anomaly Detection with AI Guardrail Support
+
   
