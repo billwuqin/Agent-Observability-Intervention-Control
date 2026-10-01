@@ -1,4 +1,4 @@
-6.1.  Network Active Assurance with Network AI Agent and AI Guardrail Support
+##  Network Active Assurance with Network AI Agent and AI Guardrail Support
 
    Network active and reactive assurance, both at the single- layer (IP
    or Optical) and multi-layer (IP over Optical), are critical
@@ -80,9 +80,9 @@
 	 (H) The Agent management plane notifies Human Operator 
 	 (I) The human Operator uses AI guardrail Assistant to intervene or control Network Agent.
 
-  Figure 4: Multi-layer Active Assurance Using Network Agent and AI Guardrail
+{: #assurance-guardrail title=" Multi-layer Active Assurance Using Network Agent and AI Guardrail" artwork-align="center"}
   
-6.2.   Network Anomaly Detection with AI Guardrail Support
+##   Network Anomaly Detection with AI Guardrail Support
 
    Network anomaly detection is a critical component of modern network
    security and management, aimed at identifying deviations from normal
@@ -162,9 +162,9 @@
 	 (E) AI Guardrail Assistant optimizes the Detection Agent based on Adjustment policy
 	     or Detection Agent requests Human-in-the-Loop Escalation from AI Guardrail Assistant
 		
-    Figure 4: network anomaly detection optimization using AI Guardrail
+{: #fault-guardrail title=" network anomaly detection optimization using AI Guardrail" artwork-align="center"}
 
-6.3.  AI-Driven Policy Enforcement and Compliance Auditing using AI Guardrail
+  ## AI-Driven Policy Enforcement and Compliance Auditing using AI Guardrail
 
    This use case leverages Network Change AI Agent to automate the enforcement of network
    policies and auditing of compliance with regulatory standards,ethical, and organizational boundaries and
@@ -227,10 +227,10 @@
    (A) Policy enforcement commands (e.g., block traffic, adjust QoS)
    (B) Agent Observability Information Feedback
    (C) Compliance reports and alerts
-   
-   Figure 5: AI-Driven Policy Enforcement and Compliance Auditing using AI Guardrail
 
-6.4. Agentic AI-Driven Resilience Testing using AI Guardrail
+{: #audit-guardrail title="  AI-Driven Policy Enforcement and Compliance Auditing using AI Guardrail" artwork-align="center"}
+
+## Agentic AI-Driven Resilience Testing using AI Guardrail
 
    This use case leverages AI to design and execute fault injection
    scenarios that test the resilience of IP/optical networks under
@@ -291,4 +291,4 @@
   (D) Agent Telemetry Collection (e.g., tool invoking success rate, Task Success rate)
   (E) Agent Resilience Test Performance Evaluation
   
-  Figure 6: Agentic AI-Driven Resilience Testing using AI Guardrail
+{: #resilience-guardrail title="Agentic AI-Driven Resilience Testing using AI Guardrail" artwork-align="center"}
