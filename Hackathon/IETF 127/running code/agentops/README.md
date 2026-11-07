@@ -95,7 +95,7 @@ Open-source components are CPython and its standard library (`time`, `json`, `ha
 
 ### Licensing status
 
-The external runtime dependencies are open source. This contribution follows the repository's existing [public-domain declaration](../../.github/LICENSE.md). No separate module license is introduced. CPython and other external tools retain their own licensing terms.
+The external runtime dependencies are open source. This contribution follows the repository's existing [public-domain declaration](../../../../.github/LICENSE.md). No separate module license is introduced. CPython and other external tools retain their own licensing terms.
 
 ## Measurements and interpretation
 
@@ -115,7 +115,7 @@ The replay contract requires one session with parents delivered before children.
 
 ## Branch and publication
 
-This contribution resides under `implementations/agentops/` on branch `agentops-observability-demo`. Its scope is a controlled prototype and documentation for review. Integration into the default branch and connection to an actual ICON control interface are separate steps.
+This contribution resides under `Hackathon/IETF 127/running code/agentops/` on branch `agentops-observability-demo`. Its scope is a controlled prototype and documentation for review. Integration into the default branch and connection to an actual ICON control interface are separate steps.
 
 ## References
 

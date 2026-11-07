@@ -71,7 +71,7 @@ The demo first generates the whole execution, then replays it one event at a tim
 
 The external runtime consists of CPython and its standard library, which are open source. There are no third-party runtime packages and no proprietary model service calls. Optional local serving uses `http.server`.
 
-This contribution follows the ICON repository's existing [public-domain declaration](../../../.github/LICENSE.md). No separate module license is introduced. CPython and external tools retain their own licensing terms. Code availability does not imply that the prototype has achieved production readiness or interoperability certification.
+This contribution follows the ICON repository's existing [public-domain declaration](../../../../../.github/LICENSE.md). No separate module license is introduced. CPython and external tools retain their own licensing terms. Code availability does not imply that the prototype has achieved production readiness or interoperability certification.
 
 OpenTelemetry, LangChain, Prometheus, Grafana, DuoTrace and RCTA are not integrated dependencies of this version. The last two inform the research context, but their algorithms are not implemented by this rule baseline.
 
