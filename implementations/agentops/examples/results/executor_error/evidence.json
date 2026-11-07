@@ -1,0 +1,33 @@
+{
+  "executor_error:e000:evidence": {},
+  "executor_error:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "executor_error:e002:evidence": {},
+  "executor_error:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "executor_error:e004:evidence": {
+    "route": "B"
+  },
+  "executor_error:e005:evidence": {
+    "route": "B"
+  },
+  "executor_error:e006:evidence": {
+    "route": "A",
+    "attempt": 1
+  },
+  "executor_error:e007:evidence": {
+    "route": "A",
+    "attempt": 1,
+    "simulated": true
+  },
+  "executor_error:e008:evidence": {
+    "expected": "B",
+    "observed": "A",
+    "test": "simulated-connectivity"
+  },
+  "executor_error:e009:evidence": {}
+}

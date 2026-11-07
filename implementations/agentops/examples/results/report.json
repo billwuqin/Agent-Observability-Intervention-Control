@@ -1,0 +1,5324 @@
+{
+  "prototype_version": "0.1.0",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "dependencies": "Python standard library only"
+  },
+  "baseline": {
+    "id": "demo-policy-v1",
+    "call_latency_ms": 50,
+    "max_attempts": 2
+  },
+  "case_count": 9,
+  "alarm_expectations_met": 9,
+  "failed_case_count": 6,
+  "diagnosed_count": 5,
+  "correct_actor_and_root_count": 5,
+  "abstention_count": 1,
+  "supported_label_cases": 5,
+  "scope": "Controlled synthetic scenarios; baseline rules and fixtures were designed together. Not a held-out benchmark or model-quality result.",
+  "measurement_limits": "Durations measured locally. Model responses, token counts, network state and tool faults are simulated. No external LLM, network device or actuator is used.",
+  "runs": [
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e000",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.119Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "50595ac8458f4749",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "clean:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e001",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.119Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "146cf06c356f44fa",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "clean:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e002",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.119Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "25645bc6a75b4ec3",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "clean:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "clean:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e003",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.120Z",
+          "sequence": 2,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "57e4debc8df4484c",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "clean:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e004",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.120Z",
+          "sequence": 3,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "1c74d1608bdd4f3d",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "clean:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e005",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.120Z",
+          "sequence": 4,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "0ea9c931ae414c51",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "clean:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "clean:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e006",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.120Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "f4a66227ff36481e",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "clean:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "clean:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e007",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "ed8cdf0df7b14ee2",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true
+          },
+          "evidence": [
+            {
+              "id": "clean:e007:evidence",
+              "hash": "sha256:e7e8fe4695caa303095851a1cd781560f7c43c8c324c747431c0dc0d7eaa91d7",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e008",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 1,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "198e70936a664d98",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "clean:e008:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "clean:e009",
+          "session_id": "clean",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 2,
+          "trace_id": "78e92a10f31d4bc9baad05bdfd063f50",
+          "span_id": "ff273793da994ad6",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "ok",
+          "parent_event_ids": [
+            "clean:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "clean:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 3
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            3
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "clean",
+          "assertion_event_id": "clean:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "clean:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "clean",
+          "assertion_event_id": "clean:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "clean:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "clean",
+          "assertion_event_id": "clean:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "clean:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "clean",
+          "assertion_event_id": "clean:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "clean:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "not-applicable",
+        "reason": "No completed failed task"
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "none",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [],
+        "diagnosis_id": null,
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.116167,
+      "case": "clean",
+      "ground_truth": {
+        "case": "clean",
+        "expected_alarm": false,
+        "task_failed": false,
+        "root_event_id": null,
+        "responsible_actor": null,
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e000",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "50cd78f34e5b4f7a",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "planner_error:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e001",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "8efe96cf8e3b4782",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "planner_error:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e002",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.122Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "d5e2c8b467504c81",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "planner_error:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "planner_error:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e003",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.124Z",
+          "sequence": 2,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "f208dac98bb14ba5",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "planner_error:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e004",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.124Z",
+          "sequence": 3,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "8571317622654008",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "planner_error:e003"
+          ],
+          "attributes": {
+            "route": "A"
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e004:evidence",
+              "hash": "sha256:73eb91521e8c1cf1e06bae38df2fcc1dc2e9b5cae8a60c27f02e0a7f35364808",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e005",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.124Z",
+          "sequence": 4,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "214174ea23ba4d73",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "planner_error:e004"
+          ],
+          "attributes": {
+            "route": "A"
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e005:evidence",
+              "hash": "sha256:73eb91521e8c1cf1e06bae38df2fcc1dc2e9b5cae8a60c27f02e0a7f35364808",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "planner_error:e004:evidence",
+              "hash": "sha256:73eb91521e8c1cf1e06bae38df2fcc1dc2e9b5cae8a60c27f02e0a7f35364808",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e006",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.124Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "834a76aca78d466a",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "planner_error:e005"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e006:evidence",
+              "hash": "sha256:60b6c79e79fb55f5d3ae229ca5afe157a0dc9247945faa94b5883498d14f53fd",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e007",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "2fbd3dd35ccd4e98",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "planner_error:e006"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1,
+            "simulated": true
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e007:evidence",
+              "hash": "sha256:3d2ddcdc0b2376e3133817de67f845d9bd37688b62c0149570171759c493056f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e008",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "sequence": 1,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "78b196b6d45448d4",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "planner_error:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "A",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "planner_error:e008:evidence",
+              "hash": "sha256:72f50682212ad0c557d97e32e8232ffe28938c6147daf1c1cf7e35c3b190af8f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "planner_error:e009",
+          "session_id": "planner_error",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "sequence": 2,
+          "trace_id": "9c17f8a45c9d4be4bfb125b996a00eaa",
+          "span_id": "622986207a9a4a6a",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "planner_error:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "planner_error:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 3
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            3
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "planner_error:e004:anomaly",
+          "session_id": "planner_error",
+          "detected_at": "2026-11-06T07:26:44.125Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "planner_error:e004"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "route-intent"
+            ],
+            "observed_through_event_id": "planner_error:e004",
+            "prefix_size": 5
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "planner_error:e006:anomaly",
+          "session_id": "planner_error",
+          "detected_at": "2026-11-06T07:26:44.125Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "planner_error:e006"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "route-intent"
+            ],
+            "observed_through_event_id": "planner_error:e006",
+            "prefix_size": 7
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "planner_error:e008:anomaly",
+          "session_id": "planner_error",
+          "detected_at": "2026-11-06T07:26:44.125Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "planner_error:e008"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "planner_error:e008",
+            "prefix_size": 9
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "planner_error",
+          "assertion_event_id": "planner_error:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "planner_error:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "planner_error",
+          "assertion_event_id": "planner_error:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "violation",
+          "evidence_event_ids": [
+            "planner_error:e004"
+          ],
+          "measured_value": "A",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "planner_error",
+          "assertion_event_id": "planner_error:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "violation",
+          "evidence_event_ids": [
+            "planner_error:e006"
+          ],
+          "measured_value": "A",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "planner_error",
+          "assertion_event_id": "planner_error:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.125Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "planner_error:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "diagnosed",
+        "record": {
+          "schema_version": "1.0",
+          "diagnosis_id": "planner_error:diagnosis",
+          "session_id": "planner_error",
+          "created_at": "2026-11-06T07:26:44.125Z",
+          "method": {
+            "name": "handoff-and-dependency-rule-baseline",
+            "version": "0.1.0"
+          },
+          "responsible_actor_id": "planner",
+          "root_cause_event_id": "planner_error:e004",
+          "terminal_event_id": "planner_error:e009",
+          "evidence_event_ids": [
+            "planner_error:e001",
+            "planner_error:e006",
+            "planner_error:e004",
+            "planner_error:e005",
+            "planner_error:e007",
+            "planner_error:e008",
+            "planner_error:e009"
+          ],
+          "failure_chain": [
+            {
+              "event_id": "planner_error:e004",
+              "actor_id": "planner",
+              "role": "root-cause"
+            },
+            {
+              "event_id": "planner_error:e005",
+              "actor_id": "planner",
+              "role": "propagation"
+            },
+            {
+              "event_id": "planner_error:e006",
+              "actor_id": "executor",
+              "role": "propagation"
+            },
+            {
+              "event_id": "planner_error:e007",
+              "actor_id": "route-tool",
+              "role": "propagation"
+            },
+            {
+              "event_id": "planner_error:e008",
+              "actor_id": "verifier",
+              "role": "exposure"
+            },
+            {
+              "event_id": "planner_error:e009",
+              "actor_id": "orchestrator",
+              "role": "terminal"
+            }
+          ],
+          "category": "C1",
+          "validation": "machine-validated",
+          "extensions": {
+            "rationale": "Executor followed the recorded handoff. The earlier plan introduced the conflicting route.",
+            "validation_scope": "record structure and evidence references only"
+          }
+        }
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "planner_error:e004:anomaly",
+          "planner_error:e006:anomaly",
+          "planner_error:e008:anomaly"
+        ],
+        "diagnosis_id": "planner_error:diagnosis",
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.157791,
+      "case": "planner_error",
+      "ground_truth": {
+        "case": "planner_error",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": "planner_error:e004",
+        "responsible_actor": "planner",
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e000",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.126Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "74e7d3b938c24c51",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "executor_error:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e001",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.126Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "2a92d4a243934c44",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "executor_error:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e002",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.126Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "0e30042181564e91",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "executor_error:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "executor_error:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e003",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.127Z",
+          "sequence": 2,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "314dd18d8a754a45",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "executor_error:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e004",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.127Z",
+          "sequence": 3,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "5fef072045d64c65",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "executor_error:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e005",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.127Z",
+          "sequence": 4,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "f02015f724eb4588",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "executor_error:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "executor_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e006",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.127Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "7906b5215bbf441a",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "executor_error:e005"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e006:evidence",
+              "hash": "sha256:60b6c79e79fb55f5d3ae229ca5afe157a0dc9247945faa94b5883498d14f53fd",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e007",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.128Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "00530ab721964212",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "executor_error:e006"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1,
+            "simulated": true
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e007:evidence",
+              "hash": "sha256:3d2ddcdc0b2376e3133817de67f845d9bd37688b62c0149570171759c493056f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e008",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "sequence": 1,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "e22e7ad5ff8b4748",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "executor_error:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "A",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "executor_error:e008:evidence",
+              "hash": "sha256:72f50682212ad0c557d97e32e8232ffe28938c6147daf1c1cf7e35c3b190af8f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "executor_error:e009",
+          "session_id": "executor_error",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "sequence": 2,
+          "trace_id": "72a37971261e4a20acacfc5e633ea095",
+          "span_id": "664a38198b284904",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "executor_error:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "executor_error:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 4
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            4
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "executor_error:e006:anomaly",
+          "session_id": "executor_error",
+          "detected_at": "2026-11-06T07:26:44.129Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "executor_error:e006"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "route-intent"
+            ],
+            "observed_through_event_id": "executor_error:e006",
+            "prefix_size": 7
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "executor_error:e008:anomaly",
+          "session_id": "executor_error",
+          "detected_at": "2026-11-06T07:26:44.129Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "executor_error:e008"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "executor_error:e008",
+            "prefix_size": 9
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "executor_error",
+          "assertion_event_id": "executor_error:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "executor_error:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "executor_error",
+          "assertion_event_id": "executor_error:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "executor_error:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "executor_error",
+          "assertion_event_id": "executor_error:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "violation",
+          "evidence_event_ids": [
+            "executor_error:e006"
+          ],
+          "measured_value": "A",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "executor_error",
+          "assertion_event_id": "executor_error:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.129Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "executor_error:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "diagnosed",
+        "record": {
+          "schema_version": "1.0",
+          "diagnosis_id": "executor_error:diagnosis",
+          "session_id": "executor_error",
+          "created_at": "2026-11-06T07:26:44.129Z",
+          "method": {
+            "name": "handoff-and-dependency-rule-baseline",
+            "version": "0.1.0"
+          },
+          "responsible_actor_id": "executor",
+          "root_cause_event_id": "executor_error:e006",
+          "terminal_event_id": "executor_error:e009",
+          "evidence_event_ids": [
+            "executor_error:e001",
+            "executor_error:e006",
+            "executor_error:e007",
+            "executor_error:e008",
+            "executor_error:e009"
+          ],
+          "failure_chain": [
+            {
+              "event_id": "executor_error:e006",
+              "actor_id": "executor",
+              "role": "root-cause"
+            },
+            {
+              "event_id": "executor_error:e007",
+              "actor_id": "route-tool",
+              "role": "propagation"
+            },
+            {
+              "event_id": "executor_error:e008",
+              "actor_id": "verifier",
+              "role": "exposure"
+            },
+            {
+              "event_id": "executor_error:e009",
+              "actor_id": "orchestrator",
+              "role": "terminal"
+            }
+          ],
+          "category": "D1",
+          "validation": "machine-validated",
+          "extensions": {
+            "rationale": "Executed route violates the recorded task constraint.",
+            "validation_scope": "record structure and evidence references only"
+          }
+        }
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "executor_error:e006:anomaly",
+          "executor_error:e008:anomaly"
+        ],
+        "diagnosis_id": "executor_error:diagnosis",
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.172917,
+      "case": "executor_error",
+      "ground_truth": {
+        "case": "executor_error",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": "executor_error:e006",
+        "responsible_actor": "executor",
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e000",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.130Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "a509864207144fac",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "tool_error:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e001",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.130Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "f54e9182de0b4005",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "tool_error:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e002",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.130Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "825b129147614b55",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "tool_error:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "tool_error:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e003",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.131Z",
+          "sequence": 2,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "1d250833f0f4460e",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "tool_error:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e004",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.131Z",
+          "sequence": 3,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "e790d3c85cd249f9",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "tool_error:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e005",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.131Z",
+          "sequence": 4,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "7a64544fe74c4d71",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "tool_error:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "tool_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e006",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.131Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "e1dc9a62ba164bc7",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "tool_error:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e007",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.132Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "a47713fb95f4441f",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "tool_error:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true,
+            "error_type": "ConnectionError"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e007:evidence",
+              "hash": "sha256:0adc7243db179e3ec67573e361878417cf622f78bece44da2d3511ed4447cfdc",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e008",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.132Z",
+          "sequence": 1,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "b80a1d309c904c14",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "tool_error:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "tool_error:e008:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "tool_error:e009",
+          "session_id": "tool_error",
+          "timestamp": "2026-11-06T07:26:44.132Z",
+          "sequence": 2,
+          "trace_id": "0e7cd94e1e4f46279ac560948b99ab19",
+          "span_id": "2ceb0cd19f424e35",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "tool_error:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "tool_error:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 3
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            3
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24,
+          "call_errors": 1,
+          "timeouts": 0
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "tool_error:e007:anomaly",
+          "session_id": "tool_error",
+          "detected_at": "2026-11-06T07:26:44.133Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "tool_error:e007"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "tool_error:e007",
+            "prefix_size": 8
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "tool_error:e008:anomaly",
+          "session_id": "tool_error",
+          "detected_at": "2026-11-06T07:26:44.133Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "tool_error:e008"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "tool_error:e008",
+            "prefix_size": 9
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "tool_error",
+          "assertion_event_id": "tool_error:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.132Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "tool_error:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "tool_error",
+          "assertion_event_id": "tool_error:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "tool_error:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "tool_error",
+          "assertion_event_id": "tool_error:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "tool_error:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "tool_error",
+          "assertion_event_id": "tool_error:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "tool_error:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "diagnosed",
+        "record": {
+          "schema_version": "1.0",
+          "diagnosis_id": "tool_error:diagnosis",
+          "session_id": "tool_error",
+          "created_at": "2026-11-06T07:26:44.133Z",
+          "method": {
+            "name": "handoff-and-dependency-rule-baseline",
+            "version": "0.1.0"
+          },
+          "responsible_actor_id": "route-tool",
+          "root_cause_event_id": "tool_error:e007",
+          "terminal_event_id": "tool_error:e009",
+          "evidence_event_ids": [
+            "tool_error:e007",
+            "tool_error:e006",
+            "tool_error:e008",
+            "tool_error:e009"
+          ],
+          "failure_chain": [
+            {
+              "event_id": "tool_error:e007",
+              "actor_id": "route-tool",
+              "role": "root-cause"
+            },
+            {
+              "event_id": "tool_error:e008",
+              "actor_id": "verifier",
+              "role": "exposure"
+            },
+            {
+              "event_id": "tool_error:e009",
+              "actor_id": "orchestrator",
+              "role": "terminal"
+            }
+          ],
+          "category": "X2",
+          "validation": "machine-validated",
+          "extensions": {
+            "rationale": "Recorded tool failure remained unresolved at task termination.",
+            "validation_scope": "record structure and evidence references only"
+          }
+        }
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "tool_error:e007:anomaly",
+          "tool_error:e008:anomaly"
+        ],
+        "diagnosis_id": "tool_error:diagnosis",
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.165792,
+      "case": "tool_error",
+      "ground_truth": {
+        "case": "tool_error",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": "tool_error:e007",
+        "responsible_actor": "route-tool",
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e000",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "2c16222656a64ee6",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "timeout:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e001",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "7c043219acdb4df3",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "timeout:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e002",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.133Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "82aa2352bbe842b7",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "timeout:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "timeout:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e003",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.135Z",
+          "sequence": 2,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "0ee72d30a519487f",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "timeout:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e004",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.135Z",
+          "sequence": 3,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "6aa542b4cc444abc",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "timeout:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e005",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.135Z",
+          "sequence": 4,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "b78106d8f0294d50",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "timeout:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "timeout:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e006",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.135Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "f2012f0743c74e31",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "timeout:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "timeout:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e007",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "25d15e4de09641a1",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "timeout:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true,
+            "error_type": "TimeoutError"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e007:evidence",
+              "hash": "sha256:2e9f8d442f72e9c0791eadc29c1f45fd783b6b727a2225ee30097b65d42c6383",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e008",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "sequence": 1,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "a0e427f6db8c44b1",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "timeout:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "timeout:e008:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "timeout:e009",
+          "session_id": "timeout",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "sequence": 2,
+          "trace_id": "b162104ae0ab4b76a5615c6298251e38",
+          "span_id": "5a7dd03cc6ac49d3",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "timeout:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "timeout:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 3
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            3
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24,
+          "call_errors": 1,
+          "timeouts": 1
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "timeout:e007:anomaly",
+          "session_id": "timeout",
+          "detected_at": "2026-11-06T07:26:44.136Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "timeout:e007"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "timeout:e007",
+            "prefix_size": 8
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "timeout:e008:anomaly",
+          "session_id": "timeout",
+          "detected_at": "2026-11-06T07:26:44.136Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "timeout:e008"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "timeout:e008",
+            "prefix_size": 9
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "timeout",
+          "assertion_event_id": "timeout:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "timeout:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "timeout",
+          "assertion_event_id": "timeout:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "timeout:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "timeout",
+          "assertion_event_id": "timeout:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "timeout:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "timeout",
+          "assertion_event_id": "timeout:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.136Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "timeout:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "diagnosed",
+        "record": {
+          "schema_version": "1.0",
+          "diagnosis_id": "timeout:diagnosis",
+          "session_id": "timeout",
+          "created_at": "2026-11-06T07:26:44.136Z",
+          "method": {
+            "name": "handoff-and-dependency-rule-baseline",
+            "version": "0.1.0"
+          },
+          "responsible_actor_id": "route-tool",
+          "root_cause_event_id": "timeout:e007",
+          "terminal_event_id": "timeout:e009",
+          "evidence_event_ids": [
+            "timeout:e007",
+            "timeout:e006",
+            "timeout:e008",
+            "timeout:e009"
+          ],
+          "failure_chain": [
+            {
+              "event_id": "timeout:e007",
+              "actor_id": "route-tool",
+              "role": "root-cause"
+            },
+            {
+              "event_id": "timeout:e008",
+              "actor_id": "verifier",
+              "role": "exposure"
+            },
+            {
+              "event_id": "timeout:e009",
+              "actor_id": "orchestrator",
+              "role": "terminal"
+            }
+          ],
+          "category": "X2",
+          "validation": "machine-validated",
+          "extensions": {
+            "rationale": "Recorded tool failure remained unresolved at task termination.",
+            "validation_scope": "record structure and evidence references only"
+          }
+        }
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "timeout:e007:anomaly",
+          "timeout:e008:anomaly"
+        ],
+        "diagnosis_id": "timeout:diagnosis",
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.139083,
+      "case": "timeout",
+      "ground_truth": {
+        "case": "timeout",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": "timeout:e007",
+        "responsible_actor": "route-tool",
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e000",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.137Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "e839493bd5494dd2",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "retry_exhausted:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e001",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.137Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "65838b7f285d4234",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e002",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.137Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "efe1606da6124774",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "retry_exhausted:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "retry_exhausted:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e003",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.138Z",
+          "sequence": 2,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "0c935153d2794e91",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e004",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.138Z",
+          "sequence": 3,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "4d3e4dcb981b4987",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e005",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.138Z",
+          "sequence": 4,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "517c5f8890c04132",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "retry_exhausted:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e006",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.138Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "b0843fe4a52940da",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "retry_exhausted:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e007",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.139Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "417796753ff04a65",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "retry_exhausted:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true,
+            "error_type": "ConnectionError"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e007:evidence",
+              "hash": "sha256:0adc7243db179e3ec67573e361878417cf622f78bece44da2d3511ed4447cfdc",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e008",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.139Z",
+          "sequence": 2,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "6d31bbae65aa4e75",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "execution",
+          "event_type": "recovery.attempt",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e007"
+          ],
+          "attributes": {
+            "attempt": 2
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e008:evidence",
+              "hash": "sha256:21416370d2ab31b5e9277d92d725014141a342b33fd7c8a23c1bd8790bafc876",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e009",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.139Z",
+          "sequence": 2,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "ba94c45a48ed4afe",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "retry_exhausted:e008"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 2
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e009:evidence",
+              "hash": "sha256:74d1f7c78852b7b7a5316520665cb7d1e2c06d7f85f8ef81d92dbb29f144096c",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e010",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.141Z",
+          "sequence": 2,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "f345286958b34f10",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "retry_exhausted:e009"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 2,
+            "simulated": true,
+            "error_type": "ConnectionError"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e010:evidence",
+              "hash": "sha256:fb47b6ca866e362dde948b75396cd020dfb54b05301e1a6e832f6748f2e85e01",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e011",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.141Z",
+          "sequence": 3,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "c0ca357bd5994855",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "execution",
+          "event_type": "recovery.attempt",
+          "status": "ok",
+          "parent_event_ids": [
+            "retry_exhausted:e010"
+          ],
+          "attributes": {
+            "attempt": 3
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e011:evidence",
+              "hash": "sha256:7416de1b364157dca1e54ed89ee97fc7ec7a1e7a4311fd1725894ca79f8f3859",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e012",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.141Z",
+          "sequence": 3,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "aeb62c99ba684935",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "retry_exhausted:e011"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 3
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e012:evidence",
+              "hash": "sha256:d1afdef4fb4592553c876f43ecef625b8725e23b51279b52cd44e6511c471799",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e013",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "sequence": 3,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "1f2b3bcba0954f63",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "retry_exhausted:e012"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 3,
+            "simulated": true,
+            "error_type": "ConnectionError"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e013:evidence",
+              "hash": "sha256:94ab8360504a2b333286f2e85a5e3333f93d8e3205d5029c90de5e940f3a68e4",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e014",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "sequence": 1,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "d279046e5f5644c8",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "retry_exhausted:e013"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "retry_exhausted:e014:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "retry_exhausted:e015",
+          "session_id": "retry_exhausted",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "sequence": 4,
+          "trace_id": "307a9eca6bf746298d17a3db651a096c",
+          "span_id": "d8202b51d9a54f10",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "retry_exhausted:e014"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "retry_exhausted:e015:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 6
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2,
+            2,
+            2
+          ],
+          "task": [
+            6
+          ]
+        },
+        "counts": {
+          "retries": 2,
+          "token_input": 64,
+          "token_output": 24,
+          "call_errors": 3,
+          "timeouts": 0
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "retry_exhausted:e007:anomaly",
+          "session_id": "retry_exhausted",
+          "detected_at": "2026-11-06T07:26:44.142Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "retry_exhausted:e007"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "retry_exhausted:e007",
+            "prefix_size": 8
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "retry_exhausted:e010:anomaly",
+          "session_id": "retry_exhausted",
+          "detected_at": "2026-11-06T07:26:44.142Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "retry_exhausted:e010"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "retry_exhausted:e010",
+            "prefix_size": 11
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "retry_exhausted:e011:anomaly",
+          "session_id": "retry_exhausted",
+          "detected_at": "2026-11-06T07:26:44.142Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "retry_exhausted:e011"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "retry-budget"
+            ],
+            "observed_through_event_id": "retry_exhausted:e011",
+            "prefix_size": 12
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "retry_exhausted:e013:anomaly",
+          "session_id": "retry_exhausted",
+          "detected_at": "2026-11-06T07:26:44.142Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "retry_exhausted:e013"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "retry_exhausted:e013",
+            "prefix_size": 14
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "retry_exhausted:e014:anomaly",
+          "session_id": "retry_exhausted",
+          "detected_at": "2026-11-06T07:26:44.142Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "retry_exhausted:e014"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "retry_exhausted:e014",
+            "prefix_size": 15
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e008:assert:retry-budget",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "retry-budget",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e008"
+          ],
+          "measured_value": 2,
+          "boundary_value": 2
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e009:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e009"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e010:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e010"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e011:assert:retry-budget",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "retry-budget",
+          "result": "violation",
+          "evidence_event_ids": [
+            "retry_exhausted:e011"
+          ],
+          "measured_value": 3,
+          "boundary_value": 2
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e012:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e012"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "retry_exhausted",
+          "assertion_event_id": "retry_exhausted:e013:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.142Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "retry_exhausted:e013"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "diagnosed",
+        "record": {
+          "schema_version": "1.0",
+          "diagnosis_id": "retry_exhausted:diagnosis",
+          "session_id": "retry_exhausted",
+          "created_at": "2026-11-06T07:26:44.142Z",
+          "method": {
+            "name": "handoff-and-dependency-rule-baseline",
+            "version": "0.1.0"
+          },
+          "responsible_actor_id": "orchestrator",
+          "root_cause_event_id": "retry_exhausted:e011",
+          "terminal_event_id": "retry_exhausted:e015",
+          "evidence_event_ids": [
+            "retry_exhausted:e011",
+            "retry_exhausted:e012",
+            "retry_exhausted:e013",
+            "retry_exhausted:e014",
+            "retry_exhausted:e015"
+          ],
+          "failure_chain": [
+            {
+              "event_id": "retry_exhausted:e011",
+              "actor_id": "orchestrator",
+              "role": "root-cause"
+            },
+            {
+              "event_id": "retry_exhausted:e012",
+              "actor_id": "executor",
+              "role": "propagation"
+            },
+            {
+              "event_id": "retry_exhausted:e013",
+              "actor_id": "route-tool",
+              "role": "propagation"
+            },
+            {
+              "event_id": "retry_exhausted:e014",
+              "actor_id": "verifier",
+              "role": "exposure"
+            },
+            {
+              "event_id": "retry_exhausted:e015",
+              "actor_id": "orchestrator",
+              "role": "terminal"
+            }
+          ],
+          "category": "D3",
+          "validation": "machine-validated",
+          "extensions": {
+            "rationale": "Orchestrator exceeded the configured retry budget.",
+            "validation_scope": "record structure and evidence references only"
+          }
+        }
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "retry_exhausted:e007:anomaly",
+          "retry_exhausted:e010:anomaly",
+          "retry_exhausted:e011:anomaly",
+          "retry_exhausted:e013:anomaly",
+          "retry_exhausted:e014:anomaly"
+        ],
+        "diagnosis_id": "retry_exhausted:diagnosis",
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.316542,
+      "case": "retry_exhausted",
+      "ground_truth": {
+        "case": "retry_exhausted",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": "retry_exhausted:e011",
+        "responsible_actor": "orchestrator",
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e000",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.143Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "ae33cae4dc2b41d6",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "recovered_error:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e001",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.143Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "d4c9b383868e4794",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e002",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.143Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "d057d15763ce4f01",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "recovered_error:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "recovered_error:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e003",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.144Z",
+          "sequence": 2,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "5d076d663e974634",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e004",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.145Z",
+          "sequence": 3,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "e6c019dd14d146de",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e005",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.145Z",
+          "sequence": 4,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "6261ab2b69f34d83",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "recovered_error:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e006",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.145Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "30e9c0b2525e4ca8",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "recovered_error:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e007",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.146Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "917a576cb377424d",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "error",
+          "parent_event_ids": [
+            "recovered_error:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true,
+            "error_type": "ConnectionError"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e007:evidence",
+              "hash": "sha256:0adc7243db179e3ec67573e361878417cf622f78bece44da2d3511ed4447cfdc",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e008",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.146Z",
+          "sequence": 2,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "3c2939b896cc416c",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "execution",
+          "event_type": "recovery.attempt",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e007"
+          ],
+          "attributes": {
+            "attempt": 2
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e008:evidence",
+              "hash": "sha256:21416370d2ab31b5e9277d92d725014141a342b33fd7c8a23c1bd8790bafc876",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e009",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.146Z",
+          "sequence": 2,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "e1b799d9d6c649e9",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "recovered_error:e008"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 2
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e009:evidence",
+              "hash": "sha256:74d1f7c78852b7b7a5316520665cb7d1e2c06d7f85f8ef81d92dbb29f144096c",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e010",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "sequence": 2,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "76d849532c934c75",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e009"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 2,
+            "simulated": true,
+            "resolves_event_ids": [
+              "recovered_error:e007"
+            ]
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e010:evidence",
+              "hash": "sha256:9df9a86804e5b4a49bcf8fbba0f9a98b636c76acc4b200622c264d5fa0ab701f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e011",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "sequence": 1,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "ed3f70fcdd4b4856",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e010"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "recovered_error:e011:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "recovered_error:e012",
+          "session_id": "recovered_error",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "sequence": 3,
+          "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+          "span_id": "a7ea822bd2114c42",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "ok",
+          "parent_event_ids": [
+            "recovered_error:e011"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "recovered_error:e012:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 5
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2,
+            2
+          ],
+          "task": [
+            5
+          ]
+        },
+        "counts": {
+          "retries": 1,
+          "token_input": 64,
+          "token_output": 24,
+          "call_errors": 1,
+          "timeouts": 0
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "recovered_error:e007:anomaly",
+          "session_id": "recovered_error",
+          "detected_at": "2026-11-06T07:26:44.147Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "recovered_error:e007"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-error"
+            ],
+            "observed_through_event_id": "recovered_error:e007",
+            "prefix_size": 8
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e008:assert:retry-budget",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "retry-budget",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e008"
+          ],
+          "measured_value": 2,
+          "boundary_value": 2
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e009:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e009"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "recovered_error",
+          "assertion_event_id": "recovered_error:e010:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.147Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "recovered_error:e010"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "not-applicable",
+        "reason": "No completed failed task"
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "recovered_error:e007:anomaly"
+        ],
+        "diagnosis_id": null,
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.206959,
+      "case": "recovered_error",
+      "ground_truth": {
+        "case": "recovered_error",
+        "expected_alarm": true,
+        "task_failed": false,
+        "root_event_id": null,
+        "responsible_actor": null,
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e000",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.148Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "4873fb6aceed4a22",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "slow_call:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e001",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.148Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "c32ea02f86d44d0e",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B",
+            "required_route": "B"
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e001:evidence",
+              "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e002",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.148Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "b35572ce92fc4a16",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "slow_call:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "slow_call:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e003",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.149Z",
+          "sequence": 2,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "bdc1a375f4a94d3b",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e004",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.149Z",
+          "sequence": 3,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "1a7d464ca0ad4e5f",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e005",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.149Z",
+          "sequence": 4,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "0665b85f15894760",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "slow_call:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e006",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.149Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "1af4e89812cd4f2b",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "slow_call:e005"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e006:evidence",
+              "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e007",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "d84941e72b3842c8",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e006"
+          ],
+          "attributes": {
+            "route": "B",
+            "attempt": 1,
+            "simulated": true
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e007:evidence",
+              "hash": "sha256:e7e8fe4695caa303095851a1cd781560f7c43c8c324c747431c0dc0d7eaa91d7",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 86
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e008",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "sequence": 1,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "c7596985451247c8",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "B",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "slow_call:e008:evidence",
+              "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "slow_call:e009",
+          "session_id": "slow_call",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "sequence": 2,
+          "trace_id": "9cbf689406bb478990806f1a15287ade",
+          "span_id": "ec733e7bd5ad4cc9",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "ok",
+          "parent_event_ids": [
+            "slow_call:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "slow_call:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 87
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            86
+          ],
+          "task": [
+            87
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "slow_call:e007:anomaly",
+          "session_id": "slow_call",
+          "detected_at": "2026-11-06T07:26:44.235Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "slow_call:e007"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "call-latency"
+            ],
+            "observed_through_event_id": "slow_call:e007",
+            "prefix_size": 8
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "slow_call",
+          "assertion_event_id": "slow_call:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "slow_call:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "slow_call",
+          "assertion_event_id": "slow_call:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "slow_call:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "slow_call",
+          "assertion_event_id": "slow_call:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "pass",
+          "evidence_event_ids": [
+            "slow_call:e006"
+          ],
+          "measured_value": "B",
+          "boundary_value": "B"
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "slow_call",
+          "assertion_event_id": "slow_call:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.235Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "violation",
+          "evidence_event_ids": [
+            "slow_call:e007"
+          ],
+          "measured_value": 86,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "not-applicable",
+        "reason": "No completed failed task"
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "slow_call:e007:anomaly"
+        ],
+        "diagnosis_id": null,
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.226333,
+      "case": "slow_call",
+      "ground_truth": {
+        "case": "slow_call",
+        "expected_alarm": true,
+        "task_failed": false,
+        "root_event_id": null,
+        "responsible_actor": null,
+        "expect_abstention": false
+      }
+    },
+    {
+      "events": [
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e000",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.236Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "c3649e77bbb34ce1",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "pre-execution",
+          "event_type": "session.start",
+          "status": "ok",
+          "parent_event_ids": [],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "missing_evidence:e000:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e001",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.236Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "a65b8e234a6048e9",
+          "actor": {
+            "id": "user",
+            "kind": "human",
+            "role": "user"
+          },
+          "phase": "pre-execution",
+          "event_type": "task.received",
+          "status": "ok",
+          "parent_event_ids": [
+            "missing_evidence:e000"
+          ],
+          "attributes": {
+            "intent": "Use backup path B"
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e001:evidence",
+              "hash": "sha256:76d0eaf5c0915c034f43d3edbfd9e8ca56759209cca9b2a4eea5b6e26e204793",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e002",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.236Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "6a4f274d47824806",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.request",
+          "status": "started",
+          "parent_event_ids": [
+            "missing_evidence:e001"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "missing_evidence:e002:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e003",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.237Z",
+          "sequence": 2,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "8bf6170284fc4b44",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "model.response",
+          "status": "ok",
+          "parent_event_ids": [
+            "missing_evidence:e002"
+          ],
+          "attributes": {
+            "provider": "local-simulation",
+            "usage_source": "synthetic"
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e003:evidence",
+              "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "model",
+            "name": "simulated-planner",
+            "duration_ms": 2,
+            "token_input": 64,
+            "token_output": 24
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e004",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.238Z",
+          "sequence": 3,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "12c97626709c4b9d",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "plan.created",
+          "status": "ok",
+          "parent_event_ids": [
+            "missing_evidence:e003"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e005",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.238Z",
+          "sequence": 4,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "07bdac90d5f043f2",
+          "actor": {
+            "id": "planner",
+            "kind": "agent",
+            "role": "planner"
+          },
+          "phase": "execution",
+          "event_type": "agent.delegated",
+          "status": "ok",
+          "parent_event_ids": [
+            "missing_evidence:e004"
+          ],
+          "attributes": {
+            "route": "B"
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e005:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "delegation": {
+            "from_actor": "planner",
+            "to_actor": "executor",
+            "instruction_ref": {
+              "id": "missing_evidence:e004:evidence",
+              "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e006",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.238Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "f4b01fbedfc84a6f",
+          "actor": {
+            "id": "executor",
+            "kind": "agent",
+            "role": "executor"
+          },
+          "phase": "execution",
+          "event_type": "tool.call",
+          "status": "started",
+          "parent_event_ids": [
+            "missing_evidence:e005"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e006:evidence",
+              "hash": "sha256:60b6c79e79fb55f5d3ae229ca5afe157a0dc9247945faa94b5883498d14f53fd",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api"
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e007",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "3f51f25998ee438d",
+          "actor": {
+            "id": "route-tool",
+            "kind": "tool",
+            "role": "route-tool"
+          },
+          "phase": "execution",
+          "event_type": "tool.result",
+          "status": "ok",
+          "parent_event_ids": [
+            "missing_evidence:e006"
+          ],
+          "attributes": {
+            "route": "A",
+            "attempt": 1,
+            "simulated": true
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e007:evidence",
+              "hash": "sha256:3d2ddcdc0b2376e3133817de67f845d9bd37688b62c0149570171759c493056f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "tool",
+            "name": "simulated-route-api",
+            "duration_ms": 2
+          }
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e008",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "sequence": 1,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "f428fd1a98624725",
+          "actor": {
+            "id": "verifier",
+            "kind": "verifier",
+            "role": "verifier"
+          },
+          "phase": "execution",
+          "event_type": "verification.result",
+          "status": "error",
+          "parent_event_ids": [
+            "missing_evidence:e007"
+          ],
+          "attributes": {
+            "expected": "B",
+            "observed": "A",
+            "test": "simulated-connectivity"
+          },
+          "evidence": [
+            {
+              "id": "missing_evidence:e008:evidence",
+              "hash": "sha256:72f50682212ad0c557d97e32e8232ffe28938c6147daf1c1cf7e35c3b190af8f",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "event_id": "missing_evidence:e009",
+          "session_id": "missing_evidence",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "sequence": 2,
+          "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+          "span_id": "be1ea5f82635480b",
+          "actor": {
+            "id": "orchestrator",
+            "kind": "orchestrator",
+            "role": "orchestrator"
+          },
+          "phase": "post-execution",
+          "event_type": "session.end",
+          "status": "error",
+          "parent_event_ids": [
+            "missing_evidence:e008"
+          ],
+          "attributes": {},
+          "evidence": [
+            {
+              "id": "missing_evidence:e009:evidence",
+              "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+              "media_type": "application/json",
+              "sensitivity": "internal",
+              "provenance": "observed"
+            }
+          ],
+          "action": {
+            "kind": "task",
+            "name": "route-change",
+            "duration_ms": 3
+          }
+        }
+      ],
+      "metrics": {
+        "duration_ms": {
+          "model": [
+            2
+          ],
+          "tool": [
+            2
+          ],
+          "task": [
+            3
+          ]
+        },
+        "counts": {
+          "retries": 0,
+          "token_input": 64,
+          "token_output": 24
+        },
+        "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+        "token_source": "simulated provider usage, not measured LLM tokens"
+      },
+      "anomalies": [
+        {
+          "schema_version": "1.0",
+          "anomaly_id": "missing_evidence:e008:anomaly",
+          "session_id": "missing_evidence",
+          "detected_at": "2026-11-06T07:26:44.239Z",
+          "detector": {
+            "name": "explicit-rule-baseline",
+            "version": "0.1.0"
+          },
+          "baseline_id": "demo-policy-v1",
+          "score": 1,
+          "score_direction": "higher-is-more-anomalous",
+          "candidate_event_ids": [
+            "missing_evidence:e008"
+          ],
+          "recommended_action": "observe",
+          "extensions": {
+            "rules": [
+              "verification-failure"
+            ],
+            "observed_through_event_id": "missing_evidence:e008",
+            "prefix_size": 9
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "schema_version": "1.0",
+          "session_id": "missing_evidence",
+          "assertion_event_id": "missing_evidence:e003:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "missing_evidence:e003"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "missing_evidence",
+          "assertion_event_id": "missing_evidence:e004:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "unknown",
+          "evidence_event_ids": [
+            "missing_evidence:e004"
+          ],
+          "measured_value": "B",
+          "boundary_value": null
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "missing_evidence",
+          "assertion_event_id": "missing_evidence:e006:assert:route-intent",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "route-intent",
+          "result": "unknown",
+          "evidence_event_ids": [
+            "missing_evidence:e006"
+          ],
+          "measured_value": "A",
+          "boundary_value": null
+        },
+        {
+          "schema_version": "1.0",
+          "session_id": "missing_evidence",
+          "assertion_event_id": "missing_evidence:e007:assert:call-latency",
+          "timestamp": "2026-11-06T07:26:44.239Z",
+          "tla_level": "demo-operational-policy",
+          "assertion_id": "call-latency",
+          "result": "pass",
+          "evidence_event_ids": [
+            "missing_evidence:e007"
+          ],
+          "measured_value": 2,
+          "boundary_value": 50
+        }
+      ],
+      "diagnosis": {
+        "status": "abstain",
+        "reason": "Insufficient supported evidence for this rule baseline",
+        "terminal_event_id": "missing_evidence:e009"
+      },
+      "intervention": {
+        "schema_version": "demo-bridge-0.1",
+        "requested_action": "human-review",
+        "execution_status": "not-executed",
+        "requires_authorization": true,
+        "anomaly_ids": [
+          "missing_evidence:e008:anomaly"
+        ],
+        "diagnosis_id": null,
+        "note": "Experimental local proposal, not an ICON control protocol or actuator"
+      },
+      "analysis_duration_ms": 0.221417,
+      "case": "missing_evidence",
+      "ground_truth": {
+        "case": "missing_evidence",
+        "expected_alarm": true,
+        "task_failed": true,
+        "root_event_id": null,
+        "responsible_actor": null,
+        "expect_abstention": true
+      }
+    }
+  ]
+}

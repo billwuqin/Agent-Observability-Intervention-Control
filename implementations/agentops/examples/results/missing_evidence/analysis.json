@@ -1,0 +1,488 @@
+{
+  "events": [
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e000",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.236Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "c3649e77bbb34ce1",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "pre-execution",
+      "event_type": "session.start",
+      "status": "ok",
+      "parent_event_ids": [],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "missing_evidence:e000:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e001",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.236Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "a65b8e234a6048e9",
+      "actor": {
+        "id": "user",
+        "kind": "human",
+        "role": "user"
+      },
+      "phase": "pre-execution",
+      "event_type": "task.received",
+      "status": "ok",
+      "parent_event_ids": [
+        "missing_evidence:e000"
+      ],
+      "attributes": {
+        "intent": "Use backup path B"
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e001:evidence",
+          "hash": "sha256:76d0eaf5c0915c034f43d3edbfd9e8ca56759209cca9b2a4eea5b6e26e204793",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e002",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.236Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "6a4f274d47824806",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "model.request",
+      "status": "started",
+      "parent_event_ids": [
+        "missing_evidence:e001"
+      ],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "missing_evidence:e002:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "model",
+        "name": "simulated-planner"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e003",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.237Z",
+      "sequence": 2,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "8bf6170284fc4b44",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "model.response",
+      "status": "ok",
+      "parent_event_ids": [
+        "missing_evidence:e002"
+      ],
+      "attributes": {
+        "provider": "local-simulation",
+        "usage_source": "synthetic"
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e003:evidence",
+          "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "model",
+        "name": "simulated-planner",
+        "duration_ms": 2,
+        "token_input": 64,
+        "token_output": 24
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e004",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.238Z",
+      "sequence": 3,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "12c97626709c4b9d",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "plan.created",
+      "status": "ok",
+      "parent_event_ids": [
+        "missing_evidence:e003"
+      ],
+      "attributes": {
+        "route": "B"
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e004:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e005",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.238Z",
+      "sequence": 4,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "07bdac90d5f043f2",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "agent.delegated",
+      "status": "ok",
+      "parent_event_ids": [
+        "missing_evidence:e004"
+      ],
+      "attributes": {
+        "route": "B"
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e005:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "delegation": {
+        "from_actor": "planner",
+        "to_actor": "executor",
+        "instruction_ref": {
+          "id": "missing_evidence:e004:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e006",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.238Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "f4b01fbedfc84a6f",
+      "actor": {
+        "id": "executor",
+        "kind": "agent",
+        "role": "executor"
+      },
+      "phase": "execution",
+      "event_type": "tool.call",
+      "status": "started",
+      "parent_event_ids": [
+        "missing_evidence:e005"
+      ],
+      "attributes": {
+        "route": "A",
+        "attempt": 1
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e006:evidence",
+          "hash": "sha256:60b6c79e79fb55f5d3ae229ca5afe157a0dc9247945faa94b5883498d14f53fd",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e007",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "3f51f25998ee438d",
+      "actor": {
+        "id": "route-tool",
+        "kind": "tool",
+        "role": "route-tool"
+      },
+      "phase": "execution",
+      "event_type": "tool.result",
+      "status": "ok",
+      "parent_event_ids": [
+        "missing_evidence:e006"
+      ],
+      "attributes": {
+        "route": "A",
+        "attempt": 1,
+        "simulated": true
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e007:evidence",
+          "hash": "sha256:3d2ddcdc0b2376e3133817de67f845d9bd37688b62c0149570171759c493056f",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api",
+        "duration_ms": 2
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e008",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "sequence": 1,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "f428fd1a98624725",
+      "actor": {
+        "id": "verifier",
+        "kind": "verifier",
+        "role": "verifier"
+      },
+      "phase": "execution",
+      "event_type": "verification.result",
+      "status": "error",
+      "parent_event_ids": [
+        "missing_evidence:e007"
+      ],
+      "attributes": {
+        "expected": "B",
+        "observed": "A",
+        "test": "simulated-connectivity"
+      },
+      "evidence": [
+        {
+          "id": "missing_evidence:e008:evidence",
+          "hash": "sha256:72f50682212ad0c557d97e32e8232ffe28938c6147daf1c1cf7e35c3b190af8f",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "missing_evidence:e009",
+      "session_id": "missing_evidence",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "sequence": 2,
+      "trace_id": "e92fd77615ac420ab3b3d37fc5e0234a",
+      "span_id": "be1ea5f82635480b",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "post-execution",
+      "event_type": "session.end",
+      "status": "error",
+      "parent_event_ids": [
+        "missing_evidence:e008"
+      ],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "missing_evidence:e009:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "task",
+        "name": "route-change",
+        "duration_ms": 3
+      }
+    }
+  ],
+  "metrics": {
+    "duration_ms": {
+      "model": [
+        2
+      ],
+      "tool": [
+        2
+      ],
+      "task": [
+        3
+      ]
+    },
+    "counts": {
+      "retries": 0,
+      "token_input": 64,
+      "token_output": 24
+    },
+    "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+    "token_source": "simulated provider usage, not measured LLM tokens"
+  },
+  "anomalies": [
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "missing_evidence:e008:anomaly",
+      "session_id": "missing_evidence",
+      "detected_at": "2026-11-06T07:26:44.239Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "missing_evidence:e008"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "verification-failure"
+        ],
+        "observed_through_event_id": "missing_evidence:e008",
+        "prefix_size": 9
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "schema_version": "1.0",
+      "session_id": "missing_evidence",
+      "assertion_event_id": "missing_evidence:e003:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "missing_evidence:e003"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "missing_evidence",
+      "assertion_event_id": "missing_evidence:e004:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "unknown",
+      "evidence_event_ids": [
+        "missing_evidence:e004"
+      ],
+      "measured_value": "B",
+      "boundary_value": null
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "missing_evidence",
+      "assertion_event_id": "missing_evidence:e006:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "unknown",
+      "evidence_event_ids": [
+        "missing_evidence:e006"
+      ],
+      "measured_value": "A",
+      "boundary_value": null
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "missing_evidence",
+      "assertion_event_id": "missing_evidence:e007:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.239Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "missing_evidence:e007"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    }
+  ],
+  "diagnosis": {
+    "status": "abstain",
+    "reason": "Insufficient supported evidence for this rule baseline",
+    "terminal_event_id": "missing_evidence:e009"
+  },
+  "intervention": {
+    "schema_version": "demo-bridge-0.1",
+    "requested_action": "human-review",
+    "execution_status": "not-executed",
+    "requires_authorization": true,
+    "anomaly_ids": [
+      "missing_evidence:e008:anomaly"
+    ],
+    "diagnosis_id": null,
+    "note": "Experimental local proposal, not an ICON control protocol or actuator"
+  },
+  "analysis_duration_ms": 0.221417,
+  "case": "missing_evidence",
+  "ground_truth": {
+    "case": "missing_evidence",
+    "expected_alarm": true,
+    "task_failed": true,
+    "root_event_id": null,
+    "responsible_actor": null,
+    "expect_abstention": true
+  }
+}

@@ -1,0 +1,469 @@
+[
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e000",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.143Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "ae33cae4dc2b41d6",
+    "actor": {
+      "id": "orchestrator",
+      "kind": "orchestrator",
+      "role": "orchestrator"
+    },
+    "phase": "pre-execution",
+    "event_type": "session.start",
+    "status": "ok",
+    "parent_event_ids": [],
+    "attributes": {},
+    "evidence": [
+      {
+        "id": "recovered_error:e000:evidence",
+        "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e001",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.143Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "d4c9b383868e4794",
+    "actor": {
+      "id": "user",
+      "kind": "human",
+      "role": "user"
+    },
+    "phase": "pre-execution",
+    "event_type": "task.received",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e000"
+    ],
+    "attributes": {
+      "intent": "Use backup path B",
+      "required_route": "B"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e001:evidence",
+        "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e002",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.143Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "d057d15763ce4f01",
+    "actor": {
+      "id": "planner",
+      "kind": "agent",
+      "role": "planner"
+    },
+    "phase": "execution",
+    "event_type": "model.request",
+    "status": "started",
+    "parent_event_ids": [
+      "recovered_error:e001"
+    ],
+    "attributes": {},
+    "evidence": [
+      {
+        "id": "recovered_error:e002:evidence",
+        "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "model",
+      "name": "simulated-planner"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e003",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.144Z",
+    "sequence": 2,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "5d076d663e974634",
+    "actor": {
+      "id": "planner",
+      "kind": "agent",
+      "role": "planner"
+    },
+    "phase": "execution",
+    "event_type": "model.response",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e002"
+    ],
+    "attributes": {
+      "provider": "local-simulation",
+      "usage_source": "synthetic"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e003:evidence",
+        "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "model",
+      "name": "simulated-planner",
+      "duration_ms": 2,
+      "token_input": 64,
+      "token_output": 24
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e004",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.145Z",
+    "sequence": 3,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "e6c019dd14d146de",
+    "actor": {
+      "id": "planner",
+      "kind": "agent",
+      "role": "planner"
+    },
+    "phase": "execution",
+    "event_type": "plan.created",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e003"
+    ],
+    "attributes": {
+      "route": "B"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e004:evidence",
+        "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e005",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.145Z",
+    "sequence": 4,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "6261ab2b69f34d83",
+    "actor": {
+      "id": "planner",
+      "kind": "agent",
+      "role": "planner"
+    },
+    "phase": "execution",
+    "event_type": "agent.delegated",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e004"
+    ],
+    "attributes": {
+      "route": "B"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e005:evidence",
+        "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "delegation": {
+      "from_actor": "planner",
+      "to_actor": "executor",
+      "instruction_ref": {
+        "id": "recovered_error:e004:evidence",
+        "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e006",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.145Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "30e9c0b2525e4ca8",
+    "actor": {
+      "id": "executor",
+      "kind": "agent",
+      "role": "executor"
+    },
+    "phase": "execution",
+    "event_type": "tool.call",
+    "status": "started",
+    "parent_event_ids": [
+      "recovered_error:e005"
+    ],
+    "attributes": {
+      "route": "B",
+      "attempt": 1
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e006:evidence",
+        "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "tool",
+      "name": "simulated-route-api"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e007",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.146Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "917a576cb377424d",
+    "actor": {
+      "id": "route-tool",
+      "kind": "tool",
+      "role": "route-tool"
+    },
+    "phase": "execution",
+    "event_type": "tool.result",
+    "status": "error",
+    "parent_event_ids": [
+      "recovered_error:e006"
+    ],
+    "attributes": {
+      "route": "B",
+      "attempt": 1,
+      "simulated": true,
+      "error_type": "ConnectionError"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e007:evidence",
+        "hash": "sha256:0adc7243db179e3ec67573e361878417cf622f78bece44da2d3511ed4447cfdc",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "tool",
+      "name": "simulated-route-api",
+      "duration_ms": 2
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e008",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.146Z",
+    "sequence": 2,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "3c2939b896cc416c",
+    "actor": {
+      "id": "orchestrator",
+      "kind": "orchestrator",
+      "role": "orchestrator"
+    },
+    "phase": "execution",
+    "event_type": "recovery.attempt",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e007"
+    ],
+    "attributes": {
+      "attempt": 2
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e008:evidence",
+        "hash": "sha256:21416370d2ab31b5e9277d92d725014141a342b33fd7c8a23c1bd8790bafc876",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e009",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.146Z",
+    "sequence": 2,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "e1b799d9d6c649e9",
+    "actor": {
+      "id": "executor",
+      "kind": "agent",
+      "role": "executor"
+    },
+    "phase": "execution",
+    "event_type": "tool.call",
+    "status": "started",
+    "parent_event_ids": [
+      "recovered_error:e008"
+    ],
+    "attributes": {
+      "route": "B",
+      "attempt": 2
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e009:evidence",
+        "hash": "sha256:74d1f7c78852b7b7a5316520665cb7d1e2c06d7f85f8ef81d92dbb29f144096c",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "tool",
+      "name": "simulated-route-api"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e010",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.147Z",
+    "sequence": 2,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "76d849532c934c75",
+    "actor": {
+      "id": "route-tool",
+      "kind": "tool",
+      "role": "route-tool"
+    },
+    "phase": "execution",
+    "event_type": "tool.result",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e009"
+    ],
+    "attributes": {
+      "route": "B",
+      "attempt": 2,
+      "simulated": true,
+      "resolves_event_ids": [
+        "recovered_error:e007"
+      ]
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e010:evidence",
+        "hash": "sha256:9df9a86804e5b4a49bcf8fbba0f9a98b636c76acc4b200622c264d5fa0ab701f",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "tool",
+      "name": "simulated-route-api",
+      "duration_ms": 2
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e011",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.147Z",
+    "sequence": 1,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "ed3f70fcdd4b4856",
+    "actor": {
+      "id": "verifier",
+      "kind": "verifier",
+      "role": "verifier"
+    },
+    "phase": "execution",
+    "event_type": "verification.result",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e010"
+    ],
+    "attributes": {
+      "expected": "B",
+      "observed": "B",
+      "test": "simulated-connectivity"
+    },
+    "evidence": [
+      {
+        "id": "recovered_error:e011:evidence",
+        "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "event_id": "recovered_error:e012",
+    "session_id": "recovered_error",
+    "timestamp": "2026-11-06T07:26:44.147Z",
+    "sequence": 3,
+    "trace_id": "4ddbbd7107804627b05c1258cbba7213",
+    "span_id": "a7ea822bd2114c42",
+    "actor": {
+      "id": "orchestrator",
+      "kind": "orchestrator",
+      "role": "orchestrator"
+    },
+    "phase": "post-execution",
+    "event_type": "session.end",
+    "status": "ok",
+    "parent_event_ids": [
+      "recovered_error:e011"
+    ],
+    "attributes": {},
+    "evidence": [
+      {
+        "id": "recovered_error:e012:evidence",
+        "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "media_type": "application/json",
+        "sensitivity": "internal",
+        "provenance": "observed"
+      }
+    ],
+    "action": {
+      "kind": "task",
+      "name": "route-change",
+      "duration_ms": 5
+    }
+  }
+]

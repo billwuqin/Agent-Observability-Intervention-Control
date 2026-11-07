@@ -1,0 +1,33 @@
+{
+  "slow_call:e000:evidence": {},
+  "slow_call:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "slow_call:e002:evidence": {},
+  "slow_call:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "slow_call:e004:evidence": {
+    "route": "B"
+  },
+  "slow_call:e005:evidence": {
+    "route": "B"
+  },
+  "slow_call:e006:evidence": {
+    "route": "B",
+    "attempt": 1
+  },
+  "slow_call:e007:evidence": {
+    "route": "B",
+    "attempt": 1,
+    "simulated": true
+  },
+  "slow_call:e008:evidence": {
+    "expected": "B",
+    "observed": "B",
+    "test": "simulated-connectivity"
+  },
+  "slow_call:e009:evidence": {}
+}
