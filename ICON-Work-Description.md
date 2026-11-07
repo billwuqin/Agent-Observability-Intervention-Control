@@ -148,11 +148,12 @@ Outreach should take place to at least:
 
 This is a list of people who contributed to the discussions that led to this work description. Draw no conclusions from the ordering of people in this list.
 - Qin Wu <billwu@huawei.com>
-- Qiufang Ma <maqiufang1@huawei.com>
+- Giuseppe Fioccola <giuseppe.fioccola@huawei.com>
 - Daniele Ceccarelli <dceccare@cisco.com>
 - Daniel King <d.king@lancaster.ac.uk>
 - Zhenqiang Li <lizhenqiang@chinamobile.com>
 - Luis M. Contreras <luismiguel.contrerasmurillo@telefonica.com>
+- Cheng Zhou <zhouchengyjy@chinamobile.com>
 
 ## Deliverables
 
