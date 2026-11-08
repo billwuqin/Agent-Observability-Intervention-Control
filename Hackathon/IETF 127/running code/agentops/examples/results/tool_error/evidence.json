@@ -1,0 +1,34 @@
+{
+  "tool_error:e000:evidence": {},
+  "tool_error:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "tool_error:e002:evidence": {},
+  "tool_error:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "tool_error:e004:evidence": {
+    "route": "B"
+  },
+  "tool_error:e005:evidence": {
+    "route": "B"
+  },
+  "tool_error:e006:evidence": {
+    "route": "B",
+    "attempt": 1
+  },
+  "tool_error:e007:evidence": {
+    "route": "B",
+    "attempt": 1,
+    "simulated": true,
+    "error_type": "ConnectionError"
+  },
+  "tool_error:e008:evidence": {
+    "expected": "B",
+    "observed": "B",
+    "test": "simulated-connectivity"
+  },
+  "tool_error:e009:evidence": {}
+}

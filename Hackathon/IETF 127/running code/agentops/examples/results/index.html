@@ -1,0 +1,1705 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+    <title>AgentOps prototype results</title><style>
+    body{font:16px system-ui;margin:40px auto;padding:0 24px;max-width:1200px;color:#172a43;background:#f7f9fb}
+    h1{font-size:34px}h2{color:#087f73}section{background:white;padding:24px;margin:24px 0;border:1px solid #dce4ec;border-radius:8px}
+    nav a{display:inline-block;margin:4px 12px 4px 0;color:#235f9e}table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:8px;border-bottom:1px solid #dce4ec;text-align:left}.root{background:#fff0e8}details{margin:16px 0}
+    pre{overflow:auto;background:#f2f5f8;padding:16px}.notice{border-left:4px solid #b94943;padding:14px;background:#fff3f0}
+    </style><h1>AgentOps Observability and Failure Diagnosis</h1>
+    <p>Controlled prototype v0.1.0</p>
+    <p class="notice">Controlled synthetic scenarios; baseline rules and fixtures were designed together. Not a held-out benchmark or model-quality result.<br>Durations measured locally. Model responses, token counts, network state and tool faults are simulated. No external LLM, network device or actuator is used.</p>
+    <p><b>9 scenarios</b> · 9/9 alarm expectations met ·
+    5/6 failed cases correctly attributed · 1 abstention</p>
+    <nav><a href="#clean">clean</a> <a href="#planner_error">planner_error</a> <a href="#executor_error">executor_error</a> <a href="#tool_error">tool_error</a> <a href="#timeout">timeout</a> <a href="#retry_exhausted">retry_exhausted</a> <a href="#recovered_error">recovered_error</a> <a href="#slow_call">slow_call</a> <a href="#missing_evidence">missing_evidence</a></nav><section id="clean"><h2>clean</h2>
+        <p><b>Diagnosis:</b> not-applicable &nbsp; <b>Actor:</b> —
+        &nbsp; <b>Root:</b> — &nbsp; <b>Anomaly signals:</b> 0</p>
+        <p>No completed failed task</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>clean:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>clean:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>clean:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>clean:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>clean:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>clean:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>clean:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>clean:e007</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>2</td></tr><tr class=""><td>clean:e008</td><td>verifier</td><td>verification.result</td><td>ok</td><td></td></tr><tr class=""><td>clean:e009</td><td>orchestrator</td><td>session.end</td><td>ok</td><td>3</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;clean&quot;,
+    &quot;assertion_event_id&quot;: &quot;clean:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.122Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;clean:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;clean&quot;,
+    &quot;assertion_event_id&quot;: &quot;clean:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.122Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;clean:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;clean&quot;,
+    &quot;assertion_event_id&quot;: &quot;clean:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.122Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;clean:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;clean&quot;,
+    &quot;assertion_event_id&quot;: &quot;clean:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.122Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;clean:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;not-applicable&quot;,
+  &quot;reason&quot;: &quot;No completed failed task&quot;
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      3
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;none&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [],
+  &quot;diagnosis_id&quot;: null,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="planner_error"><h2>planner_error</h2>
+        <p><b>Diagnosis:</b> diagnosed &nbsp; <b>Actor:</b> planner
+        &nbsp; <b>Root:</b> planner_error:e004 &nbsp; <b>Anomaly signals:</b> 3</p>
+        <p>Executor followed the recorded handoff. The earlier plan introduced the conflicting route.</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>planner_error:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>planner_error:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>planner_error:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>planner_error:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class="root"><td>planner_error:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>planner_error:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>planner_error:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>planner_error:e007</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>2</td></tr><tr class=""><td>planner_error:e008</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>planner_error:e009</td><td>orchestrator</td><td>session.end</td><td>error</td><td>3</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;planner_error:e004:anomaly&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;planner_error:e004&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;route-intent&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;planner_error:e004&quot;,
+      &quot;prefix_size&quot;: 5
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;planner_error:e006:anomaly&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;planner_error:e006&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;route-intent&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;planner_error:e006&quot;,
+      &quot;prefix_size&quot;: 7
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;planner_error:e008:anomaly&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;planner_error:e008&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;planner_error:e008&quot;,
+      &quot;prefix_size&quot;: 9
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;planner_error:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;planner_error:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;planner_error:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;violation&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;planner_error:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;A&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;planner_error:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;violation&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;planner_error:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;A&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;planner_error:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;planner_error:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;diagnosed&quot;,
+  &quot;record&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;diagnosis_id&quot;: &quot;planner_error:diagnosis&quot;,
+    &quot;session_id&quot;: &quot;planner_error&quot;,
+    &quot;created_at&quot;: &quot;2026-11-06T07:26:44.125Z&quot;,
+    &quot;method&quot;: {
+      &quot;name&quot;: &quot;handoff-and-dependency-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;responsible_actor_id&quot;: &quot;planner&quot;,
+    &quot;root_cause_event_id&quot;: &quot;planner_error:e004&quot;,
+    &quot;terminal_event_id&quot;: &quot;planner_error:e009&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;planner_error:e001&quot;,
+      &quot;planner_error:e006&quot;,
+      &quot;planner_error:e004&quot;,
+      &quot;planner_error:e005&quot;,
+      &quot;planner_error:e007&quot;,
+      &quot;planner_error:e008&quot;,
+      &quot;planner_error:e009&quot;
+    ],
+    &quot;failure_chain&quot;: [
+      {
+        &quot;event_id&quot;: &quot;planner_error:e004&quot;,
+        &quot;actor_id&quot;: &quot;planner&quot;,
+        &quot;role&quot;: &quot;root-cause&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;planner_error:e005&quot;,
+        &quot;actor_id&quot;: &quot;planner&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;planner_error:e006&quot;,
+        &quot;actor_id&quot;: &quot;executor&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;planner_error:e007&quot;,
+        &quot;actor_id&quot;: &quot;route-tool&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;planner_error:e008&quot;,
+        &quot;actor_id&quot;: &quot;verifier&quot;,
+        &quot;role&quot;: &quot;exposure&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;planner_error:e009&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;terminal&quot;
+      }
+    ],
+    &quot;category&quot;: &quot;C1&quot;,
+    &quot;validation&quot;: &quot;machine-validated&quot;,
+    &quot;extensions&quot;: {
+      &quot;rationale&quot;: &quot;Executor followed the recorded handoff. The earlier plan introduced the conflicting route.&quot;,
+      &quot;validation_scope&quot;: &quot;record structure and evidence references only&quot;
+    }
+  }
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      3
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;planner_error:e004:anomaly&quot;,
+    &quot;planner_error:e006:anomaly&quot;,
+    &quot;planner_error:e008:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: &quot;planner_error:diagnosis&quot;,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="executor_error"><h2>executor_error</h2>
+        <p><b>Diagnosis:</b> diagnosed &nbsp; <b>Actor:</b> executor
+        &nbsp; <b>Root:</b> executor_error:e006 &nbsp; <b>Anomaly signals:</b> 2</p>
+        <p>Executed route violates the recorded task constraint.</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>executor_error:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>executor_error:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>executor_error:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>executor_error:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>executor_error:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>executor_error:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class="root"><td>executor_error:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>executor_error:e007</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>2</td></tr><tr class=""><td>executor_error:e008</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>executor_error:e009</td><td>orchestrator</td><td>session.end</td><td>error</td><td>4</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;executor_error:e006:anomaly&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;executor_error:e006&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;route-intent&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;executor_error:e006&quot;,
+      &quot;prefix_size&quot;: 7
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;executor_error:e008:anomaly&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;executor_error:e008&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;executor_error:e008&quot;,
+      &quot;prefix_size&quot;: 9
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;executor_error:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;executor_error:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;executor_error:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;executor_error:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;executor_error:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;violation&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;executor_error:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;A&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;executor_error:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;executor_error:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;diagnosed&quot;,
+  &quot;record&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;diagnosis_id&quot;: &quot;executor_error:diagnosis&quot;,
+    &quot;session_id&quot;: &quot;executor_error&quot;,
+    &quot;created_at&quot;: &quot;2026-11-06T07:26:44.129Z&quot;,
+    &quot;method&quot;: {
+      &quot;name&quot;: &quot;handoff-and-dependency-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;responsible_actor_id&quot;: &quot;executor&quot;,
+    &quot;root_cause_event_id&quot;: &quot;executor_error:e006&quot;,
+    &quot;terminal_event_id&quot;: &quot;executor_error:e009&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;executor_error:e001&quot;,
+      &quot;executor_error:e006&quot;,
+      &quot;executor_error:e007&quot;,
+      &quot;executor_error:e008&quot;,
+      &quot;executor_error:e009&quot;
+    ],
+    &quot;failure_chain&quot;: [
+      {
+        &quot;event_id&quot;: &quot;executor_error:e006&quot;,
+        &quot;actor_id&quot;: &quot;executor&quot;,
+        &quot;role&quot;: &quot;root-cause&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;executor_error:e007&quot;,
+        &quot;actor_id&quot;: &quot;route-tool&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;executor_error:e008&quot;,
+        &quot;actor_id&quot;: &quot;verifier&quot;,
+        &quot;role&quot;: &quot;exposure&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;executor_error:e009&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;terminal&quot;
+      }
+    ],
+    &quot;category&quot;: &quot;D1&quot;,
+    &quot;validation&quot;: &quot;machine-validated&quot;,
+    &quot;extensions&quot;: {
+      &quot;rationale&quot;: &quot;Executed route violates the recorded task constraint.&quot;,
+      &quot;validation_scope&quot;: &quot;record structure and evidence references only&quot;
+    }
+  }
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      4
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;executor_error:e006:anomaly&quot;,
+    &quot;executor_error:e008:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: &quot;executor_error:diagnosis&quot;,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="tool_error"><h2>tool_error</h2>
+        <p><b>Diagnosis:</b> diagnosed &nbsp; <b>Actor:</b> route-tool
+        &nbsp; <b>Root:</b> tool_error:e007 &nbsp; <b>Anomaly signals:</b> 2</p>
+        <p>Recorded tool failure remained unresolved at task termination.</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>tool_error:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>tool_error:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>tool_error:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>tool_error:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>tool_error:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>tool_error:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>tool_error:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class="root"><td>tool_error:e007</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class=""><td>tool_error:e008</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>tool_error:e009</td><td>orchestrator</td><td>session.end</td><td>error</td><td>3</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;tool_error:e007:anomaly&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;tool_error:e007&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;tool_error:e007&quot;,
+      &quot;prefix_size&quot;: 8
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;tool_error:e008:anomaly&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;tool_error:e008&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;tool_error:e008&quot;,
+      &quot;prefix_size&quot;: 9
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;tool_error:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.132Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;tool_error:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;tool_error:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;tool_error:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;tool_error:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;tool_error:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;tool_error:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;tool_error:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;diagnosed&quot;,
+  &quot;record&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;diagnosis_id&quot;: &quot;tool_error:diagnosis&quot;,
+    &quot;session_id&quot;: &quot;tool_error&quot;,
+    &quot;created_at&quot;: &quot;2026-11-06T07:26:44.133Z&quot;,
+    &quot;method&quot;: {
+      &quot;name&quot;: &quot;handoff-and-dependency-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;responsible_actor_id&quot;: &quot;route-tool&quot;,
+    &quot;root_cause_event_id&quot;: &quot;tool_error:e007&quot;,
+    &quot;terminal_event_id&quot;: &quot;tool_error:e009&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;tool_error:e007&quot;,
+      &quot;tool_error:e006&quot;,
+      &quot;tool_error:e008&quot;,
+      &quot;tool_error:e009&quot;
+    ],
+    &quot;failure_chain&quot;: [
+      {
+        &quot;event_id&quot;: &quot;tool_error:e007&quot;,
+        &quot;actor_id&quot;: &quot;route-tool&quot;,
+        &quot;role&quot;: &quot;root-cause&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;tool_error:e008&quot;,
+        &quot;actor_id&quot;: &quot;verifier&quot;,
+        &quot;role&quot;: &quot;exposure&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;tool_error:e009&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;terminal&quot;
+      }
+    ],
+    &quot;category&quot;: &quot;X2&quot;,
+    &quot;validation&quot;: &quot;machine-validated&quot;,
+    &quot;extensions&quot;: {
+      &quot;rationale&quot;: &quot;Recorded tool failure remained unresolved at task termination.&quot;,
+      &quot;validation_scope&quot;: &quot;record structure and evidence references only&quot;
+    }
+  }
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      3
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24,
+    &quot;call_errors&quot;: 1,
+    &quot;timeouts&quot;: 0
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;tool_error:e007:anomaly&quot;,
+    &quot;tool_error:e008:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: &quot;tool_error:diagnosis&quot;,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="timeout"><h2>timeout</h2>
+        <p><b>Diagnosis:</b> diagnosed &nbsp; <b>Actor:</b> route-tool
+        &nbsp; <b>Root:</b> timeout:e007 &nbsp; <b>Anomaly signals:</b> 2</p>
+        <p>Recorded tool failure remained unresolved at task termination.</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>timeout:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>timeout:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>timeout:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>timeout:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>timeout:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>timeout:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>timeout:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class="root"><td>timeout:e007</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class=""><td>timeout:e008</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>timeout:e009</td><td>orchestrator</td><td>session.end</td><td>error</td><td>3</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;timeout:e007:anomaly&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;timeout:e007&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;timeout:e007&quot;,
+      &quot;prefix_size&quot;: 8
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;timeout:e008:anomaly&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;timeout:e008&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;timeout:e008&quot;,
+      &quot;prefix_size&quot;: 9
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;assertion_event_id&quot;: &quot;timeout:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;timeout:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;assertion_event_id&quot;: &quot;timeout:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;timeout:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;assertion_event_id&quot;: &quot;timeout:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;timeout:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;assertion_event_id&quot;: &quot;timeout:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;timeout:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;diagnosed&quot;,
+  &quot;record&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;diagnosis_id&quot;: &quot;timeout:diagnosis&quot;,
+    &quot;session_id&quot;: &quot;timeout&quot;,
+    &quot;created_at&quot;: &quot;2026-11-06T07:26:44.136Z&quot;,
+    &quot;method&quot;: {
+      &quot;name&quot;: &quot;handoff-and-dependency-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;responsible_actor_id&quot;: &quot;route-tool&quot;,
+    &quot;root_cause_event_id&quot;: &quot;timeout:e007&quot;,
+    &quot;terminal_event_id&quot;: &quot;timeout:e009&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;timeout:e007&quot;,
+      &quot;timeout:e006&quot;,
+      &quot;timeout:e008&quot;,
+      &quot;timeout:e009&quot;
+    ],
+    &quot;failure_chain&quot;: [
+      {
+        &quot;event_id&quot;: &quot;timeout:e007&quot;,
+        &quot;actor_id&quot;: &quot;route-tool&quot;,
+        &quot;role&quot;: &quot;root-cause&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;timeout:e008&quot;,
+        &quot;actor_id&quot;: &quot;verifier&quot;,
+        &quot;role&quot;: &quot;exposure&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;timeout:e009&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;terminal&quot;
+      }
+    ],
+    &quot;category&quot;: &quot;X2&quot;,
+    &quot;validation&quot;: &quot;machine-validated&quot;,
+    &quot;extensions&quot;: {
+      &quot;rationale&quot;: &quot;Recorded tool failure remained unresolved at task termination.&quot;,
+      &quot;validation_scope&quot;: &quot;record structure and evidence references only&quot;
+    }
+  }
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      3
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24,
+    &quot;call_errors&quot;: 1,
+    &quot;timeouts&quot;: 1
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;timeout:e007:anomaly&quot;,
+    &quot;timeout:e008:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: &quot;timeout:diagnosis&quot;,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="retry_exhausted"><h2>retry_exhausted</h2>
+        <p><b>Diagnosis:</b> diagnosed &nbsp; <b>Actor:</b> orchestrator
+        &nbsp; <b>Root:</b> retry_exhausted:e011 &nbsp; <b>Anomaly signals:</b> 5</p>
+        <p>Orchestrator exceeded the configured retry budget.</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>retry_exhausted:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>retry_exhausted:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>retry_exhausted:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>retry_exhausted:e007</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class=""><td>retry_exhausted:e008</td><td>orchestrator</td><td>recovery.attempt</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e009</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>retry_exhausted:e010</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class="root"><td>retry_exhausted:e011</td><td>orchestrator</td><td>recovery.attempt</td><td>ok</td><td></td></tr><tr class=""><td>retry_exhausted:e012</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>retry_exhausted:e013</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class=""><td>retry_exhausted:e014</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>retry_exhausted:e015</td><td>orchestrator</td><td>session.end</td><td>error</td><td>6</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;retry_exhausted:e007:anomaly&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;retry_exhausted:e007&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;retry_exhausted:e007&quot;,
+      &quot;prefix_size&quot;: 8
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;retry_exhausted:e010:anomaly&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;retry_exhausted:e010&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;retry_exhausted:e010&quot;,
+      &quot;prefix_size&quot;: 11
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;retry_exhausted:e011:anomaly&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;retry_exhausted:e011&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;retry-budget&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;retry_exhausted:e011&quot;,
+      &quot;prefix_size&quot;: 12
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;retry_exhausted:e013:anomaly&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;retry_exhausted:e013&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;retry_exhausted:e013&quot;,
+      &quot;prefix_size&quot;: 14
+    }
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;retry_exhausted:e014:anomaly&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;retry_exhausted:e014&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;retry_exhausted:e014&quot;,
+      &quot;prefix_size&quot;: 15
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e008:assert:retry-budget&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;retry-budget&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e008&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 2
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e009:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e009&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e010:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e010&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e011:assert:retry-budget&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;retry-budget&quot;,
+    &quot;result&quot;: &quot;violation&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e011&quot;
+    ],
+    &quot;measured_value&quot;: 3,
+    &quot;boundary_value&quot;: 2
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e012:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e012&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;assertion_event_id&quot;: &quot;retry_exhausted:e013:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e013&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;diagnosed&quot;,
+  &quot;record&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;diagnosis_id&quot;: &quot;retry_exhausted:diagnosis&quot;,
+    &quot;session_id&quot;: &quot;retry_exhausted&quot;,
+    &quot;created_at&quot;: &quot;2026-11-06T07:26:44.142Z&quot;,
+    &quot;method&quot;: {
+      &quot;name&quot;: &quot;handoff-and-dependency-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;responsible_actor_id&quot;: &quot;orchestrator&quot;,
+    &quot;root_cause_event_id&quot;: &quot;retry_exhausted:e011&quot;,
+    &quot;terminal_event_id&quot;: &quot;retry_exhausted:e015&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;retry_exhausted:e011&quot;,
+      &quot;retry_exhausted:e012&quot;,
+      &quot;retry_exhausted:e013&quot;,
+      &quot;retry_exhausted:e014&quot;,
+      &quot;retry_exhausted:e015&quot;
+    ],
+    &quot;failure_chain&quot;: [
+      {
+        &quot;event_id&quot;: &quot;retry_exhausted:e011&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;root-cause&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;retry_exhausted:e012&quot;,
+        &quot;actor_id&quot;: &quot;executor&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;retry_exhausted:e013&quot;,
+        &quot;actor_id&quot;: &quot;route-tool&quot;,
+        &quot;role&quot;: &quot;propagation&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;retry_exhausted:e014&quot;,
+        &quot;actor_id&quot;: &quot;verifier&quot;,
+        &quot;role&quot;: &quot;exposure&quot;
+      },
+      {
+        &quot;event_id&quot;: &quot;retry_exhausted:e015&quot;,
+        &quot;actor_id&quot;: &quot;orchestrator&quot;,
+        &quot;role&quot;: &quot;terminal&quot;
+      }
+    ],
+    &quot;category&quot;: &quot;D3&quot;,
+    &quot;validation&quot;: &quot;machine-validated&quot;,
+    &quot;extensions&quot;: {
+      &quot;rationale&quot;: &quot;Orchestrator exceeded the configured retry budget.&quot;,
+      &quot;validation_scope&quot;: &quot;record structure and evidence references only&quot;
+    }
+  }
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2,
+      2,
+      2
+    ],
+    &quot;task&quot;: [
+      6
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 2,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24,
+    &quot;call_errors&quot;: 3,
+    &quot;timeouts&quot;: 0
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;retry_exhausted:e007:anomaly&quot;,
+    &quot;retry_exhausted:e010:anomaly&quot;,
+    &quot;retry_exhausted:e011:anomaly&quot;,
+    &quot;retry_exhausted:e013:anomaly&quot;,
+    &quot;retry_exhausted:e014:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: &quot;retry_exhausted:diagnosis&quot;,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="recovered_error"><h2>recovered_error</h2>
+        <p><b>Diagnosis:</b> not-applicable &nbsp; <b>Actor:</b> —
+        &nbsp; <b>Root:</b> — &nbsp; <b>Anomaly signals:</b> 1</p>
+        <p>No completed failed task</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>recovered_error:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>recovered_error:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>recovered_error:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>recovered_error:e007</td><td>route-tool</td><td>tool.result</td><td>error</td><td>2</td></tr><tr class=""><td>recovered_error:e008</td><td>orchestrator</td><td>recovery.attempt</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e009</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>recovered_error:e010</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>2</td></tr><tr class=""><td>recovered_error:e011</td><td>verifier</td><td>verification.result</td><td>ok</td><td></td></tr><tr class=""><td>recovered_error:e012</td><td>orchestrator</td><td>session.end</td><td>ok</td><td>5</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;recovered_error:e007:anomaly&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;recovered_error:e007&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-error&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;recovered_error:e007&quot;,
+      &quot;prefix_size&quot;: 8
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e008:assert:retry-budget&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;retry-budget&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e008&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 2
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e009:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e009&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;recovered_error&quot;,
+    &quot;assertion_event_id&quot;: &quot;recovered_error:e010:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.147Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;recovered_error:e010&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;not-applicable&quot;,
+  &quot;reason&quot;: &quot;No completed failed task&quot;
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2,
+      2
+    ],
+    &quot;task&quot;: [
+      5
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 1,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24,
+    &quot;call_errors&quot;: 1,
+    &quot;timeouts&quot;: 0
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;recovered_error:e007:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: null,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="slow_call"><h2>slow_call</h2>
+        <p><b>Diagnosis:</b> not-applicable &nbsp; <b>Actor:</b> —
+        &nbsp; <b>Root:</b> — &nbsp; <b>Anomaly signals:</b> 1</p>
+        <p>No completed failed task</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>slow_call:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>slow_call:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>slow_call:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>slow_call:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>slow_call:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>slow_call:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>slow_call:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>slow_call:e007</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>86</td></tr><tr class=""><td>slow_call:e008</td><td>verifier</td><td>verification.result</td><td>ok</td><td></td></tr><tr class=""><td>slow_call:e009</td><td>orchestrator</td><td>session.end</td><td>ok</td><td>87</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;slow_call:e007:anomaly&quot;,
+    &quot;session_id&quot;: &quot;slow_call&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.235Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;slow_call:e007&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;call-latency&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;slow_call:e007&quot;,
+      &quot;prefix_size&quot;: 8
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;slow_call&quot;,
+    &quot;assertion_event_id&quot;: &quot;slow_call:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.235Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;slow_call:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;slow_call&quot;,
+    &quot;assertion_event_id&quot;: &quot;slow_call:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.235Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;slow_call:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;slow_call&quot;,
+    &quot;assertion_event_id&quot;: &quot;slow_call:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.235Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;slow_call:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: &quot;B&quot;
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;slow_call&quot;,
+    &quot;assertion_event_id&quot;: &quot;slow_call:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.235Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;violation&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;slow_call:e007&quot;
+    ],
+    &quot;measured_value&quot;: 86,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;not-applicable&quot;,
+  &quot;reason&quot;: &quot;No completed failed task&quot;
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      86
+    ],
+    &quot;task&quot;: [
+      87
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;slow_call:e007:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: null,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section><section id="missing_evidence"><h2>missing_evidence</h2>
+        <p><b>Diagnosis:</b> abstain &nbsp; <b>Actor:</b> —
+        &nbsp; <b>Root:</b> — &nbsp; <b>Anomaly signals:</b> 1</p>
+        <p>Insufficient supported evidence for this rule baseline</p>
+        <table><thead><tr><th>Event</th><th>Actor</th><th>Type</th><th>Status</th><th>Elapsed ms</th></tr></thead><tbody><tr class=""><td>missing_evidence:e000</td><td>orchestrator</td><td>session.start</td><td>ok</td><td></td></tr><tr class=""><td>missing_evidence:e001</td><td>user</td><td>task.received</td><td>ok</td><td></td></tr><tr class=""><td>missing_evidence:e002</td><td>planner</td><td>model.request</td><td>started</td><td></td></tr><tr class=""><td>missing_evidence:e003</td><td>planner</td><td>model.response</td><td>ok</td><td>2</td></tr><tr class=""><td>missing_evidence:e004</td><td>planner</td><td>plan.created</td><td>ok</td><td></td></tr><tr class=""><td>missing_evidence:e005</td><td>planner</td><td>agent.delegated</td><td>ok</td><td></td></tr><tr class=""><td>missing_evidence:e006</td><td>executor</td><td>tool.call</td><td>started</td><td></td></tr><tr class=""><td>missing_evidence:e007</td><td>route-tool</td><td>tool.result</td><td>ok</td><td>2</td></tr><tr class=""><td>missing_evidence:e008</td><td>verifier</td><td>verification.result</td><td>error</td><td></td></tr><tr class=""><td>missing_evidence:e009</td><td>orchestrator</td><td>session.end</td><td>error</td><td>3</td></tr></tbody></table>
+        <details><summary>Anomalies and prefix boundary</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;anomaly_id&quot;: &quot;missing_evidence:e008:anomaly&quot;,
+    &quot;session_id&quot;: &quot;missing_evidence&quot;,
+    &quot;detected_at&quot;: &quot;2026-11-06T07:26:44.239Z&quot;,
+    &quot;detector&quot;: {
+      &quot;name&quot;: &quot;explicit-rule-baseline&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;
+    },
+    &quot;baseline_id&quot;: &quot;demo-policy-v1&quot;,
+    &quot;score&quot;: 1,
+    &quot;score_direction&quot;: &quot;higher-is-more-anomalous&quot;,
+    &quot;candidate_event_ids&quot;: [
+      &quot;missing_evidence:e008&quot;
+    ],
+    &quot;recommended_action&quot;: &quot;observe&quot;,
+    &quot;extensions&quot;: {
+      &quot;rules&quot;: [
+        &quot;verification-failure&quot;
+      ],
+      &quot;observed_through_event_id&quot;: &quot;missing_evidence:e008&quot;,
+      &quot;prefix_size&quot;: 9
+    }
+  }
+]</pre></details>
+        <details><summary>Assertions</summary><pre>[
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;missing_evidence&quot;,
+    &quot;assertion_event_id&quot;: &quot;missing_evidence:e003:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.239Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;missing_evidence:e003&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;missing_evidence&quot;,
+    &quot;assertion_event_id&quot;: &quot;missing_evidence:e004:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.239Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;unknown&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;missing_evidence:e004&quot;
+    ],
+    &quot;measured_value&quot;: &quot;B&quot;,
+    &quot;boundary_value&quot;: null
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;missing_evidence&quot;,
+    &quot;assertion_event_id&quot;: &quot;missing_evidence:e006:assert:route-intent&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.239Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;route-intent&quot;,
+    &quot;result&quot;: &quot;unknown&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;missing_evidence:e006&quot;
+    ],
+    &quot;measured_value&quot;: &quot;A&quot;,
+    &quot;boundary_value&quot;: null
+  },
+  {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;session_id&quot;: &quot;missing_evidence&quot;,
+    &quot;assertion_event_id&quot;: &quot;missing_evidence:e007:assert:call-latency&quot;,
+    &quot;timestamp&quot;: &quot;2026-11-06T07:26:44.239Z&quot;,
+    &quot;tla_level&quot;: &quot;demo-operational-policy&quot;,
+    &quot;assertion_id&quot;: &quot;call-latency&quot;,
+    &quot;result&quot;: &quot;pass&quot;,
+    &quot;evidence_event_ids&quot;: [
+      &quot;missing_evidence:e007&quot;
+    ],
+    &quot;measured_value&quot;: 2,
+    &quot;boundary_value&quot;: 50
+  }
+]</pre></details>
+        <details><summary>Diagnosis and evidence chain</summary><pre>{
+  &quot;status&quot;: &quot;abstain&quot;,
+  &quot;reason&quot;: &quot;Insufficient supported evidence for this rule baseline&quot;,
+  &quot;terminal_event_id&quot;: &quot;missing_evidence:e009&quot;
+}</pre></details>
+        <details><summary>Runtime measurements</summary><pre>{
+  &quot;duration_ms&quot;: {
+    &quot;model&quot;: [
+      2
+    ],
+    &quot;tool&quot;: [
+      2
+    ],
+    &quot;task&quot;: [
+      3
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;retries&quot;: 0,
+    &quot;token_input&quot;: 64,
+    &quot;token_output&quot;: 24
+  },
+  &quot;measurement&quot;: &quot;perf_counter_ns elapsed duration, rounded up to ms&quot;,
+  &quot;token_source&quot;: &quot;simulated provider usage, not measured LLM tokens&quot;
+}</pre></details>
+        <details><summary>ICON intervention proposal (not executed)</summary><pre>{
+  &quot;schema_version&quot;: &quot;demo-bridge-0.1&quot;,
+  &quot;requested_action&quot;: &quot;human-review&quot;,
+  &quot;execution_status&quot;: &quot;not-executed&quot;,
+  &quot;requires_authorization&quot;: true,
+  &quot;anomaly_ids&quot;: [
+    &quot;missing_evidence:e008:anomaly&quot;
+  ],
+  &quot;diagnosis_id&quot;: null,
+  &quot;note&quot;: &quot;Experimental local proposal, not an ICON control protocol or actuator&quot;
+}</pre></details>
+        </section></html>

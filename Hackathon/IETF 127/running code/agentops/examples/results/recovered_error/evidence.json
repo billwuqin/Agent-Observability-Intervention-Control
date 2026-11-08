@@ -1,0 +1,49 @@
+{
+  "recovered_error:e000:evidence": {},
+  "recovered_error:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "recovered_error:e002:evidence": {},
+  "recovered_error:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "recovered_error:e004:evidence": {
+    "route": "B"
+  },
+  "recovered_error:e005:evidence": {
+    "route": "B"
+  },
+  "recovered_error:e006:evidence": {
+    "route": "B",
+    "attempt": 1
+  },
+  "recovered_error:e007:evidence": {
+    "route": "B",
+    "attempt": 1,
+    "simulated": true,
+    "error_type": "ConnectionError"
+  },
+  "recovered_error:e008:evidence": {
+    "attempt": 2
+  },
+  "recovered_error:e009:evidence": {
+    "route": "B",
+    "attempt": 2
+  },
+  "recovered_error:e010:evidence": {
+    "route": "B",
+    "attempt": 2,
+    "simulated": true,
+    "resolves_event_ids": [
+      "recovered_error:e007"
+    ]
+  },
+  "recovered_error:e011:evidence": {
+    "expected": "B",
+    "observed": "B",
+    "test": "simulated-connectivity"
+  },
+  "recovered_error:e012:evidence": {}
+}

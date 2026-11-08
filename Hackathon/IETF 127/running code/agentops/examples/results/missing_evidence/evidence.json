@@ -1,0 +1,32 @@
+{
+  "missing_evidence:e000:evidence": {},
+  "missing_evidence:e001:evidence": {
+    "intent": "Use backup path B"
+  },
+  "missing_evidence:e002:evidence": {},
+  "missing_evidence:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "missing_evidence:e004:evidence": {
+    "route": "B"
+  },
+  "missing_evidence:e005:evidence": {
+    "route": "B"
+  },
+  "missing_evidence:e006:evidence": {
+    "route": "A",
+    "attempt": 1
+  },
+  "missing_evidence:e007:evidence": {
+    "route": "A",
+    "attempt": 1,
+    "simulated": true
+  },
+  "missing_evidence:e008:evidence": {
+    "expected": "B",
+    "observed": "A",
+    "test": "simulated-connectivity"
+  },
+  "missing_evidence:e009:evidence": {}
+}

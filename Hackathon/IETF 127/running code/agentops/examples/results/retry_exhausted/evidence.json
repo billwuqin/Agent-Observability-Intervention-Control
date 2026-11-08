@@ -1,0 +1,60 @@
+{
+  "retry_exhausted:e000:evidence": {},
+  "retry_exhausted:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "retry_exhausted:e002:evidence": {},
+  "retry_exhausted:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "retry_exhausted:e004:evidence": {
+    "route": "B"
+  },
+  "retry_exhausted:e005:evidence": {
+    "route": "B"
+  },
+  "retry_exhausted:e006:evidence": {
+    "route": "B",
+    "attempt": 1
+  },
+  "retry_exhausted:e007:evidence": {
+    "route": "B",
+    "attempt": 1,
+    "simulated": true,
+    "error_type": "ConnectionError"
+  },
+  "retry_exhausted:e008:evidence": {
+    "attempt": 2
+  },
+  "retry_exhausted:e009:evidence": {
+    "route": "B",
+    "attempt": 2
+  },
+  "retry_exhausted:e010:evidence": {
+    "route": "B",
+    "attempt": 2,
+    "simulated": true,
+    "error_type": "ConnectionError"
+  },
+  "retry_exhausted:e011:evidence": {
+    "attempt": 3
+  },
+  "retry_exhausted:e012:evidence": {
+    "route": "B",
+    "attempt": 3
+  },
+  "retry_exhausted:e013:evidence": {
+    "route": "B",
+    "attempt": 3,
+    "simulated": true,
+    "error_type": "ConnectionError"
+  },
+  "retry_exhausted:e014:evidence": {
+    "expected": "B",
+    "observed": "B",
+    "test": "simulated-connectivity"
+  },
+  "retry_exhausted:e015:evidence": {}
+}

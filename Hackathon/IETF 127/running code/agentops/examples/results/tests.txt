@@ -1,0 +1,33 @@
+test_actor_sequence_rejected (test_prototype.PrototypeTests.test_actor_sequence_rejected) ... ok
+test_all_scenarios_alarm_and_outcome (test_prototype.PrototypeTests.test_all_scenarios_alarm_and_outcome) ... ok
+test_broken_parent_rejected (test_prototype.PrototypeTests.test_broken_parent_rejected) ... ok
+test_call_exception_captured_without_secret_text (test_prototype.PrototypeTests.test_call_exception_captured_without_secret_text) ... ok
+test_duplicate_event_rejected (test_prototype.PrototypeTests.test_duplicate_event_rejected) ... ok
+test_executor_deviation_keeps_responsibility (test_prototype.PrototypeTests.test_executor_deviation_keeps_responsibility) ... ok
+test_future_suffix_does_not_change_prefix (test_prototype.PrototypeTests.test_future_suffix_does_not_change_prefix) ... ok
+test_html_escapes_log_content (test_prototype.PrototypeTests.test_html_escapes_log_content) ... ok
+test_intervention_is_proposal_only (test_prototype.PrototypeTests.test_intervention_is_proposal_only) ... ok
+test_invalid_evidence_rejected (test_prototype.PrototypeTests.test_invalid_evidence_rejected) ... ok
+test_latency_approaching_boundary (test_prototype.PrototypeTests.test_latency_approaching_boundary) ... ok
+test_latency_violation_can_coexist_with_success (test_prototype.PrototypeTests.test_latency_violation_can_coexist_with_success) ... ok
+test_missing_evidence_abstains (test_prototype.PrototypeTests.test_missing_evidence_abstains) ... ok
+test_mixed_sessions_rejected (test_prototype.PrototypeTests.test_mixed_sessions_rejected) ... ok
+test_nested_redaction (test_prototype.PrototypeTests.test_nested_redaction) ... ok
+test_optional_attributes_can_be_omitted (test_prototype.PrototypeTests.test_optional_attributes_can_be_omitted) ... ok
+test_planner_responsibility_through_handoff (test_prototype.PrototypeTests.test_planner_responsibility_through_handoff) ... ok
+test_prefix_boundary_and_no_future_references (test_prototype.PrototypeTests.test_prefix_boundary_and_no_future_references) ... ok
+test_recovered_error_is_not_terminal_failure (test_prototype.PrototypeTests.test_recovered_error_is_not_terminal_failure) ... ok
+test_replay_json_roundtrip (test_prototype.PrototypeTests.test_replay_json_roundtrip) ... ok
+test_retry_policy_root (test_prototype.PrototypeTests.test_retry_policy_root) ... ok
+test_timeout_measurement (test_prototype.PrototypeTests.test_timeout_measurement) ... ok
+test_tool_failure_diagnosis (test_prototype.PrototypeTests.test_tool_failure_diagnosis) ... ok
+test_unknown_event_and_extensions_preserved (test_prototype.PrototypeTests.test_unknown_event_and_extensions_preserved) ... ok
+test_unrelated_failed_branch_is_not_selected (test_prototype.PrototypeTests.test_unrelated_failed_branch_is_not_selected) ... ok
+test_unsupported_major_version (test_prototype.PrototypeTests.test_unsupported_major_version) ... ok
+test_usage_is_preserved (test_prototype.PrototypeTests.test_usage_is_preserved) ... ok
+test_wrong_chain_actor_rejected (test_prototype.PrototypeTests.test_wrong_chain_actor_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.012s
+
+OK

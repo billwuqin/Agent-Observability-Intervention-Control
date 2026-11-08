@@ -1,0 +1,33 @@
+{
+  "clean:e000:evidence": {},
+  "clean:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "clean:e002:evidence": {},
+  "clean:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "clean:e004:evidence": {
+    "route": "B"
+  },
+  "clean:e005:evidence": {
+    "route": "B"
+  },
+  "clean:e006:evidence": {
+    "route": "B",
+    "attempt": 1
+  },
+  "clean:e007:evidence": {
+    "route": "B",
+    "attempt": 1,
+    "simulated": true
+  },
+  "clean:e008:evidence": {
+    "expected": "B",
+    "observed": "B",
+    "test": "simulated-connectivity"
+  },
+  "clean:e009:evidence": {}
+}

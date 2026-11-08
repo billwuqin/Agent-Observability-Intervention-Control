@@ -1,0 +1,33 @@
+{
+  "planner_error:e000:evidence": {},
+  "planner_error:e001:evidence": {
+    "intent": "Use backup path B",
+    "required_route": "B"
+  },
+  "planner_error:e002:evidence": {},
+  "planner_error:e003:evidence": {
+    "provider": "local-simulation",
+    "usage_source": "synthetic"
+  },
+  "planner_error:e004:evidence": {
+    "route": "A"
+  },
+  "planner_error:e005:evidence": {
+    "route": "A"
+  },
+  "planner_error:e006:evidence": {
+    "route": "A",
+    "attempt": 1
+  },
+  "planner_error:e007:evidence": {
+    "route": "A",
+    "attempt": 1,
+    "simulated": true
+  },
+  "planner_error:e008:evidence": {
+    "expected": "B",
+    "observed": "A",
+    "test": "simulated-connectivity"
+  },
+  "planner_error:e009:evidence": {}
+}

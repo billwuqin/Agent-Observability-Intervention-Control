@@ -1,0 +1,947 @@
+{
+  "events": [
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e000",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.137Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "e839493bd5494dd2",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "pre-execution",
+      "event_type": "session.start",
+      "status": "ok",
+      "parent_event_ids": [],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "retry_exhausted:e000:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e001",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.137Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "65838b7f285d4234",
+      "actor": {
+        "id": "user",
+        "kind": "human",
+        "role": "user"
+      },
+      "phase": "pre-execution",
+      "event_type": "task.received",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e000"
+      ],
+      "attributes": {
+        "intent": "Use backup path B",
+        "required_route": "B"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e001:evidence",
+          "hash": "sha256:adac33257a6ec16e546ba41e3d8e85bd7e54ef097aebb98956072f31b3659d4a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e002",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.137Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "efe1606da6124774",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "model.request",
+      "status": "started",
+      "parent_event_ids": [
+        "retry_exhausted:e001"
+      ],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "retry_exhausted:e002:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "model",
+        "name": "simulated-planner"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e003",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.138Z",
+      "sequence": 2,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "0c935153d2794e91",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "model.response",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e002"
+      ],
+      "attributes": {
+        "provider": "local-simulation",
+        "usage_source": "synthetic"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e003:evidence",
+          "hash": "sha256:8ced2c66751a4701b5ff95cedb3d0a154dc7da755ba336b944a41ed71913993d",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "model",
+        "name": "simulated-planner",
+        "duration_ms": 2,
+        "token_input": 64,
+        "token_output": 24
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e004",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.138Z",
+      "sequence": 3,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "4d3e4dcb981b4987",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "plan.created",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e003"
+      ],
+      "attributes": {
+        "route": "B"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e004:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e005",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.138Z",
+      "sequence": 4,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "517c5f8890c04132",
+      "actor": {
+        "id": "planner",
+        "kind": "agent",
+        "role": "planner"
+      },
+      "phase": "execution",
+      "event_type": "agent.delegated",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e004"
+      ],
+      "attributes": {
+        "route": "B"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e005:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "delegation": {
+        "from_actor": "planner",
+        "to_actor": "executor",
+        "instruction_ref": {
+          "id": "retry_exhausted:e004:evidence",
+          "hash": "sha256:bc07548f5bccfefcc04d84569e52f2a06206329a9e658c6349aaa01396b27804",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e006",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.138Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "b0843fe4a52940da",
+      "actor": {
+        "id": "executor",
+        "kind": "agent",
+        "role": "executor"
+      },
+      "phase": "execution",
+      "event_type": "tool.call",
+      "status": "started",
+      "parent_event_ids": [
+        "retry_exhausted:e005"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 1
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e006:evidence",
+          "hash": "sha256:3fee4ff7659c9532bedfdbc4ec8d65b088d46af372e1a773de3ac6869d0afcaa",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e007",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.139Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "417796753ff04a65",
+      "actor": {
+        "id": "route-tool",
+        "kind": "tool",
+        "role": "route-tool"
+      },
+      "phase": "execution",
+      "event_type": "tool.result",
+      "status": "error",
+      "parent_event_ids": [
+        "retry_exhausted:e006"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 1,
+        "simulated": true,
+        "error_type": "ConnectionError"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e007:evidence",
+          "hash": "sha256:0adc7243db179e3ec67573e361878417cf622f78bece44da2d3511ed4447cfdc",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api",
+        "duration_ms": 2
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e008",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.139Z",
+      "sequence": 2,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "6d31bbae65aa4e75",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "execution",
+      "event_type": "recovery.attempt",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e007"
+      ],
+      "attributes": {
+        "attempt": 2
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e008:evidence",
+          "hash": "sha256:21416370d2ab31b5e9277d92d725014141a342b33fd7c8a23c1bd8790bafc876",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e009",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.139Z",
+      "sequence": 2,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "ba94c45a48ed4afe",
+      "actor": {
+        "id": "executor",
+        "kind": "agent",
+        "role": "executor"
+      },
+      "phase": "execution",
+      "event_type": "tool.call",
+      "status": "started",
+      "parent_event_ids": [
+        "retry_exhausted:e008"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 2
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e009:evidence",
+          "hash": "sha256:74d1f7c78852b7b7a5316520665cb7d1e2c06d7f85f8ef81d92dbb29f144096c",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e010",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.141Z",
+      "sequence": 2,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "f345286958b34f10",
+      "actor": {
+        "id": "route-tool",
+        "kind": "tool",
+        "role": "route-tool"
+      },
+      "phase": "execution",
+      "event_type": "tool.result",
+      "status": "error",
+      "parent_event_ids": [
+        "retry_exhausted:e009"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 2,
+        "simulated": true,
+        "error_type": "ConnectionError"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e010:evidence",
+          "hash": "sha256:fb47b6ca866e362dde948b75396cd020dfb54b05301e1a6e832f6748f2e85e01",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api",
+        "duration_ms": 2
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e011",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.141Z",
+      "sequence": 3,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "c0ca357bd5994855",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "execution",
+      "event_type": "recovery.attempt",
+      "status": "ok",
+      "parent_event_ids": [
+        "retry_exhausted:e010"
+      ],
+      "attributes": {
+        "attempt": 3
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e011:evidence",
+          "hash": "sha256:7416de1b364157dca1e54ed89ee97fc7ec7a1e7a4311fd1725894ca79f8f3859",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e012",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.141Z",
+      "sequence": 3,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "aeb62c99ba684935",
+      "actor": {
+        "id": "executor",
+        "kind": "agent",
+        "role": "executor"
+      },
+      "phase": "execution",
+      "event_type": "tool.call",
+      "status": "started",
+      "parent_event_ids": [
+        "retry_exhausted:e011"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 3
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e012:evidence",
+          "hash": "sha256:d1afdef4fb4592553c876f43ecef625b8725e23b51279b52cd44e6511c471799",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e013",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "sequence": 3,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "1f2b3bcba0954f63",
+      "actor": {
+        "id": "route-tool",
+        "kind": "tool",
+        "role": "route-tool"
+      },
+      "phase": "execution",
+      "event_type": "tool.result",
+      "status": "error",
+      "parent_event_ids": [
+        "retry_exhausted:e012"
+      ],
+      "attributes": {
+        "route": "B",
+        "attempt": 3,
+        "simulated": true,
+        "error_type": "ConnectionError"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e013:evidence",
+          "hash": "sha256:94ab8360504a2b333286f2e85a5e3333f93d8e3205d5029c90de5e940f3a68e4",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "tool",
+        "name": "simulated-route-api",
+        "duration_ms": 2
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e014",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "sequence": 1,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "d279046e5f5644c8",
+      "actor": {
+        "id": "verifier",
+        "kind": "verifier",
+        "role": "verifier"
+      },
+      "phase": "execution",
+      "event_type": "verification.result",
+      "status": "error",
+      "parent_event_ids": [
+        "retry_exhausted:e013"
+      ],
+      "attributes": {
+        "expected": "B",
+        "observed": "B",
+        "test": "simulated-connectivity"
+      },
+      "evidence": [
+        {
+          "id": "retry_exhausted:e014:evidence",
+          "hash": "sha256:de4f7e39658f7308add56d080e573f2bf891a3e26c98dd17f61f9cf03b4e9b54",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "retry_exhausted:e015",
+      "session_id": "retry_exhausted",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "sequence": 4,
+      "trace_id": "307a9eca6bf746298d17a3db651a096c",
+      "span_id": "d8202b51d9a54f10",
+      "actor": {
+        "id": "orchestrator",
+        "kind": "orchestrator",
+        "role": "orchestrator"
+      },
+      "phase": "post-execution",
+      "event_type": "session.end",
+      "status": "error",
+      "parent_event_ids": [
+        "retry_exhausted:e014"
+      ],
+      "attributes": {},
+      "evidence": [
+        {
+          "id": "retry_exhausted:e015:evidence",
+          "hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "media_type": "application/json",
+          "sensitivity": "internal",
+          "provenance": "observed"
+        }
+      ],
+      "action": {
+        "kind": "task",
+        "name": "route-change",
+        "duration_ms": 6
+      }
+    }
+  ],
+  "metrics": {
+    "duration_ms": {
+      "model": [
+        2
+      ],
+      "tool": [
+        2,
+        2,
+        2
+      ],
+      "task": [
+        6
+      ]
+    },
+    "counts": {
+      "retries": 2,
+      "token_input": 64,
+      "token_output": 24,
+      "call_errors": 3,
+      "timeouts": 0
+    },
+    "measurement": "perf_counter_ns elapsed duration, rounded up to ms",
+    "token_source": "simulated provider usage, not measured LLM tokens"
+  },
+  "anomalies": [
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "retry_exhausted:e007:anomaly",
+      "session_id": "retry_exhausted",
+      "detected_at": "2026-11-06T07:26:44.142Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "retry_exhausted:e007"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "call-error"
+        ],
+        "observed_through_event_id": "retry_exhausted:e007",
+        "prefix_size": 8
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "retry_exhausted:e010:anomaly",
+      "session_id": "retry_exhausted",
+      "detected_at": "2026-11-06T07:26:44.142Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "retry_exhausted:e010"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "call-error"
+        ],
+        "observed_through_event_id": "retry_exhausted:e010",
+        "prefix_size": 11
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "retry_exhausted:e011:anomaly",
+      "session_id": "retry_exhausted",
+      "detected_at": "2026-11-06T07:26:44.142Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "retry_exhausted:e011"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "retry-budget"
+        ],
+        "observed_through_event_id": "retry_exhausted:e011",
+        "prefix_size": 12
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "retry_exhausted:e013:anomaly",
+      "session_id": "retry_exhausted",
+      "detected_at": "2026-11-06T07:26:44.142Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "retry_exhausted:e013"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "call-error"
+        ],
+        "observed_through_event_id": "retry_exhausted:e013",
+        "prefix_size": 14
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "anomaly_id": "retry_exhausted:e014:anomaly",
+      "session_id": "retry_exhausted",
+      "detected_at": "2026-11-06T07:26:44.142Z",
+      "detector": {
+        "name": "explicit-rule-baseline",
+        "version": "0.1.0"
+      },
+      "baseline_id": "demo-policy-v1",
+      "score": 1,
+      "score_direction": "higher-is-more-anomalous",
+      "candidate_event_ids": [
+        "retry_exhausted:e014"
+      ],
+      "recommended_action": "observe",
+      "extensions": {
+        "rules": [
+          "verification-failure"
+        ],
+        "observed_through_event_id": "retry_exhausted:e014",
+        "prefix_size": 15
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e003:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e003"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e004:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e004"
+      ],
+      "measured_value": "B",
+      "boundary_value": "B"
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e006:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e006"
+      ],
+      "measured_value": "B",
+      "boundary_value": "B"
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e007:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e007"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e008:assert:retry-budget",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "retry-budget",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e008"
+      ],
+      "measured_value": 2,
+      "boundary_value": 2
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e009:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e009"
+      ],
+      "measured_value": "B",
+      "boundary_value": "B"
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e010:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e010"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e011:assert:retry-budget",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "retry-budget",
+      "result": "violation",
+      "evidence_event_ids": [
+        "retry_exhausted:e011"
+      ],
+      "measured_value": 3,
+      "boundary_value": 2
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e012:assert:route-intent",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "route-intent",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e012"
+      ],
+      "measured_value": "B",
+      "boundary_value": "B"
+    },
+    {
+      "schema_version": "1.0",
+      "session_id": "retry_exhausted",
+      "assertion_event_id": "retry_exhausted:e013:assert:call-latency",
+      "timestamp": "2026-11-06T07:26:44.142Z",
+      "tla_level": "demo-operational-policy",
+      "assertion_id": "call-latency",
+      "result": "pass",
+      "evidence_event_ids": [
+        "retry_exhausted:e013"
+      ],
+      "measured_value": 2,
+      "boundary_value": 50
+    }
+  ],
+  "diagnosis": {
+    "status": "diagnosed",
+    "record": {
+      "schema_version": "1.0",
+      "diagnosis_id": "retry_exhausted:diagnosis",
+      "session_id": "retry_exhausted",
+      "created_at": "2026-11-06T07:26:44.142Z",
+      "method": {
+        "name": "handoff-and-dependency-rule-baseline",
+        "version": "0.1.0"
+      },
+      "responsible_actor_id": "orchestrator",
+      "root_cause_event_id": "retry_exhausted:e011",
+      "terminal_event_id": "retry_exhausted:e015",
+      "evidence_event_ids": [
+        "retry_exhausted:e011",
+        "retry_exhausted:e012",
+        "retry_exhausted:e013",
+        "retry_exhausted:e014",
+        "retry_exhausted:e015"
+      ],
+      "failure_chain": [
+        {
+          "event_id": "retry_exhausted:e011",
+          "actor_id": "orchestrator",
+          "role": "root-cause"
+        },
+        {
+          "event_id": "retry_exhausted:e012",
+          "actor_id": "executor",
+          "role": "propagation"
+        },
+        {
+          "event_id": "retry_exhausted:e013",
+          "actor_id": "route-tool",
+          "role": "propagation"
+        },
+        {
+          "event_id": "retry_exhausted:e014",
+          "actor_id": "verifier",
+          "role": "exposure"
+        },
+        {
+          "event_id": "retry_exhausted:e015",
+          "actor_id": "orchestrator",
+          "role": "terminal"
+        }
+      ],
+      "category": "D3",
+      "validation": "machine-validated",
+      "extensions": {
+        "rationale": "Orchestrator exceeded the configured retry budget.",
+        "validation_scope": "record structure and evidence references only"
+      }
+    }
+  },
+  "intervention": {
+    "schema_version": "demo-bridge-0.1",
+    "requested_action": "human-review",
+    "execution_status": "not-executed",
+    "requires_authorization": true,
+    "anomaly_ids": [
+      "retry_exhausted:e007:anomaly",
+      "retry_exhausted:e010:anomaly",
+      "retry_exhausted:e011:anomaly",
+      "retry_exhausted:e013:anomaly",
+      "retry_exhausted:e014:anomaly"
+    ],
+    "diagnosis_id": "retry_exhausted:diagnosis",
+    "note": "Experimental local proposal, not an ICON control protocol or actuator"
+  },
+  "analysis_duration_ms": 0.316542,
+  "case": "retry_exhausted",
+  "ground_truth": {
+    "case": "retry_exhausted",
+    "expected_alarm": true,
+    "task_failed": true,
+    "root_event_id": "retry_exhausted:e011",
+    "responsible_actor": "orchestrator",
+    "expect_abstention": false
+  }
+}
