@@ -6,7 +6,7 @@
       suspension, rollback to a last known safe state, or termination),
    -	and enable the control of what an agent is permitted to do before and during action execution.
 
-3.  Negotiating with AINETOPS on the division of the topics
+2.  Negotiating with AINETOPS on the division of the topics
 
    - AINETOPS and ICON focus on different use case, take different architecture, use different protocol,
       data model, AINETOPS is more YANG data model specific while ICON is not.
@@ -39,18 +39,18 @@
 
       2). AINETOPS focused task management can work without ICON developed building block.
 
-4. Objective of ICON follow up meeting:
+3. Objective of ICON follow up meeting:
 
       1). Reach agreement on ICON work description scope and key work items
       2). Have sufficient supports for ICON
 
-5. How to work toward a BoF at IETF-128
+4. How to work toward a BoF at IETF-128
 
     1). Kick off mailing list discussion on key discussion points
     2). Create a separate ICON mailing list
     3). Set up a weekly call to cook Charter Proposal and BOF proposal
          
-6. Pointers to relevant work (I-Ds, draft charter, side meeting materials)
+5. Pointers to relevant work (I-Ds, draft charter, side meeting materials)
 
     1). I-Ds:
     - ICON Problem Statement: draft-wnd-opsawg-icon-ps
