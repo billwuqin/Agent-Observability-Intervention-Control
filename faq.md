@@ -39,17 +39,18 @@
 
       2). AINETOPS focused task management can work without ICON developed building block.
 
--   Objective of ICON follow up meeting:
+4. Objective of ICON follow up meeting:
+
       1). Reach agreement on ICON work description scope and key work items
       2). Have sufficient supports for ICON
 
-3. How to work toward a BoF at IETF-128
+5. How to work toward a BoF at IETF-128
 
     1). Kick off mailing list discussion on key discussion points
     2). Create a separate ICON mailing list
     3). Set up a weekly call to cook Charter Proposal and BOF proposal
          
-5. Pointers to relevant work (I-Ds, draft charter, side meeting materials)
+6. Pointers to relevant work (I-Ds, draft charter, side meeting materials)
 
     1). I-Ds:
     - ICON Problem Statement: draft-wnd-opsawg-icon-ps
