@@ -1,11 +1,11 @@
--   What is ICON
+1. What is ICON?
     ICON focuses on addressing non deterministic behaivor exhibiting by AI Agent,
     -	it is built on top of continuous observability of AI agent behavior;
     -	introduce the ability of human operators to intervene when an agent goes wrong (e.g., task
       suspension, rollback to a last known safe state, or termination),
    -	and enable the control of what an agent is permitted to do before and during action execution.
 
--   Negotiating with AINETOPS on the division of the topics
+2.  Negotiating with AINETOPS on the division of the topics
 
    - AINETOPS and ICON focus on different use case, take different architecture, use different protocol,
       data model, AINETOPS is more YANG data model specific while ICON is not.
@@ -37,13 +37,13 @@
 -   Objective of ICON follow up meeting:
       1). Reach agreement on ICON work description scope and key work items
       2). Have sufficient supports for ICON
-         
--   How you hope to work toward a BoF at IETF-128
+
+3. How to work toward a BoF at IETF-128
     1). Kick off mailing list discussion on key discussion points
-    2).Create a separate ICON mailing list
+    2). Create a separate ICON mailing list
     3). Set up a weekly call to cook Charter Proposal and BOF proposal
          
--   Pointers to relevant work (I-Ds, draft charter, side meeting materials)
+4. Pointers to relevant work (I-Ds, draft charter, side meeting materials)
     1). I-Ds:
     - ICON Problem Statement: draft-wnd-opsawg-icon-ps
     - ICON Requirement: draft-mcw-opsawg-icon-requirements
