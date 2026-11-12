@@ -14,7 +14,7 @@ ICON focuses on addressing non deterministic behaivor exhibiting by AI Agent,
 
 # Why ICON?
 
-However, as Agentic AI systems are increasingly integrated into
+As Agentic AI systems are increasingly integrated into
 autonomous workflows and critical infrastructure, these static
 measures are proving insufficient for the full operational lifecycle,
 e.g.,
