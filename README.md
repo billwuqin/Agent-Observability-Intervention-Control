@@ -136,6 +136,10 @@ c. Technial and Governance Teams
 
 - Quality Gate Application
 
+- Agent Benchmarking and Application
+
+- Human Oversight Application
+
 
 # Do We Need a Dedicated Mailing List for ICON?
 
