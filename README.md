@@ -100,7 +100,7 @@ a. Network Operators:
 b. Industry Vertical
 
  * Financial Services & Banking
-  - Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
+   - Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
 
  * Healthcare & Life Sciences
    - protect patient data (HIPAA compliance) and prevent AI tools from offering unsafe medical diagnoses.
