@@ -24,16 +24,16 @@ There has been a steady growth in the use of AI Agent with Network Management ap
 has allowed network operations to become increasingly autonomous, but the use of AI-based agents in network management means that the behavior of
 network management applications may be non-deterministic.
 
-To help protect against AI-based Network Management Agents misbehaving or deviating from what from the operator expected them to do, AI safety
+To help protect against AI-based Agents misbehaving or deviating from what from the operator expected them to do, AI safety
 technologies, often referred to as "AI guardrails", can be to constrain the behavior of the AI agents to within operational and compliance
 boundaries, to prevent the AI-based agents from producing harmful results or taking wrong actions, or to defend against malicious attacks. For
 example, a decision for a high-risk network operation may be escalated to a human, defend against malicious attacks. These guardrails typically
 operate at the input/output/pre-action filter level, or through static boundary alignment.
 
-As Network Management AI systems are integrated into autonomous workflows and critical infrastructure, these static guardrail measures are proving
+As AI systems are integrated into autonomous workflows and critical infrastructure, these static guardrail measures are proving
 insufficient for the full operational lifecycle: they often cannot detect, interrupt, and rollback from unanticipated behaviors. Network operators
-usually lack an equivalent automated infrastructure for human oversight or to provide continuous monitoring of an AI-based Network Managementt Agent’s 
-internal logic or its long-running execution paths that match the speed and scale of the Network Management Agent applications. For example, it can 
+usually lack an equivalent automated infrastructure for human oversight or to provide continuous monitoring of an AI-based Agent’s 
+internal logic or its long-running execution paths that match the speed and scale of the AI Agent applications. For example, it can 
 be hard to detect and control network failures or security risks that are happening at machine speed.
 
 When a violation of the guardrails is suspected, there are currently no standardized protocols for intervention (e.g., immediate task suspension) or
@@ -55,21 +55,21 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 
 The terms defined here are specifically within the ICON context. Thus, for example, any mention of an "AI agent" is in the context of that agent being used as part of a Network Management Application or in support of its functionality.
 
-- Human to Agent Communication: The interaction between human users and Network Management Agents designed to perform tasks, solve problems,
+- Human to Agent Communication: The interaction between human users and AI Agents designed to perform tasks, solve problems,
                                  or provide information. Unlike standard human-to-machine interactions where a human drives every step of a
                                  task, human to agent communication involves delegation, where the human provides a goal and the agent
                                  autonomously figures out how to achieve it and then acts to achieve it.
 - Observability: Enabling network behavioral assessment through analysis of observed operational network data (logs, metrics, traces, etc.)
                 with the aim of detecting symptoms of network behavior, and to identify anomalies and their causes.
 - Intervention: Operates when something has gone wrong, is going wrong, or is about to go wrong to provide humans with the
-                ability to detect, interrupt, correct, and recover from Network Management Agent behavior that is not anticipated by control mechanism.
-- Control: Operates before and during actions executed by Network Management Agents. Defines what an agent is permitted to do, enforcing boundaries,
+                ability to detect, interrupt, correct, and recover from AI Agent behavior that is not anticipated by control mechanism.
+- Control: Operates before and during actions executed by AI Agents. Defines what an agent is permitted to do, enforcing boundaries,
            and structuring the environment so that harmful or unauthorized actions are difficult or impossible to execute.
 - Evaluation: Using Trajectory Records to assess the performance of agents and to understand how an agent solves a problem. For example, checking if
               the agent took the shortest sequence of actions or wasted resources on redundant tools, or analyzing specific segments of the trajectory to
               see if the agent excels at information retrieval, but struggles with mathematical synthesis.
 - Human Oversight: The practice of keeping humans actively involved in continuous monitoring of AI agents. In agent trajectory management,
-                   it ensures that Network Management Agents do not go wrong, violate safety protocols, or waste resources. It transforms
+                   it ensures that AI Agents do not go wrong, violate safety protocols, or waste resources. It transforms
                    a fully autonomous "black box" into a controllable and collaborative system.
 - Behavior: A Pattern of reasoning, decisions, and actions that an AI agent takes to achieve a specific goal such as a reasoning sequence, the sequence
             and logic of execution paths.
@@ -165,7 +165,7 @@ This is a list of people who contributed to the discussions that led to this wor
 Several Internet-Drafts are directly related to the ICON work:
 
 - "Problem Statement for Observability, Intervention and Control (I&C) in Multi-Agent Autonomous Networks" <https://datatracker.ietf.org/doc/draft-wnd-opsawg-icon-ps/>
-- "Architecture and Requirements for Observability, Control and Intervention of Network Management Agents" <https://datatracker.ietf.org/doc/draft-mcw-opsawg-icon-requirements/>
+- "Architecture and Requirements for Observability, Control and Intervention of AI Agents" <https://datatracker.ietf.org/doc/draft-mcw-opsawg-icon-requirements/>
 
 ## Related Internet-Drafts or Documents
 
