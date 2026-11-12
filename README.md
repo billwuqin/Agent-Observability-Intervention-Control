@@ -36,12 +36,13 @@ e.g.,
       human-AI semantic intent exchange hinder timely risk mitigation
       and state recovery during boundary violations by agents.
 
-# How ICON is different from AUDIT?
+# How ICON is related to AUDIT?
 
-Based on its defined charter and design constraints, AUDIT more focuses on
-post event audit record and evidence exchange and verification. However AUDIT
+Based on its defined charter and design constraints, the commonality is both
+are built on top of Agent observability data. However AUDIT more focuses on
+post event audit record and evidence exchange and verification. AUDIT
 cannot provide comprehensive operational control or real-time risk mitigation
-within autonomous network environments. The gaps include but not limite to:
+within autonomous network environments. The gaps include but not limited to:
 
    *  Post-mortem Rather than Pre-Event Interceptive Control
 
