@@ -1,9 +1,9 @@
-# Observability, Intervention, and Control of Network Management Agents (ICON)
+# AI Agent Observability, Intervention, and Control (ICON)
 
 This page provides a short description of a proposed IETF work-item to address Observability, 
-Intervention, and Control of Network Management Agents (ICON). The ICON work explores how an
-automated Network Management Agent (such as one that is utilising AI function) can be 
-continuously monitored, and how operators can intervene to control a Network Management Agent
+Intervention, and Control of AI Agents (ICON). The ICON work explores how an
+automated AI Agent (such as one that is utilising AI function) can be 
+continuously monitored, and how operators can intervene to control a AI Agent
 that has gone wrong or is performing actions that are not what the operator wants. 
 
 The intention of this page is to capture the scope of the ICON work, identify which parts are 
@@ -20,7 +20,7 @@ dispatching this work to:
 
 ## Problem Statement and Work Scope
 
-There has been a steady growth in the use of Network Management Agent applications used both at the network level and at the service level. This
+There has been a steady growth in the use of AI Agent with Network Management applications used both at the network level and at the service level. This
 has allowed network operations to become increasingly autonomous, but the use of AI-based agents in network management means that the behavior of
 network management applications may be non-deterministic.
 
@@ -53,7 +53,7 @@ of the capabilities of existing protocols and identify gaps that need to be fill
 
 ## Terminology
 
-The terms defined here are specifically within the ICON context. Thus, for example, any mention of an "AI agent" is in the context of that agent being used as part of a Network Management Agent or in support of its functionality.
+The terms defined here are specifically within the ICON context. Thus, for example, any mention of an "AI agent" is in the context of that agent being used as part of a Network Management Application or in support of its functionality.
 
 - Human to Agent Communication: The interaction between human users and Network Management Agents designed to perform tasks, solve problems,
                                  or provide information. Unlike standard human-to-machine interactions where a human drives every step of a
@@ -81,15 +81,15 @@ The terms defined here are specifically within the ICON context. Thus, for examp
 
 The questions listed below drive the functional requirements for ICON.
 
-- What are the typical scenarios for Observability, Intervention, and Control of Network Management Agents?
+- What are the typical scenarios for Observability, Intervention, and Control of AI Agents?
   - Which are specific for Agent Observability?
   - Which are specific for Agent Intervention and Control?
   - What component, function, application, or human does the Observation?
   - What elements of the system are Observed and Evaluated?
 - What information needs to be collected and recorded to enable Observation and Evaluation?
-  - Which performance metrics are used to charaterize the operational state of the Network Management Agent?
+  - Which performance metrics are used to charaterize the operational state of the AI Agent in the network management field?
   - What Log information is collected?
-  - What Trace information is used to charaterize the trajectory record of the Network Management Agent?
+  - What Trace information is used to charaterize the trajectory record of the AI Agent in the network management field?
 - How is Observability,Intervention and Control realized?
   - What components are responsible for Intervention and Control?
   - What information are used for Intervention and Control?
@@ -97,11 +97,12 @@ The questions listed below drive the functional requirements for ICON.
 
 ## Out Of Scope
 
-While the following topics are very important to the construction of an autonomous network management that uses Network Management Agents that comprise AI-based components, they are out of scope of the ICON work. It is hoped that other IETF work efforts will capture these topics for the general application of AI agents and the resulting output will be available to implementers and operators building AI-enabled network management systems.
+While the following topics are very important to the construction of an autonomous network management that uses AI Agents that comprise AI-based components, they are out of scope of the ICON work. It is hoped that other IETF work efforts will capture these topics for the general application of AI agents and the resulting output will be available to implementers and operators building AI-enabled network management systems.
 
 - Agent Discovery. How individual Ai agents (or instances of AI agents) are discovered so that they can be used by the network management system is out of scope, but may be captured by the DAWN work effort.
 - Agent-to-Agent Communication. How applications or AI agents communicate with other AI agents to exchange and negotiate capabilities and to perform tasks is not in scope, but may be captured by the AgentProto work effort.
-- Trust, Authentication, and Authorisation of Agents is critically important to ensure that only legitimate AI agents are allowed to process the network data and to issue commands to control the network. This is out of scope for ICON, but may form part of the AgentProto effort or may be a separate IETF topic.
+- Trust, Authentication, and Authorisation of Agents is critically important to ensure that only legitimate AI agents are allowed to process the network data and to issue  commands to control the network. This is out of scope for ICON, but may form part of the AgentProto effort or may be a separate IETF topic.
+- AUDIT, Agent Use of Delegation and Interaction Traceability.
   
 ## Implementations and Interoperability
 
