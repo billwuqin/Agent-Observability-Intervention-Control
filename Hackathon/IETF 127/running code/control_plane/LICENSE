@@ -1,0 +1,9 @@
+This project is in the public domain.
+
+The contribution in this directory follows the existing declaration at
+.github/LICENSE.md in the Agent-Observability-Intervention-Control repository.
+No separate module license is introduced.
+
+CPython and other external tools retain their own licensing terms. No upstream
+code is vendored: every module under icon_control_plane/ is written for this
+contribution, and the only imports are from the Python standard library.

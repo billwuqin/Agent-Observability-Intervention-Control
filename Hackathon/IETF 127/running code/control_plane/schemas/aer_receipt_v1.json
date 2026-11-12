@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jdieselny.com/schemas/aer-receipt-v1.json",
+  "title": "AER Receipt-v1",
+  "description": "Canonical EMILIA consequential-action receipt. receipt_id is rcpt_ plus the hex SHA-256 of the canonical CBOR unsigned body (principal, action, authorization without signatures). Signatures cover the ASCII receipt_id. Consequence tier spellings AMBIENT, CONSEQUENTIAL, and CRITICAL_IRREVERSIBLE are the wire names. AMBIENT_OBSERVATION and CONSEQUENTIAL_STATE_CHANGE are accepted aliases of the first two.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt_id", "principal", "action", "authorization"],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^rcpt_[0-9a-f]{64}$"
+    },
+    "principal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_id"],
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_key_ed25519": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_uri", "verb", "consequence_tier", "payload_sha256"],
+      "properties": {
+        "target_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verb": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "consequence_tier": {
+          "enum": [
+            "AMBIENT",
+            "CONSEQUENTIAL",
+            "CRITICAL_IRREVERSIBLE",
+            "AMBIENT_OBSERVATION",
+            "CONSEQUENTIAL_STATE_CHANGE"
+          ]
+        },
+        "payload_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["monotonic_nonce", "issued_at", "expires_at", "signatures"],
+      "properties": {
+        "monotonic_nonce": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "issued_at": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expires_at": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "signatures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["signer", "sig"],
+            "properties": {
+              "signer": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sig": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{128}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

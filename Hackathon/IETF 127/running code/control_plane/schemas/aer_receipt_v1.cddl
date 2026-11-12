@@ -1,0 +1,47 @@
+; Receipt-v1 CBOR envelope. Unsigned body (no receipt_id, no signatures)
+; is the SHA-256 preimage. Map keys are canonical CBOR order.
+;
+; receipt_id = "rcpt_" || hex(sha256(cbor(unsigned_body)))
+; each signature is Ed25519 over the ASCII receipt_id
+
+receipt = {
+  receipt_id: tstr,
+  principal: principal,
+  action: action,
+  authorization: authorization,
+}
+
+principal = {
+  agent_id: tstr,
+  ? public_key_ed25519: tstr,
+}
+
+action = {
+  target_uri: tstr,
+  verb: tstr,
+  consequence_tier: "AMBIENT" / "CONSEQUENTIAL" / "CRITICAL_IRREVERSIBLE"
+                 / "AMBIENT_OBSERVATION" / "CONSEQUENTIAL_STATE_CHANGE",
+  payload_sha256: tstr,
+}
+
+authorization = {
+  monotonic_nonce: uint,
+  issued_at: uint,
+  expires_at: uint,
+  signatures: [* signature],
+}
+
+signature = {
+  signer: tstr,
+  sig: tstr,
+}
+
+unsigned_body = {
+  principal: principal,
+  action: action,
+  authorization: {
+    monotonic_nonce: uint,
+    issued_at: uint,
+    expires_at: uint,
+  },
+}
