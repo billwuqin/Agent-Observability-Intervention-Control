@@ -37,7 +37,7 @@ e.g.,
       human-AI semantic intent exchange hinder timely risk mitigation
       and state recovery during boundary violations by agents.
 
-# What are the expected ICON deliverables?
+# What are the Expected ICON Deliverables?
 
 ICON focus on defining generic building blocks including:
 
@@ -50,7 +50,7 @@ ICON focus on defining generic building blocks including:
 which can be applied to various different use cases, not limited to network management cases.
 which is similar to what AUDIT did. 
 
-# Pointers to relevant work (I-Ds, draft charter, side meeting materials)
+# Pointers to Relevant Work (I-Ds, Draft Charter, Side meeting materials)
 
 I-Ds:
 
@@ -62,33 +62,78 @@ I-Ds:
 
 Draft charter:
 
-	* https://github.com/billwuqin/Agent-Observability-Intervention-Control/blob/main/ICON-Work-Description.md
+  * https://github.com/billwuqin/Agent-Observability-Intervention-Control/blob/main/ICON-Work-Description.md
 
 Side Meeting Materials:
 
   * https://github.com/billwuqin/Agent-Observability-Intervention-Control/tree/main/presentation
 
 
-# How ICON is related to AUDIT?
+# Who are the Consumers of ICON related technologies?
 
-Based on its defined charter and design constraints, the commonality is both
-are built on top of Agent observability data. However AUDIT more focuses on
-post event audit record and evidence exchange and verification. AUDIT
-cannot provide comprehensive operational control or real-time risk mitigation
-within autonomous network environments. The gaps include but not limited to:
+a. Network Operators:
 
-   *  Post-mortem Rather than Pre-Event Interceptive Control
+  * Autonomous Network Operations (AIOps)
 
-   *  Absence of In-Event Active State Recovery & Rollback
+	- Preventing catastrophic actions
+      * e.g., block unauthorized or high-risk configuration changes
 
-   *  Exclusion of Internal Reasoning Evaluation
+    - Enforcing operational policies
+      * e.g., stays within strict engineering safety limits before executing commands
 
-# Do we need a dedicated mailing list for ICON?
+  * Customer-Facing & Internal AI Assistants
+
+    - Customer service bots
+      * Prevent support chatbots from hallucinating billing policies, promising unauthorized plan discounts, or leaking subscriber data.
+
+    - Technician copilots
+      * Verify factual accuracy of network maintainance manual from AI assistant
+
+  * Enterprise B2B Offerings (Telco-as-a-Platform)
+
+	- Network-level AI security
+      * Integrate into enterprise cloud and private 5G offerings to inspect AI traffic, block prompt injections, and filter sensitive data
+
+	- Sovereign AI compliance
+      * Help local businesses comply with national data privacy and AI safety regulations
+
+b. Industry Vertical
+
+ * Financial Services & Banking
+  - Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
+
+ * Healthcare & Life Sciences
+   - protect patient data (HIPAA compliance) and prevent AI tools from offering unsafe medical diagnoses.
+
+ * Customer Support & E-Commerce
+   - stop chatbots from making unauthorized refund promises, using offensive language, or discussing competitors.
+
+ * Enterprise SaaS & Software Vendors
+   - ensure their product behaves reliably and safely for their business customers
+
+ * Government & Legal Sectors
+   - prevent confidential case data from leaking into public AI models and to verify factual accuracy.
+
+c. Technial and Governance Teams
+
+ * AI / Machine Learning Engineers
+   - Prevent large language models (LLMs) from hallucinating, going off-topic, or producing broken output formats
+
+ * Cybersecurity & AppSec Teams
+   - block prompt injections, jailbreaks, and adversarial attacks
+
+ * Data Privacy & Compliance Officers
+   - automatically detect and redact Personally Identifiable Information (PII), financial data, or trade secrets from user prompts and AI responses
+
+ * Chief Information Security Officers (CISOs) & Risk Leaders
+   - enforce company-wide AI policies and maintain audit trails for regulators
+
+# Do We Need a Dedicated Mailing List for ICON?
 
 Yes, A Dedicated Mailing List is required for "Agent Observability, Intervention and Control"
 
 The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 
-# Hackathon implementations
+# Hackathon Implementations
 
 - [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
