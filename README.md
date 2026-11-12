@@ -1,11 +1,11 @@
 # What is ICON:
 
 ICON focuses on addressing non deterministic behaivor exhibiting by AI Agent,
--	it is built on top of continuous observability of AI agent behavior;
+-	It is built on top of continuous observability of AI agent behavior;
 
--	introduce the ability of human operators to intervene when an agent goes wrong (e.g., task suspension, rollback to a last known safe state, or termination),
+-	Introduce the ability of human operators to intervene when an agent goes wrong (e.g., task suspension, rollback to a last known safe state, or termination),
 
--	and enable the control of what an agent is permitted to do before and during action execution.
+-	Enable the control of what an agent is permitted to do before and during action execution.
 
 # Who are the Consumers of ICON related technologies?
 
