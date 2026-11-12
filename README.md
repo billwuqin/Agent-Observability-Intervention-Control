@@ -97,7 +97,7 @@ a. Network Operators:
 	- Sovereign AI compliance
       * Help local businesses comply with national data privacy and AI safety regulations
 
-b. Industry Vertical
+b. Industry Verticals
 
  * Financial Services & Banking
    - Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
@@ -127,6 +127,15 @@ c. Technial and Governance Teams
 
  * Chief Information Security Officers (CISOs) & Risk Leaders
    - enforce company-wide AI policies and maintain audit trails for regulators
+
+# What are Key Applications of ICON Related Technologies
+
+- AI guardrail Application
+
+- Agent Drift Detection Application
+
+- Quality Gate Application
+
 
 # Do We Need a Dedicated Mailing List for ICON?
 
