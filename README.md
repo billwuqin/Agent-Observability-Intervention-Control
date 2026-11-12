@@ -1,9 +1,3 @@
-# A Dedicated Mailing List is required for "Agent Observability, Intervention and Control"
-
-# Hackathon implementations
-
-- [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
-
 # What is ICON:
 ICON focuses on addressing non deterministic behaivor exhibiting by AI Agent,
 -	it is built on top of continuous observability of AI agent behavior;
@@ -41,3 +35,24 @@ e.g.,
    *  In non-deterministic environments, the lack of human oversight and
       human-AI semantic intent exchange hinder timely risk mitigation
       and state recovery during boundary violations by agents.
+
+# How ICON is different from AUDIT?
+
+Based on its defined charter and design constraints, AUDIT more focuses on
+post event audit record and evidence exchange and verification. However AUDIT
+cannot provide comprehensive operational control or real-time risk mitigation
+within autonomous network environments. The gaps include but not limite to:
+
+   *  Post-mortem Rather than Pre-Event Interceptive Control
+
+   *  Absence of In-Event Active State Recovery & Rollback
+
+   *  Exclusion of Internal Reasoning Evaluation
+
+# Do we need a dedicated mailing list for ICON?
+Yes, A Dedicated Mailing List is required for "Agent Observability, Intervention and Control"
+The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
+
+# Hackathon implementations
+
+- [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
