@@ -1,4 +1,5 @@
 # What is ICON:
+
 ICON focuses on addressing non deterministic behaivor exhibiting by AI Agent,
 -	it is built on top of continuous observability of AI agent behavior;
 
@@ -83,6 +84,7 @@ within autonomous network environments. The gaps include but not limited to:
    *  Exclusion of Internal Reasoning Evaluation
 
 # Do we need a dedicated mailing list for ICON?
+
 Yes, A Dedicated Mailing List is required for "Agent Observability, Intervention and Control"
 The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 
