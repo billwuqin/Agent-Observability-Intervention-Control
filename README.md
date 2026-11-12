@@ -86,6 +86,7 @@ within autonomous network environments. The gaps include but not limited to:
 # Do we need a dedicated mailing list for ICON?
 
 Yes, A Dedicated Mailing List is required for "Agent Observability, Intervention and Control"
+
 The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 
 # Hackathon implementations
