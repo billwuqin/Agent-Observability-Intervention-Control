@@ -36,6 +36,29 @@ e.g.,
       human-AI semantic intent exchange hinder timely risk mitigation
       and state recovery during boundary violations by agents.
 
+# What are the expected ICON deliverables?
+
+ICON focus on defining generic building blocks including
+         1) Agent observability Data model (Not YANG based)
+         2) Agent intervention protocol  (Application Protocol)
+         3) and Agent control protocol (Application protocol)
+which can be applied to various different use cases, not limited to network management cases.
+which is similar to what AUDIT did. 
+
+# Pointers to relevant work (I-Ds, draft charter, side meeting materials)
+
+I-Ds:
+  * ICON Problem Statement: draft-wnd-opsawg-icon-ps
+	* ICON Requirement: draft-mcw-opsawg-icon-requirements
+  * ICON Solution Related: draft-pei-opsawg-agentops-observability
+
+Draft charter:
+	* https://github.com/billwuqin/Agent-Observability-Intervention-Control/blob/main/ICON-Work-Description.md
+
+Side Meeting Materials:
+  * https://github.com/billwuqin/Agent-Observability-Intervention-Control/tree/main/presentation
+
+
 # How ICON is related to AUDIT?
 
 Based on its defined charter and design constraints, the commonality is both
