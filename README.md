@@ -100,33 +100,33 @@ a. Network Operators:
 b. Industry Verticals
 
  * Financial Services & Banking
-   - Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
+   - e.g., Ensure customer-facing chatbots do not give unauthorized investment advice, leak account details, or violate strict compliance laws.
 
  * Healthcare & Life Sciences
-   - protect patient data (HIPAA compliance) and prevent AI tools from offering unsafe medical diagnoses.
+   - e.g., Protect patient data (HIPAA compliance) and prevent AI tools from offering unsafe medical diagnoses.
 
  * Customer Support & E-Commerce
-   - stop chatbots from making unauthorized refund promises, using offensive language, or discussing competitors.
+   - e.g., Stop chatbots from making unauthorized refund promises, using offensive language, or discussing competitors.
 
  * Enterprise SaaS & Software Vendors
-   - ensure their product behaves reliably and safely for their business customers
+   - e.g.,Ensure their product behaves reliably and safely for their business customers
 
  * Government & Legal Sectors
-   - prevent confidential case data from leaking into public AI models and to verify factual accuracy.
+   - e.g.,Prevent confidential case data from leaking into public AI models and to verify factual accuracy.
 
 c. Technial and Governance Teams
 
  * AI / Machine Learning Engineers
-   - Prevent large language models (LLMs) from hallucinating, going off-topic, or producing broken output formats
+   - e.g.,Prevent large language models (LLMs) from hallucinating, going off-topic, or producing broken output formats
 
  * Cybersecurity & AppSec Teams
-   - block prompt injections, jailbreaks, and adversarial attacks
+   - e.g.,Block prompt injections, jailbreaks, and adversarial attacks
 
  * Data Privacy & Compliance Officers
-   - automatically detect and redact Personally Identifiable Information (PII), financial data, or trade secrets from user prompts and AI responses
+   - e.g., Automatically detect and redact Personally Identifiable Information (PII), financial data, or trade secrets from user prompts and AI responses
 
  * Chief Information Security Officers (CISOs) & Risk Leaders
-   - enforce company-wide AI policies and maintain audit trails for regulators
+   - e.g., Enforce company-wide AI policies and maintain audit trails for regulators
 
 # What are Key Applications of ICON Related Technologies
 
