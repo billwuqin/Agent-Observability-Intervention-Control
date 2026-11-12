@@ -1,0 +1,11 @@
+# The normative CBOR exemplar is a byte-exact artifact: its SHA-256 is the
+# receipt content id. Never let a line-ending conversion touch it.
+*.cbor binary
+
+# Everything else is text; normalise to LF in the repository.
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.cddl text eol=lf
+Dockerfile text eol=lf

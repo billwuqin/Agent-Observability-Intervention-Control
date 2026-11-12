@@ -1,0 +1,24 @@
+{
+  "action": {
+    "consequence_tier": "CONSEQUENTIAL",
+    "payload_sha256": "c638bb58f77dde907d37758c7348a0ea470da144f2216cf061fbafb5b5381688",
+    "target_uri": "device://router-core-01.ops.local/interfaces/0/policy",
+    "verb": "APPLY_RATE_LIMIT"
+  },
+  "authorization": {
+    "expires_at": 1761600030,
+    "issued_at": 1761600000,
+    "monotonic_nonce": 7,
+    "signatures": [
+      {
+        "sig": "32e799123848cec722f9b308a068c106370a043b68115f9fec3ecc953195b1903d7d96a36f35496fb52411b03ba324988270963e3fb6c34bbf7ce87233ceb005",
+        "signer": "diag-agent@ops.local"
+      }
+    ]
+  },
+  "principal": {
+    "agent_id": "diag-agent@ops.local",
+    "public_key_ed25519": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a"
+  },
+  "receipt_id": "rcpt_d41855d5c548226324d928f0bc243a14264d8fc8db5ddfd76676d2f3d783397e"
+}
