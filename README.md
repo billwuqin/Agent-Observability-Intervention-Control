@@ -149,3 +149,6 @@ The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 # Hackathon Implementations
 
 - [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
+- [Agent Control and Enforcement Plane](<Hackathon/IETF 127/running code/control_plane/README.md>): the component that decides whether a proposed network mutation is permitted or refused
+- [A2H (agent to human) protocol](https://github.com/twilio-labs/Agent2Human): Agent to Human communication protocol for multi-channel approvals
+- [Agent Control](https://github.com/agentcontrol/agent-control):Enforce runtime guardrails through a centralized control layer; Evaluates inputs and outputs against configurable rules to block prompt injections, PII leakage, and other risks without changing your agent’s code
