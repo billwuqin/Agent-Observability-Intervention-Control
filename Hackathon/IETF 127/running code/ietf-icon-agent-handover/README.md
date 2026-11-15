@@ -14,7 +14,7 @@ Four HD sessions fill `edge-small` (8 compute units). A 4K session needs 6 units
 
 Intervention is separate. An operator can pause the agent, roll back a handover whose acknowledgement failed, and replace the open plan. Those steps are `H1`, `I1`, `I2`, and `I3` in the ledger. `H1` is an approval (control). `I1`–`I3` are intervention.
 
-The workload is a concrete scenario for the ICON use-case discussion. Section 6 of [draft-king-rokui-ainetops-usecases-03](https://datatracker.ietf.org/doc/html/draft-king-rokui-ainetops-usecases-03) does not itself specify a video use case. The drafts this run follows are listed in [HACKATHON-PLAN.md](HACKATHON-PLAN.md).
+The workload is a concrete scenario for the ICON use-case discussion. Section 6 of [draft-king-rokui-ainetops-usecases-03](https://datatracker.ietf.org/doc/html/draft-king-rokui-ainetops-usecases-03) does not itself specify a video use case.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ From this directory:
 python3 demo.py
 ```
 
-The command prints one line per ledger step, then the scoreboard. Exit status is 0 when the scoreboard matches the frozen ledger in [HACKATHON-PLAN.md](HACKATHON-PLAN.md). Exit status is 1 when it does not. A passing run ends with:
+A passing run prints:
 
 ```text
 ICON handover scoreboard
@@ -83,4 +83,3 @@ Stop the server with Ctrl-C.
 | `control.py` | Applies a proposal only after policy allows it |
 | `intervention.py` | Approve, pause, rollback, and correct |
 | `trace.py` | Append-only event log |
-| `HACKATHON-PLAN.md` | Ledger, check order, and the numbers the demo must print |
