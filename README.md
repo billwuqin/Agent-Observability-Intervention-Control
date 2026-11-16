@@ -152,3 +152,5 @@ The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 - [Agent Control and Enforcement Plane](<Hackathon/IETF 127/running code/control_plane/README.md>): the component that decides whether a proposed network mutation is permitted or refused
 - [A2H (agent to human) protocol](https://github.com/twilio-labs/Agent2Human): Agent to Human communication protocol for multi-channel approvals
 - [Agent Control](https://github.com/agentcontrol/agent-control):Enforce runtime guardrails through a centralized control layer; Evaluates inputs and outputs against configurable rules to block prompt injections, PII leakage, and other risks without changing your agent’s code
+- [Agent Control for 4K streaming session handover](https://github.com/billwuqin/Agent-Observability-Intervention-Control/tree/main/Hackathon/IETF%20127/running%20code/ietf-icon-agent-handover): Showcase policy-driven observability, automated refusal of unsafe actions, and Test human-in-the-loop rollback and recovery controls
+]
