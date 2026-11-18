@@ -152,10 +152,13 @@ This is a list of people who contributed to the discussions that led to this wor
 - Giuseppe Fioccola <giuseppe.fioccola@huawei.com>
 - Daniele Ceccarelli <dceccare@cisco.com>
 - Daniel King <d.king@lancaster.ac.uk>
+- Changhua Pei <chpei@cnic.cn>
+- Shailesh Prabhu <shailesh.prabhu@nokia.com>
+- Swamynathan B <swamynathan.b.ietf@outlook.com>
 - Zhenqiang Li <lizhenqiang@chinamobile.com>
 - Luis M. Contreras <luismiguel.contrerasmurillo@telefonica.com>
 - Cheng Zhou <zhouchengyjy@chinamobile.com>
-
+- Justin Kintzele <jkintzele@jdieselny.com>
 ## Deliverables
 
 **A list of deliverables will be added here**
