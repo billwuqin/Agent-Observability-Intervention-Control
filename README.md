@@ -100,11 +100,13 @@ e.g.,
 
 ICON focus on defining generic building blocks including:
 
+  * Architecture for Agent Observability, Intervention and Control and Human Oversight
+
   * Agent observability Data model (Not YANG based)
 
-  * Agent intervention protocol  (Application Protocol)
+  * Agent intervention protocol  (Policy based Application Protocol)
 
-  * and Agent control protocol (Application protocol)
+  * and Agent control protocol (Policy based Application protocol)
 
 which can be applied to various different use cases, not limited to network management cases.
 which is similar to what AUDIT did. 
