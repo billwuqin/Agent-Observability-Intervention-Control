@@ -70,14 +70,11 @@ c. Technial and Governance Teams
 
 As Agentic AI systems are increasingly integrated into
 autonomous workflows and critical infrastructure, these static
-measures are proving insufficient for the full operational lifecycle,
+measures are proving insufficient for the full operational lifecycle of Autonomous Agents,
 e.g.,
 
    *  Unable to detect, interrupt, and rollover from unanticipated
       behaviors;
-
-   *  Network operators usually lack an equivalent infrastructure or
-      platform for human oversight;
 
    *  Unable to provide continuous monitoring of an AI system's internal
       logic or its long-running execution paths that match the speed and
