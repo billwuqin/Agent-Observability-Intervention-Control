@@ -158,7 +158,7 @@ This is a list of people who contributed to the discussions that led to this wor
 - Zhenqiang Li <lizhenqiang@chinamobile.com>
 - Luis M. Contreras <luismiguel.contrerasmurillo@telefonica.com>
 - Cheng Zhou <zhouchengyjy@chinamobile.com>
-- Justin Kintzele <jkintzele@jdieselny.com>
+
 ## Deliverables
 
 **A list of deliverables will be added here**
