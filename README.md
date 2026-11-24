@@ -3,7 +3,7 @@
 ICON focuses on addressing non deterministic behaivior exhibiting by AI Agent,
 -	It is built on top of continuous observability of AI agent behavior;
 
--	Introduce the ability of human operators to intervene when an agent goes wrong (e.g., task suspension, rollback to a last known safe state, or termination),
+-	Introduce the ability of human operators to intervene on demand when an agent goes wrong (e.g., task suspension, rollback to a last known safe state, or termination),
 
 -	Enable the control of what an agent is permitted to do before and during action execution.
 
