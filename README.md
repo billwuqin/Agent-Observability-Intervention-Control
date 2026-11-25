@@ -195,6 +195,20 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
  * Distributed Concurrency & Resource Locking:
    The Enforcement Plane prevents multiple autonomous agents from executing conflicting changes on the same shared resource simultaneously.
 
+# What has been observed through ICON Observability Component?
+
+ * Agent Behavior and Execution Paths
+   Supervision systems track the patterns of reasoning, decision-making, and actions an autonomous agent takes to achieve a goal, ensuring it
+   stays within operational boundaries.
+ 
+ * Trajectory Records
+   The system captures audit logs and trace information covering the agent's entire reasoning sequence, tool executions, knowledge retrieval,
+    and multi-agent collaborations
+
+ * Performance and Behavioral Drift
+   Monitoring evaluates agents in production environments to detect operational anomalies, performance degradation, or deviations from expected
+   behavior over time.
+
 # Where ICON Enforcement plane is placed?
 
 Where ICON Enforcement plan is place is implementation specific. One of option is to make ICON Enforcement plane place at the unfied
