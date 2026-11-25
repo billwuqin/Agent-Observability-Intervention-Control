@@ -149,8 +149,9 @@ The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 
 The practice of delegating authority to autonomous agents with guardaril policies or constraints and keeping humans away from being actively
 involved in continuously monitoring of Autonomous agents and provide on demand intervention
-or control on the Autonmous Agents if needed. In the agent trajectory management, it ensures that Autonomous Agents do not go off the rails,
-violate safety protocols, or waste resources.  It transforms a fully autonomous "black box" into a controllable and collaborative system.
+or control on the Autonmous Agents if needed. This practice prevent Humans suffering from alert fatigue if forced to watch every routine step.
+In the agent trajectory management, it ensures that Autonomous Agents do not go off the rails, violate safety protocols, or waste resources.
+It transforms a fully autonomous "black box" into a controllable and collaborative system.
 
 # Human in the Loop vs Human on the Loop
 
