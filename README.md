@@ -197,7 +197,8 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 
 # Where ICON Enforcement plane is placed?
 
-ICON Enforcement plane can be placed at the unfied agent gateway. The unified agent gateway can be part of orchestration layer or network layer or network element layer
+Where ICON Enforcement plan is place is implementation specific. One of option is to make ICON Enforcement plane place at the unfied
+agent gateway. The unified agent gateway can be part of orchestration layer or network layer or network element layer
 and sits on the request path between autonomous agents, LLM providers, LLM consumers
 and external tool servers or MCP server and provide the folowing capabilties:
 
