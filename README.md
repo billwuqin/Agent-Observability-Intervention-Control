@@ -197,11 +197,11 @@ ICON Enforcement plane can be placed at the unfied agent gateway. The unified ag
 and sits on the request path between autonomous agents, LLM providers, LLM consumers
 and external tool servers or MCP server and provide the folowing capabilties:
 
-* Enforces centralized policy
+* Provide consistent centralized policy enforcement
 
-* Provides unified HOTL Agent Observability
+* Provide unified HOTL Agent Observability
 
-* Executes cascading kill switches
+* Execute cascading kill switches
 
 # Hackathon Implementations
 
