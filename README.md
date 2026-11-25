@@ -155,7 +155,7 @@ It transforms a fully autonomous "black box" into a controllable and collaborati
 
 # Human in the Loop vs Human on the Loop
 
-Note that ICON focuses on Human on the loop instead of human in the loop.
+Note that ICON focuses on ***Human on the loop*** instead of human in the loop.
 Human-on-the-Loop (HOTL) allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when
 necessary whereas Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or the next action. 
 
