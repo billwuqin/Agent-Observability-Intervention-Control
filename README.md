@@ -162,7 +162,7 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 | Difference | HOTL(Human On the Loop)  | HITL (Human in the Loop) | 
 |---|---|---|
 |Workflow|Asynchronous / Non-Blocking The agent executes independently unless a human steps in|Synchronous / Blocking The Agent execution highly depends on Human Approval|
-|Primary Human Role|Supervisor & Auditor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
+|Primary Human Role|Supervisor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
 |Speed&Scalability|High throughput; allows multi-agent workflows to run continuously at machine speed|scales poorly if humans must approve routine steps|
 |Delegation Model|Bounded delegation — Authority is pre-delegated with Guardrail policies|Real time continous delegation — Authority is granted per action or short-lived task|
 
