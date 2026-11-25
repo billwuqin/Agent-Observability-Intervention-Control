@@ -162,7 +162,6 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 |Workflow|Asynchronous / Non-Blocking The agent executes independently unless a human steps in|Synchronous / Blocking The Agent execution highly depends on Human Approval|
 |Primary Human Role|Supervisor & Auditor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
 |Speed&Scalability|High throughput; allows multi-agent workflows to run continuously at machine speed|scales poorly if humans must approve routine steps|
-|Delegation Model|Broad, bounded delegation — Authority is pre-delegated with guardrails policy|Narrow, continously delegation — Authority is granted per action or short-lived task|
 
 # Hackathon Implementations
 
