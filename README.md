@@ -145,24 +145,25 @@ Yes, A Dedicated Mailing List is required for "Agent Observability, Intervention
 
 The current discussion is on the AINETOPS mailing list <ainetops@ietf.org>
 
-# Human oversight/ Human on the Loop
+# What is Human oversight/ Human on the Loop?
 
-The practice of keeping humans actively involved in continuously monitoring of Autonomous agents and provide on demand intervention
-or control the Autonmous Agents. In the agent trajectory management, it ensures that Autonomous Agents do not go off the rails,
+The practice of delegating authority to autonomous agents with guardaril policies or constraints and keeping humans away from being actively
+involved in continuously monitoring of Autonomous agents and provide on demand intervention
+or control on the Autonmous Agents if needed. In the agent trajectory management, it ensures that Autonomous Agents do not go off the rails,
 violate safety protocols, or waste resources.  It transforms a fully autonomous "black box" into a controllable and collaborative system.
 
 # Human in the Loop vs Human on the Loop
 
-Note that ICON focus on Human on the loop instead of human in the loop.
+Note that ICON focuses on Human on the loop instead of human in the loop.
 Human-on-the-Loop (HOTL) allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when
-necessary whereas Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or next action. 
+necessary whereas Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or the next action. 
 
 | Difference | HOTL(Human On the Loop)  | HITL (Human in the Loop) | 
 |---|---|---|
 |Workflow|Asynchronous / Non-Blocking The agent executes independently unless a human steps in|Synchronous / Blocking The Agent execution highly depends on Human Approval|
 |Primary Human Role|Supervisor & Auditor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
 |Speed&Scalability|High throughput; allows multi-agent workflows to run continuously at machine speed|scales poorly if humans must approve routine steps|
-
+|Delegation Model|Bounded delegation — Authority is pre-delegated with Guardrail policies|Real time continous delegation — Authority is granted per action or short-lived task|
 # Hackathon Implementations
 
 - [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
