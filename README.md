@@ -176,6 +176,10 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
  as policy enforcement point embeds those AI guardrails for fast, local rejection of obvious violations, while adding dynamic
  governance capabilities that static guardrails lack but not limited to:
 
+ * Agent Intervention Signaling
+
+ * Agent Control Signaling
+
  * Dynamic run time policy adding, deleting, update:
    The Agent Supervisory plane as policy decision point allows dynamic run time policy rules adding, deleting, update based on
    Evaluation results of Agent Observability Data.
