@@ -173,7 +173,7 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
  static policies.
 
  ICON governance plane can be break down into Agent Supervisory Plane and Agent Enforcement Plane. The ICON Enforcement Plane
- as policy enforcement plane embeds those AI guardrails for fast, local rejection of obvious violations, while adding dynamic
+ as policy enforcement point embeds those AI guardrails for fast, local rejection of obvious violations, while adding dynamic
  governance capabilities that static guardrails lack but not limited to:
 
  * Dynamic run time policy adding, deleting, update:
@@ -190,6 +190,18 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
  
  * Distributed Concurrency & Resource Locking:
    The Enforcement Plane prevents multiple autonomous agents from executing conflicting changes on the same shared resource simultaneously.
+
+# Where ICON Enforcement plane is placed?
+
+ICON Enforcement plane can be placed at the unfied agent gateway. The unified agent gateway can be part of orchestration layer or network layer or network element layer
+and sits on the request path between autonomous agents, LLM providers, LLM consumers
+and external tool servers or MCP server and provide the folowing capabilties:
+
+* Enforces centralized policy
+
+* Provides unified HOTL Agent Observability
+
+* Executes cascading kill switches
 
 # Hackathon Implementations
 
