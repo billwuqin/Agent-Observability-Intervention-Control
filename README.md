@@ -165,6 +165,32 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 |Primary Human Role|Supervisor & Auditor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
 |Speed&Scalability|High throughput; allows multi-agent workflows to run continuously at machine speed|scales poorly if humans must approve routine steps|
 |Delegation Model|Bounded delegation — Authority is pre-delegated with Guardrail policies|Real time continous delegation — Authority is granted per action or short-lived task|
+
+# How ICON is different from Traditonal AI Guardrail?
+
+ Traditional AI guardrails operate at fixed transition points — filtering prompts at the LLM input, validating responses at the LLM
+ output, and checking static rules before a tool call. They assume dangerous behaviors can be predicted upfront and blocked with
+ static policies.
+
+ ICON governance plane can be break down into Agent Supervisory Plane and Agent Enforcement Plane. The ICON Enforcement Plane
+ as policy enforcement plane embeds those AI guardrails for fast, local rejection of obvious violations, while adding dynamic
+ governance capabilities that static guardrails lack but not limited to:
+
+ * Dynamic run time policy adding, deleting, update:
+   The Agent Supervisory plane as policy decision point allows dynamic run time policy rules adding, deleting, update based on
+   Evaluation results of Agent Observability Data.
+ 
+ * Runtime Intervention:
+   The Enforcement Plane listens to live Control and Intervention Signals from the Supervisory Plane—allowing a human operator or the supervisory
+   plane to pause, throttle, redirect, or trigger a post-execution rollback mid-workflow when continuous observability detects goal drift.
+
+ * Delegation & Precedence Enforcement:
+   When multiple agents collaborate across domains, the Enforcement Plane resolves policy conflicts, enforces authority precedence
+   (ensuring a human operator or supervisory policy preempts a sub-agent), and validates delegated scope bounds.
+ 
+ * Distributed Concurrency & Resource Locking:
+   The Enforcement Plane prevents multiple autonomous agents from executing conflicting changes on the same shared resource simultaneously.
+
 # Hackathon Implementations
 
 - [AgentOps observability and failure diagnosis prototype](<Hackathon/IETF 127/running code/agentops/README.md>): runtime measurements, normalized trajectories, anomaly detection, evidence-based attribution, reproducible scenarios and tests.
