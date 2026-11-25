@@ -154,10 +154,10 @@ violate safety protocols, or waste resources.  It transforms a fully autonomous 
 # Human in the Loop vs Human on the Loop
 
 Note that ICON focus on Human on the loop instead of human in the loop.
-Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or next action, whereas Human-on-the-Loop (HOTL)
-allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when necessary. 
+Human-on-the-Loop (HOTL) allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when
+necessary whereas Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or next action. 
 
-| Difference | HOTL  | HITL | 
+| Difference | HOTL(Human On the Loop)  | HITL (Human in the Loop) | 
 |---|---|---|
 |Workflow|Asynchronous / Non-Blocking The agent executes independently unless a human steps in|Synchronous / Blocking|
 |Primary Human Role|Supervisor & Auditor — Monitors live telemetry, handles exceptions, and triggers overrides|Gatekeeper & Approver — Validates each decision or actions|
