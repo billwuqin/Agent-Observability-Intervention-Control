@@ -166,7 +166,7 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 |Speed&Scalability|High throughput; allows multi-agent workflows to run continuously at machine speed|scales poorly if humans must approve routine steps|
 |Delegation Model|Bounded delegation — Authority is pre-delegated with Guardrail policies|Real time continous delegation — Authority is granted per action or short-lived task|
 
-# How ICON is different from Traditonal AI Guardrail?
+# How is ICON different from Traditonal AI Guardrail?
 
  Traditional AI guardrails operate at fixed transition points — filtering prompts at the LLM input, validating responses at the LLM
  output, and checking static rules before a tool call. They assume dangerous behaviors can be predicted upfront and blocked with
