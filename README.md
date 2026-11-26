@@ -78,20 +78,16 @@ e.g.,
 
    *  Unable to provide continuous monitoring of an AI system's internal
       logic or its long-running execution paths that match the speed and
-      scale of the network management Agent applications, e.g., network
-      failure or security risk is hard to detect and control, occurring
-      at machine speed.
+      scale of the autonomous Agent applications, e.g., agent
+      failure or security risk is hard to detect and control.
 
    *  When a violation related to input/output filter is suspected,
       there are currently no standardized interoperable protocols for
-      network operation and task intervention (e.g., immediate task
-      suspension) and recovery (e.g., reverting to a last known safe
-      state or undoing a series of autonomous actions that introduce
-      substantial operational risk) mechanisms.
+      agent intervention and control mechanisms.
 
    *  In non-deterministic environments, the lack of human oversight and
       human-AI semantic intent exchange hinder timely risk mitigation
-      and state recovery during boundary violations by agents.
+      and state recovery during boundary violations by autonmous agents.
 
 # What are the Expected ICON Deliverables?
 
