@@ -153,7 +153,7 @@ or control on the Autonmous Agents if needed. This practice prevent Humans suffe
 In the agent trajectory management, it ensures that Autonomous Agents do not go off the rails, violate safety protocols, or waste resources.
 It transforms a fully autonomous "black box" into a controllable and collaborative system.
 
-# Human in the Loop vs Human on the Loop
+# Human on the Loop vs Human in the Loop
 
 Note that ICON focuses on ***Human on the loop*** instead of human in the loop.
 Human-on-the-Loop (HOTL) allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when
