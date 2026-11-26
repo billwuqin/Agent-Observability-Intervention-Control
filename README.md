@@ -69,7 +69,7 @@ c. Technial and Governance Teams
 # Why ICON?
 
 As Agentic AI systems are increasingly integrated into
-autonomous workflows and critical infrastructure, these static
+autonomous workflows and critical infrastructure, traditional AI guardrails with static
 measures are proving insufficient for the full operational lifecycle of Autonomous Agents,
 e.g.,
 
