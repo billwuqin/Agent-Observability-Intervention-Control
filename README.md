@@ -91,7 +91,7 @@ e.g.,
 
 # What are the Expected ICON Deliverables?
 
-ICON focus on defining generic building blocks including:
+ICON focuses on defining generic building blocks including:
 
   * Architecture for Agent Observability, Intervention and Control and Human Oversight
 
@@ -151,7 +151,7 @@ It transforms a fully autonomous "black box" into a controllable and collaborati
 
 # Human on the Loop vs Human in the Loop
 
-Note that ICON focuses on ***Human on the loop*** instead of human in the loop.
+Note that ICON focuses on ***Human on the loop***.
 Human-on-the-Loop (HOTL) allows an agent to act autonomously while a human monitors the trajectory and intervenes or control only when
 necessary whereas Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or the next action. 
 
@@ -207,6 +207,26 @@ necessary whereas Human-in-the-Loop (HITL) requires explicit human approval befo
 
    Monitoring evaluates agents in production environments to detect operational anomalies, performance degradation, or deviations from expected
    behavior over time.
+
+# What needs to be Controlled by ICON Controlled Component?
+
+* Agent Execution Guardrails and Risk Control
+
+* Authorization and Access Control
+
+* Policy Precedence and Concurrency Control
+
+* Resilience
+
+# What needs to be Intervened by ICON Intervention Component?
+
+* Runtime Execution Intervention
+
+* Post-execution Rollback
+
+* Escalation
+
+* Correction
 
 # Where ICON Enforcement plane is placed?
 
